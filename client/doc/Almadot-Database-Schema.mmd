@@ -1,0 +1,208 @@
+%% Almadot — MongoDB Database Schema (renderable source)
+%% Open with any Mermaid renderer (Mermaid Live, VS Code Mermaid plugin, GitHub).
+%% Derived from doc/Almadot-DFD-Section{1..4}.png + implemented server models.
+%% Last aligned: 2026-06-01 (membership tiers Free/Earth/Sky/Sun; embedded users.membership + membership_orders; per-plan listing cap).
+
+erDiagram
+    USERS ||--o{ SESSIONS          : "has many"
+    USERS ||--o{ OTPS              : "issued for"
+    USERS ||--o{ LISTINGS          : "user has many listings"
+    USERS ||--o{ CLAIMS            : "claims (claimerUserId)"
+    USERS ||--o{ CLAIMS            : "owns listing (ownerUserId)"
+    USERS ||--o{ CLAIM_MESSAGES    : "sends"
+    USERS ||--o{ NOTIFICATIONS     : "recipient"
+    USERS ||--o{ MEMBERSHIP_ORDERS : "requests"
+    USERS ||--o{ AUDIT_LOGS        : "acted by"
+
+    LISTING_CATEGORIES ||--o{ LISTING_CATEGORIES : "parent → children"
+    LISTING_CATEGORIES ||--o{ LISTINGS           : "categorizes"
+
+    LISTING_LOCATIONS ||--o{ LISTING_LOCATIONS : "parent → children"
+    LISTING_LOCATIONS ||--o{ LISTINGS          : "pickup area (areaId)"
+
+    LISTINGS ||--o{ CLAIMS        : "receives"
+    LISTINGS ||--o{ NOTIFICATIONS : "context"
+
+    CLAIMS   ||--o{ CLAIM_MESSAGES  : "negotiation thread"
+    CLAIMS   ||--o{ NOTIFICATIONS   : "context"
+
+    USERS {
+        ObjectId _id PK
+        string   email "unique, lowercased"
+        string   passwordHash "bcrypt/argon2"
+        string   fullName
+        string   phone
+        string   address
+        string   profileImageUrl
+        bool     emailVerified
+        string   status "active|disabled|deleted"
+        date     lastLoginAt
+        date     createdAt
+        date     updatedAt
+        string   privacy_publicDisplayName "≤60 chars; empty → use fullName"
+        string   privacy_emailVisibility "everyone|logged_in|hidden"
+        string   privacy_phoneVisibility "everyone|logged_in|hidden"
+        string   membership_plan "free|earth|sky|sun (default free)"
+        string   membership_status "active|pending|expired (default active)"
+        date     membership_startedAt
+        date     membership_expiresAt "null for free; ~1yr for paid plans"
+    }
+
+    SESSIONS {
+        string   _id PK "opaque session id"
+        ObjectId userId FK
+        string   csrfToken
+        string   userAgent
+        string   ipAddress
+        date     expiresAt "TTL indexed"
+        date     lastActivityAt
+        date     createdAt
+    }
+
+    MEMBERSHIP_ORDERS {
+        ObjectId _id PK
+        ObjectId userId FK "buyer; indexed"
+        string   plan "earth|sky|sun (paid plans only)"
+        number   amountBdt "price from membership catalog"
+        string   paymentMethod "bank_transfer"
+        string   bankTransfer_accountName "sender account name"
+        string   bankTransfer_senderReference "transaction / reference no."
+        date     bankTransfer_transferDate
+        string   bankTransfer_note "optional"
+        string   status "pending|confirmed|rejected (default pending)"
+        date     createdAt
+        date     updatedAt
+    }
+
+    OTPS {
+        ObjectId _id PK
+        ObjectId userId FK
+        string   email
+        string   codeHash
+        string   purpose "password_reset|email_verify|login_2fa"
+        string   channel "email|sms"
+        date     expiresAt "TTL indexed"
+        int      attempts
+        int      maxAttempts
+        int      resendCount
+        date     lastResendAt
+        date     verifiedAt
+        date     consumedAt
+        string   ipAddress
+        date     createdAt
+    }
+
+    LISTING_CATEGORIES {
+        ObjectId _id PK
+        string   slug "unique, namespaced give/ or exchange/; Zakat e.g. give/zakat/<range>/<asset>"
+        string   name "display label"
+        ObjectId parentId FK "null for root nodes"
+        int      level "0=root … 3=max (MAX_CATEGORY_LEVEL); most L2 are leaves; Zakat L2=ranges, L3=assets"
+        string   ancestors "array<ObjectId> root..parent (length == level)"
+        string   listingType "give|exchange (inherited from root)"
+        int      sortOrder
+        bool     isActive
+        date     createdAt
+        date     updatedAt
+    }
+
+    LISTING_LOCATIONS {
+        ObjectId _id PK
+        string   slug "unique, e.g. dhaka/dhaka-metro/gulshan"
+        string   name "display label"
+        ObjectId parentId FK "null for divisions"
+        int      level "0=division … 2=area leaf (MAX_LOCATION_LEVEL)"
+        string   ancestors "array<ObjectId> root..parent (length == level)"
+        number   latitude "required on level-2 leaves"
+        number   longitude "required on level-2 leaves"
+        int      sortOrder
+        bool     isActive
+        date     createdAt
+        date     updatedAt
+    }
+
+    LISTINGS {
+        ObjectId _id PK
+        ObjectId ownerUserId FK "user has many listings"
+        string   title
+        string   listingType "give|exchange"
+        string   imageUrl
+        string   gallery "array"
+        ObjectId categoryId FK "listing_categories LEAF (no active children; usually L2, Zakat assets L3)"
+        string   categoryName "denormalized leaf name"
+        string   categoryPath "denormalized breadcrumb"
+        string   location "display string; server-built from area + pickupNotes"
+        ObjectId areaId FK "listing_locations LEAF (level 2)"
+        string   divisionName "denormalized"
+        string   cityName "denormalized"
+        string   areaName "denormalized"
+        string   locationPath "denormalized breadcrumb e.g. Dhaka > Metro > Gulshan"
+        number   pickupLatitude "draggable map pin"
+        number   pickupLongitude "draggable map pin"
+        string   story
+        string   tags "array"
+        object   specs
+        number   exchange_referencePrice
+        string   exchange_desiredItems "array; new rows: one category breadcrumb from interestedCategoryId"
+        string   status "available|pending|accepted|completed|rejected|cancelled"
+        ObjectId claimedByUserId FK "set on claim accept"
+        ObjectId acceptedClaimId FK "set on claim accept"
+        string   relatedIds "optional ObjectId[] — legacy; product detail Related products uses related-by-price (exchange: P÷2…P×2) or related-by-category (give)"
+        date     createdAt
+        date     updatedAt
+    }
+
+    CLAIMS {
+        ObjectId _id PK
+        ObjectId listingId FK
+        ObjectId ownerUserId FK "denormalized for owner inbox"
+        ObjectId claimerUserId FK
+        string   type "give_claim|exchange_proposal"
+        string   message
+        string   offeredItem_title
+        string   offeredItem_imageUrl
+        string   offeredItem_notes
+        string   status "submitted|pending|accepted|rejected|completed|cancelled"
+        date     ownerDecisionAt
+        date     completedAt
+        date     createdAt
+        date     updatedAt
+    }
+
+    CLAIM_MESSAGES {
+        ObjectId _id PK
+        ObjectId claimId FK
+        ObjectId senderUserId FK "owner or claimer"
+        string   body "max 2000 chars"
+        date     createdAt
+    }
+
+    NOTIFICATIONS {
+        ObjectId _id PK
+        ObjectId userId FK "recipient"
+        string   type "claim_submitted|claim_accepted|claim_rejected|claim_message|claim_completed|listing_updated"
+        string   title
+        string   body
+        ObjectId relatedListingId FK
+        ObjectId relatedClaimId FK
+        string   navigateSearch "deep-link query e.g. ?claims=owner&negotiate=<id>"
+        string   channel "in_app|email|push"
+        date     deliveredAt
+        bool     read
+        date     readAt
+        date     createdAt
+    }
+
+    AUDIT_LOGS {
+        ObjectId _id PK
+        string   entityType "user|session|otp|listing_category|listing_location|listing|claim"
+        ObjectId entityId
+        string   action "create|update|status_change|login|logout|otp_issued|password_reset"
+        ObjectId actorUserId FK "nullable for system"
+        object   previousState
+        object   newState
+        string   ipAddress
+        string   userAgent
+        object   metadata
+        date     createdAt
+    }

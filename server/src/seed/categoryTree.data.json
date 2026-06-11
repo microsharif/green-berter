@@ -1,0 +1,820 @@
+{
+  "exchange": {
+    "Automotive": [
+      "Boats & Watercraft",
+      "Camper Vans & Caravans",
+      "Car Accessories",
+      "Car Parts",
+      "Cherished Numbers",
+      "Crossers and Pit Bikes",
+      "Go-Karts & Buggies",
+      "In Car Entertainment",
+      "Kids Motorbikes & Mini-motos",
+      "Memorabilia",
+      "Mobility Scooters",
+      "Mopeds & Scooters",
+      "Motorcycle Clothing & Helmets",
+      "Motorcycle Parts & Accessories",
+      "Motorcycles",
+      "Other Vehicles",
+      "Quad Bikes & Trikes",
+      "SatNav",
+      "Vans & Trucks",
+      "Wheels & Tyres"
+    ],
+    "Clothing & Accessories": [
+      "Cosmetics & Perfumes",
+      "Mens Jewellery, Watches & other Accessories",
+      "Mens Clothing",
+      "Mens Footwear",
+      "Uniforms",
+      "Wedding Clothing",
+      "Womens Jewellery, Watches & other Accessories",
+      "Womens Clothing",
+      "Womens Footwear"
+    ],
+    "Dolls & Plush": [
+      "Dolls",
+      "Dolls House Contents",
+      "Dolls Houses",
+      "Plush: Bears",
+      "Plush: Other"
+    ],
+    "PC & Video Games": [
+      "Classic Platforms",
+      "Coin Operated",
+      "Gameboy",
+      "Gameboy Advance",
+      "Gameboy Colour",
+      "Game",
+      "GameCube",
+      "Internet Games",
+      "Merchandise & Books",
+      "Nintendo 64",
+      "Nintendo DS",
+      "Nintendo Wii",
+      "Nintendo Wii U",
+      "Other Video Gaming",
+      "PC Games",
+      "Sega Dreamcast",
+      "Sony PlayStation",
+      "Sony PS2",
+      "Sony PS3",
+      "Sony PS4",
+      "Sony PSP",
+      "Vintage Platforms",
+      "Xbox",
+      "Xbox 360",
+      "Xbox One"
+    ],
+    "Potter, Porcelain & Glass": [
+      "Glass",
+      "Porcelain & China",
+      "Pottery",
+      "Stoneware"
+    ],
+    "DVD & Films": [
+      "DVDs",
+      "Film Memorabilia",
+      "TV Memorabilia",
+      "Video: VHS & PAL",
+      "Videos: Other Formats"
+    ],
+    "Hobbies & Pastimes": [
+      "Amateur Radio",
+      "Arts & Crafts",
+      "Astronomy",
+      "Camping",
+      "Homebrewing",
+      "Magic",
+      "Model Building",
+      "Other Hobbies",
+      "Radio Control",
+      "Vaping"
+    ],
+    "Skills/Services": [
+      "Accountancy",
+      "Administration",
+      "Allergy Advice",
+      "Alternative Therapies",
+      "Architects",
+      "Architectural Services & Building Design",
+      "Art & Design",
+      "Art Tuition",
+      "AutoCAD",
+      "Automotive",
+      "Automotive Servicing & Repairs",
+      "Babysitting",
+      "Bar Staff",
+      "Bathrooms",
+      "Beauty Therapy",
+      "Bed & Breakfast",
+      "Billiard & Pool Table Repair",
+      "Book Keeping",
+      "Brick Laying",
+      "Building & Decorating",
+      "Business Advice & Coaching",
+      "Business IT",
+      "Business Opportunity",
+      "Business Service",
+      "Car Valeting",
+      "Care",
+      "Carpentry",
+      "Carpet and Upholstery Cleaning",
+      "Carpet Fitting",
+      "Catering",
+      "CCTV & Alarm Systems",
+      "Chauffeur Services",
+      "Child Support Maintenance",
+      "Chinese Herbal Medicine",
+      "Cleaning",
+      "Cleaning Companies",
+      "Cleaning Services",
+      "Climbing",
+      "Clinical Hypnotherapist",
+      "Complementary Therapies",
+      "Computer Programming",
+      "Computer Repair",
+      "Computer Retail",
+      "Computer Support",
+      "Construction",
+      "Consulting Services",
+      "Cookery Lessons",
+      "Copywriting",
+      "Corporate Promotional Items",
+      "Counselling",
+      "Customer Services",
+      "Damp Proofing",
+      "Dance",
+      "Decorating",
+      "Dermatology",
+      "Diggers and Drivers",
+      "Dog and Cat Minding",
+      "Driving",
+      "Driving Instruction & Training",
+      "Dry Cleaning",
+      "Education",
+      "Electrician",
+      "Emergency Services",
+      "Employee Vetting",
+      "Employment Law",
+      "English Tuition for Adults",
+      "Entertainment",
+      "Entrepeneurs",
+      "Environment",
+      "Event Management",
+      "Excel Spreadsheets",
+      "Exporting Assistance",
+      "Family History Research",
+      "Fencing",
+      "Fibre Glassing",
+      "Finance",
+      "Financial Services",
+      "Fish",
+      "Flooring",
+      "Florist",
+      "Food Safety",
+      "French Polishing",
+      "Fuel Cards",
+      "Game Console",
+      "Modification",
+      "Gardenning & Landscaping",
+      "Gas Engineers & Installers",
+      "Genealogy",
+      "Graphic Design",
+      "Hairdressing",
+      "Handyman",
+      "Healing",
+      "Health & Safety",
+      "Holiday",
+      "Holiday Accommodation",
+      "Holistic Therapies",
+      "Home Based Business Opportunity",
+      "Home Computing",
+      "Hotel",
+      "House Sitting",
+      "Human Resources Consultancy",
+      "Hypnosis & Mind Coaching",
+      "Imports (Global)",
+      "Information Technology",
+      "Insurance",
+      "Interior Design",
+      "Interpreter",
+      "Investment",
+      "Ironing",
+      "IT Training",
+      "Landscaping",
+      "Languages",
+      "Lead Generation",
+      "Legal",
+      "Leisure",
+      "Life Coaching",
+      "Locksmith",
+      "Loft Conversions",
+      "Maintenance",
+      "Management",
+      "Marketing",
+      "Media",
+      "Medical",
+      "Mentor",
+      "Modelling",
+      "Money Management",
+      "Multi-Skilled Tradesman",
+      "Music",
+      "Music Producer",
+      "Musical directing",
+      "Office",
+      "Oil & Gas",
+      "Overseas Property Sales",
+      "Painting",
+      "Painting & Decorating",
+      "PC Repair",
+      "Personal Trainer",
+      "Pet Care",
+      "Photography",
+      "Physiotherapy",
+      "Picture Framing",
+      "Pilates",
+      "Plastering",
+      "Plumbing",
+      "Plumbing & Heating",
+      "Podiatry",
+      "Presentation Skills",
+      "Press Release",
+      "Printing",
+      "Private Investigators",
+      "Promotion",
+      "Proof Reading",
+      "Property Investment",
+      "Psychic Development",
+      "Public Relations",
+      "Recruitment",
+      "Reflexology",
+      "Reiki",
+      "Removals",
+      "Researching",
+      "Retail & Wholesale",
+      "Retail Fraud Prevention",
+      "Roofing Services",
+      "Sales",
+      "Scientific & Research",
+      "Search Engine Optimisation",
+      "Secretarial & PA",
+      "Security",
+      "Sport Coaching",
+      "Sports Massage",
+      "Stress Management",
+      "Surveys, Audits & Analysis",
+      "Tailoring & Dressmaking",
+      "TattooTax Advice",
+      "Teaching & Tutoring",
+      "Team Building",
+      "Telecommunications",
+      "Therapy",
+      "Tiling",
+      "Training",
+      "Translation",
+      "Transport",
+      "Travel & Tourism",
+      "Tree Surgery",
+      "Tree Surveying",
+      "Typing & Editing",
+      "Vehicle Maintenance",
+      "Washing Machine Repair",
+      "Web Development",
+      "Web Marketing",
+      "Website Design",
+      "Weddings & Functions",
+      "Well Being",
+      "Window Cleaners",
+      "Word Processing",
+      "Writing",
+      "Wrought Ironwork",
+      "Yoga"
+    ],
+    "Others": [
+      "Others"
+    ],
+    "Pets & Animals": [
+      "Pets & Animals"
+    ],
+    "Sports": [
+      "Camping",
+      "Cycling",
+      "Equestrain",
+      "Fishing",
+      "Fitness Equipment",
+      "Football Memorabilia",
+      "Golf",
+      "Sporting Goods",
+      "Sports Memorabilia",
+      "Watersports"
+    ],
+    "Books, Comics & Magazines": [
+      "Antiquarian Books",
+      "Audio Books",
+      "Children's Books",
+      "Comics",
+      "Educational & Textbooks",
+      "Fiction Books",
+      "Magazines",
+      "Non Fiction Books"
+    ],
+    "Mobile": [
+      "Mobile Phone Accessories",
+      "Other Phones",
+      "Smart Watches",
+      "Mobile Phone"
+    ],
+    "Music": [
+      "Cassettes",
+      "CDs",
+      "Music Memorabilia",
+      "Other Formats",
+      "Records"
+    ],
+    "Musical Instruments": [
+      "DJ & Sound Equipment",
+      "Guitars & Amps",
+      "Instruments - General",
+      "Pianos & Keyboards"
+    ],
+    "Stamps": [
+      "Thematics"
+    ],
+    "Collectibles": [
+      "Animals",
+      "Autographs",
+      "Badges & Patches",
+      "Branded Items",
+      "Clubs & Associations",
+      "Coins & Banknotes",
+      "Household Items",
+      "Memorabilia",
+      "Militaria",
+      "Ornaments",
+      "Other Collectibles",
+      "Photographs & Postcards",
+      "Radio, Film & TV",
+      "Tools & Hardware",
+      "Trading Cards"
+    ],
+    "Computer & computer accessories": [
+      "Components",
+      "Desktop Systems",
+      "e-Book Reader",
+      "Laptops & Accessories",
+      "Mac",
+      "Networking & IT",
+      "Other Items",
+      "PDAs & Accessories",
+      "Peripherals",
+      "Software",
+      "Tablets"
+    ],
+    "Photography and Optical": [
+      "Binoculars & Telescopes",
+      "Camcorders",
+      "Darkroom & Studio",
+      "Digital Cameras & Lenses",
+      "Digital Memory",
+      "Film Cameras & Lenses",
+      "Photographic Accessories",
+      "Vintage & Collectible"
+    ],
+    "Antiques": [
+      "Antiques Post 1900",
+      "Aniques pre 1900"
+    ],
+    "Toys & Games": [
+      "Action Figures & Accessories",
+      "Batteries & Radio Controlled",
+      "Construction Toys & Kits",
+      "Diecast & Vehicles",
+      "Fast Food & Cereal Toys",
+      "Games",
+      "Jigsaws & Puzzles",
+      "Model Toys",
+      "Modern Kits",
+      "Outdoor Toys",
+      "Pre School & Educational Toys",
+      "Scalextrix & Slot Cars",
+      "Soft Toys",
+      "Steam Toys",
+      "Toy Soldiers",
+      "TV & Movie Character Toys",
+      "Vintage Toys",
+      "Wooden Toys"
+    ],
+    "Consumer Electronics": [
+      "Accessories",
+      "Audio: Portable",
+      "Audio: Systems & Components",
+      "Camcorders",
+      "Collectibles & Vintage",
+      "DJ Equipment",
+      "Other Consumer Electronics",
+      "Professional & Studio Equipment",
+      "Radio Equipment",
+      "TV & Home Cinema"
+    ],
+    "Art": [
+      "Drawings",
+      "Other Art",
+      "Paintings",
+      "Photographs",
+      "Posters",
+      "Prints",
+      "Sculptures"
+    ],
+    "Tickets & Travels": [
+      "Tickets",
+      "Travel"
+    ],
+    "Arts, Craft & Sewing": [
+      "Arts, Craft & Sewing"
+    ],
+    "Baby": [
+      "Baby"
+    ],
+    "Bathroom": [
+      "Bathroom"
+    ],
+    "Bedroom": [
+      "Bedroom"
+    ],
+    "Cleaning, Laundry & Storage": [
+      "Cleaning, Laundry & Storage"
+    ],
+    "Clocks": [
+      "Clocks"
+    ],
+    "Curtains & Blinds": [
+      "Curtains & Blinds"
+    ],
+    "Decorative Items": [
+      "Decorative Items"
+    ],
+    "Dining Room": [
+      "Dining Room"
+    ],
+    "Food & Drink": [
+      "Food & Drink"
+    ],
+    "Garden": [
+      "Garden"
+    ],
+    "Household Appliances": [
+      "Household Appliances"
+    ],
+    "Kitchen": [
+      "Kitchen"
+    ],
+    "Living Room": [
+      "Living Room"
+    ],
+    "Other Home, Garden & Family Items": [
+      "Other Home, Garden & Family Items"
+    ],
+    "Pet Accessories & Food": [
+      "Pet Accessories & Food"
+    ],
+    "Beads": [
+      "Beads"
+    ],
+    "Costume Jewellery": [
+      "Costume Jewellery"
+    ],
+    "Gemstones": [
+      "Gemstones"
+    ],
+    "Webmaster Tests": [
+      "Webmaster Tests"
+    ]
+  },
+  "give": {
+    "Art": [
+      "Drawings",
+      "Other Art",
+      "Paintings",
+      "Photographs",
+      "Posters",
+      "Prints",
+      "Sculptures"
+    ],
+    "Collectibles": [
+      "Trading Cards",
+      "Tools & Hardware",
+      "Radio, Film & TV",
+      "Photographs & Postcards",
+      "Other Collectibles",
+      "Ornaments",
+      "Militaria",
+      "Memorabilia",
+      "Household Items",
+      "Coins & Banknotes",
+      "Clubs & Associations",
+      "Branded Items",
+      "Badges & Patches",
+      "Autographs",
+      "Animals"
+    ],
+    "Computer & computer accessories": [
+      "Tablets",
+      "Software",
+      "Peripherals",
+      "PDAs & Accessories",
+      "Other Items",
+      "Networking & IT",
+      "Mac",
+      "Laptops & Accessories",
+      "e-Book Reader",
+      "Desktop Systems",
+      "Components"
+    ],
+    "Consumer Electronics": [
+      "TV & Home Cinema",
+      "Accessories",
+      "Audio: Portable",
+      "Audio: Systems & Components",
+      "Collectibles & Vintage",
+      "DJ Equipment",
+      "Other Consumer",
+      "Professional & Studio Equipment",
+      "Radio Equipment"
+    ],
+    "Dolls & Plush": [
+      "Dolls",
+      "Dolls House",
+      "Dolls House Contents",
+      "Plush: Bears",
+      "Plush: Other"
+    ],
+    "Antiques": [
+      "Antiques Post 1900",
+      "Antiques Pre 1900"
+    ],
+    "Automotive": [
+      "Boats & Watercraft",
+      "Breaking",
+      "Camper Vans & Caravans",
+      "Car Accessories",
+      "Car Parts",
+      "Cars",
+      "Cherished Numbers",
+      "Classic Cars",
+      "Crossers and Pit Bikes",
+      "Go-Karts & Buggies",
+      "In Car Entertainment",
+      "Kids Motorbikes & Mini-motos",
+      "Memorabilia",
+      "Mopeds & Scooters",
+      "Motorcycle Clothing & Helmets",
+      "Motorcycle Parts & Accessories",
+      "Motorcycles",
+      "Other Vehicles",
+      "Quad Bikes & Trikes",
+      "SatNav",
+      "Trailers",
+      "Vans & Trucks",
+      "Wheels & Tyres"
+    ],
+    "Books, Comics & Magazines": [
+      "Non Fiction Books",
+      "Magazines",
+      "Fiction Books",
+      "Educational & Textbooks",
+      "Comics",
+      "Children's Books",
+      "Audio Books",
+      "Antiquarian Books"
+    ],
+    "Clothing & Accessories": [
+      "Womens Footwear",
+      "Womens Clothing",
+      "Womens Jewellery, Watches & other Accessories",
+      "Wedding Clothing",
+      "Uniforms",
+      "Other Clothing",
+      "Mens Footwear",
+      "Mens Clothing",
+      "Mens Jewellery, Watches & other Accessories",
+      "Cosmetics & Perfumes"
+    ],
+    "DVD & Films": [
+      "DVDs",
+      "Film Memorabilia",
+      "TV Memorabilia",
+      "Video: VHS & PAL",
+      "Videos: Other Formats"
+    ],
+    "Hobbies & Pastimes": [
+      "Amateur Radio",
+      "Arts & Crafts",
+      "Astronomy",
+      "Camping",
+      "Homebrewing",
+      "Magic",
+      "Model Building",
+      "Other Hobbies",
+      "Radio Control",
+      "Vaping"
+    ],
+    "Musical Instruments": [
+      "DJ & Sound Equipment",
+      "Guitars & Amps",
+      "Instruments - General",
+      "Pianos & Keyboards"
+    ],
+    "Music": [
+      "Cassettes",
+      "CDs",
+      "Music Memorabilia",
+      "Other Formats",
+      "Records"
+    ],
+    "Others": [
+      "Others"
+    ],
+    "PC & Video Games": [
+      "Classic Platforms",
+      "Coin Operated",
+      "Gameboy",
+      "Gameboy Advance",
+      "Gameboy Colour",
+      "GameCube",
+      "Internet Games",
+      "Merchandise & Books",
+      "Nintendo 64",
+      "Nintendo DS",
+      "Nintendo Wii",
+      "Nintendo Wii U",
+      "Other Video Gaming",
+      "PC Games",
+      "Sega Dreamcast",
+      "Sony PlayStation",
+      "Sony PS2",
+      "Sony PS3",
+      "Sony PS4",
+      "Sony PSP",
+      "Vintage Platforms",
+      "Xbox",
+      "Xbox 360",
+      "Xbox One"
+    ],
+    "Pets & Animals": [
+      "Pets & Animals"
+    ],
+    "Photography and Optical": [
+      "Binoculars & Telescopes",
+      "Camcorders",
+      "Darkroom & Studio",
+      "Digital Cameras & Lenses",
+      "Digital Memory",
+      "Film Cameras & Lenses",
+      "Photographic Accessories",
+      "Vintage & Collectible"
+    ],
+    "Potter, Porcelain & Glass": [
+      "Glass",
+      "Porcelain & China",
+      "Pottery",
+      "Stoneware"
+    ],
+    "Sports": [
+      "Stamps",
+      "Camping",
+      "Cycling",
+      "Equestrian",
+      "Fishing",
+      "Fitness Equipment",
+      "Football Memorabilia",
+      "Golf",
+      "Sporting Goods",
+      "Sports Memorabilia",
+      "Watersports"
+    ],
+    "Tickets & Travels": [
+      "Tickets",
+      "Travel"
+    ],
+    "Toys & Games": [
+      "Action Figures & Accessories",
+      "Batteries & Radio Controlled",
+      "Construction Toys & Kits",
+      "Diecast & Vehicles",
+      "Fast Food & Cereal Toys",
+      "Games",
+      "Hobbies",
+      "Jigsaws & Puzzles",
+      "Model Toys",
+      "Modern Kits",
+      "Outdoor Toys",
+      "Pre School & Educational Toys",
+      "Scalextrix & Slot Cars",
+      "Soft Toys",
+      "Steam Toys",
+      "Toy Soldiers",
+      "TV & Movie Character Toys",
+      "Vintage Toys",
+      "Wooden Toys"
+    ],
+    "Arts, Craft & Sewing": [
+      "Arts, Craft & Sewing"
+    ],
+    "Baby": [
+      "Baby"
+    ],
+    "Bathroom": [
+      "Bathroom"
+    ],
+    "Bedroom": [
+      "Bedroom"
+    ],
+    "Cleaning, Laundry & Storage": [
+      "Cleaning, Laundry & Storage"
+    ],
+    "Clocks": [
+      "Clocks"
+    ],
+    "Curtains & Blinds": [
+      "Curtains & Blinds"
+    ],
+    "Decorative Items": [
+      "Decorative Items"
+    ],
+    "Dining Room": [
+      "Dining Room"
+    ],
+    "Food & Drink": [
+      "Food & Drink"
+    ],
+    "Garden": [
+      "Garden"
+    ],
+    "Household Appliances": [
+      "Household Appliances"
+    ],
+    "Kitchen": [
+      "Kitchen"
+    ],
+    "Living Room": [
+      "Living Room"
+    ],
+    "Other Home, Garden & Family Items": [
+      "Other Home, Garden & Family Items"
+    ],
+    "Pet Accessories & Food": [
+      "Pet Accessories & Food"
+    ],
+    "Beads": [
+      "Beads"
+    ],
+    "Gemstones": [
+      "Gemstones"
+    ],
+    "Answering Machines": [
+      "Answering Machines"
+    ],
+    "Mobile & Mobile Accessories": [
+      "Smart Watches",
+      "Mobile Phone",
+      "Other phone",
+      "Mobile accessories"
+    ],
+    "Ringtones, Logos & Software": [
+      "Ringtones, Logos & Software"
+    ],
+    "SIM Cards": [
+      "SIM Cards"
+    ],
+    "Webmaster Tests": [
+      "Webmaster Tests"
+    ],
+    "Speaker": [
+      "Speaker"
+    ],
+    "Zakat": {
+      "20,000–50,000 BDT": [
+        "Cycle",
+        "Sewing Machine",
+        "Small Solar Kit"
+      ],
+      "51,000–70,000 BDT": [
+        "Riksha",
+        "Medium Solar Kit",
+        "Laptop"
+      ],
+      "70,000–100,000 BDT": [
+        "Large Riksha",
+        "Advanced Solar Kit",
+        "Motorbike"
+      ],
+      "More than 100,000 BDT": [
+        "Shop Setup Package",
+        "Large Solar System",
+        "Vehicle"
+      ]
+    }
+  }
+}

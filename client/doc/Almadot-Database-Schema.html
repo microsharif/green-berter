@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Almadot — MongoDB Database Schema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --frame: #11161c;
+        --paper: #fbfcfd;
+        --hdr: #0f5c4e;          /* dark green table header */
+        --hdr2: #134f44;
+        --hdr-text: #ffffff;
+        --row: #1b2733;
+        --muted: #6b7a88;
+        --note: #5a6b78;
+        --pk: #0b3d33;
+        --line: #7c3aed;         /* purple relationship line */
+        --line-soft: rgba(124, 58, 237, 0.55);
+        --card: #7c3aed;
+        --seed-bg: #f3f7f5;
+        --seed-border: #cfe0d9;
+        --footer-bg: #e9f1fb;
+        --footer-border: #bcd4f0;
+        --footer-text: #1f3a5f;
+        --table-border: #b9c6cf;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--frame);
+        color: var(--row);
+        padding: 18px;
+      }
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 auto 12px;
+        max-width: 1816px;
+        color: #cdd8e2;
+        font-size: 13px;
+      }
+      .toolbar button {
+        font: inherit;
+        font-size: 13px;
+        padding: 5px 11px;
+        border-radius: 7px;
+        border: 1px solid #2c3a47;
+        background: #1b232c;
+        color: #dde7ef;
+        cursor: pointer;
+      }
+      .toolbar button:hover { border-color: var(--line); color: #fff; }
+      .toolbar .spacer { flex: 1; }
+      .toolbar .hint { color: #8696a4; font-size: 12px; }
+
+      .frame {
+        max-width: 1816px;
+        margin: 0 auto;
+        background: var(--frame);
+        border-radius: 14px;
+        padding: 10px;
+        overflow: auto;
+      }
+      .stage-wrap { transform-origin: top left; transition: transform 0.12s ease; }
+      .stage {
+        position: relative;
+        width: 1796px;
+        height: 1600px;
+        background: var(--paper);
+        border-radius: 10px;
+        box-shadow: inset 0 0 0 1px #e4e9ec;
+      }
+      .stage h1 {
+        position: absolute;
+        top: 18px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #15202b;
+      }
+
+      svg.wires {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: visible;
+      }
+
+      .tbl {
+        position: absolute;
+        width: 250px;
+        background: #fff;
+        border: 1.5px solid var(--table-border);
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(15, 30, 25, 0.08);
+        z-index: 2;
+      }
+      .tbl > header {
+        background: linear-gradient(180deg, var(--hdr) 0%, var(--hdr2) 100%);
+        color: var(--hdr-text);
+        text-align: center;
+        font-weight: 700;
+        font-size: 13.5px;
+        letter-spacing: 0.02em;
+        padding: 5px 6px;
+      }
+      .tbl ul {
+        list-style: none;
+        margin: 0;
+        padding: 3px 0;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        line-height: 1.18;
+      }
+      .tbl li {
+        display: block;
+        padding: 1.5px 8px;
+        color: var(--row);
+        white-space: nowrap;
+      }
+      .tbl li .nm { font-weight: 600; }
+      .tbl li.pk .nm { color: var(--pk); font-weight: 700; }
+      .tbl li.fk .nm { color: #1d4ed8; }
+      .tbl li .ty { color: #2d7d6c; }
+      .tbl li .dt { color: var(--note); font-style: italic; }
+
+      .seed {
+        position: absolute;
+        width: 322px;
+        background: var(--seed-bg);
+        border: 1.5px solid var(--seed-border);
+        border-radius: 6px;
+        padding: 8px 10px 10px;
+        z-index: 2;
+      }
+      .seed .t {
+        text-align: center;
+        font-weight: 700;
+        font-size: 11.5px;
+        color: var(--pk);
+        margin-bottom: 6px;
+        letter-spacing: 0.02em;
+      }
+      .seed pre {
+        margin: 0;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        line-height: 1.35;
+        color: #34433d;
+        white-space: pre;
+      }
+      .seed .cap {
+        margin-top: 7px;
+        font-size: 10px;
+        color: #4d6157;
+        line-height: 1.3;
+      }
+
+      .note-box {
+        position: absolute;
+        width: 250px;
+        background: #faf6ff;
+        border: 1.3px dashed var(--line-soft);
+        border-radius: 6px;
+        padding: 7px 9px;
+        z-index: 2;
+        font-size: 10px;
+        line-height: 1.32;
+        color: #4b3b66;
+      }
+      .note-box b { color: var(--pk); }
+
+      .footer {
+        position: absolute;
+        left: 40px;
+        right: 40px;
+        bottom: 22px;
+        background: var(--footer-bg);
+        border: 1.5px solid var(--footer-border);
+        border-radius: 8px;
+        padding: 12px 18px;
+        text-align: center;
+        color: var(--footer-text);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.45;
+        z-index: 2;
+      }
+
+      .wire-label {
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #5b2bb0;
+      }
+      .card-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        font-weight: 600;
+        fill: #5b2bb0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <span class="hint">Almadot — MongoDB schema (rendered from Almadot-Database-Schema.mmd)</span>
+      <span class="spacer"></span>
+      <span style="font-size:12px;color:#8696a4">Zoom</span>
+      <button id="zo" title="Zoom out">−</button>
+      <button id="zr" title="Fit / 100%">100%</button>
+      <button id="zi" title="Zoom in">+</button>
+    </div>
+
+    <div class="frame" id="frame">
+      <div class="stage-wrap" id="stageWrap">
+        <div class="stage" id="stage">
+          <h1>Almadot — MongoDB Database Schema</h1>
+          <svg class="wires" id="wires">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"></path>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---- type display helper -------------------------------------------
+      const T = {
+        oid: "ObjectId",
+        str: "String",
+        num: "Number",
+        bool: "Boolean",
+        date: "Date",
+        obj: "Object",
+        arr: "Array",
+      };
+
+      // field tuple: [name, type, note, kind]  kind: 'pk' | 'fk' | ''
+      const ENTITIES = {
+        users: {
+          x: 70, y: 140, title: "users",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["email", T.str, "unique, lowercased"],
+            ["passwordHash", T.str, "bcrypt / argon2"],
+            ["fullName", T.str, ""],
+            ["phone", T.str, ""],
+            ["address", T.str, ""],
+            ["profileImageUrl", T.str, ""],
+            ["emailVerified", T.bool, ""],
+            ["status", T.str, "active | disabled | deleted"],
+            ["lastLoginAt", T.date, ""],
+            ["createdAt", T.date, ""],
+            ["updatedAt", T.date, ""],
+            ["privacy_publicDisplayName", T.str, "≤60 chars; empty → fullName"],
+            ["privacy_emailVisibility", T.str, "everyone | logged_in | hidden"],
+            ["privacy_phoneVisibility", T.str, "everyone | logged_in | hidden"],
+            ["membership_plan", T.str, "free | earth | sky | sun"],
+            ["membership_status", T.str, "active | pending | expired"],
+            ["membership_startedAt", T.date, ""],
+            ["membership_expiresAt", T.date, "null for free; ~1yr paid"],
+          ],
+        },
+        sessions: {
+          x: 568, y: 140, title: "sessions",
+          fields: [
+            ["_id", T.str, "opaque session id", "pk"],
+            ["userId", T.oid, "→ users", "fk"],
+            ["csrfToken", T.str, ""],
+            ["userAgent", T.str, ""],
+            ["ipAddress", T.str, ""],
+            ["expiresAt", T.date, "TTL indexed"],
+            ["lastActivityAt", T.date, ""],
+            ["createdAt", T.date, ""],
+          ],
+        },
+        otps: {
+          x: 1018, y: 140, title: "otps",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["userId", T.oid, "→ users", "fk"],
+            ["email", T.str, ""],
+            ["codeHash", T.str, ""],
+            ["purpose", T.str, "password_reset | email_verify | login_2fa"],
+            ["channel", T.str, "email | sms"],
+            ["expiresAt", T.date, "TTL indexed"],
+            ["attempts", T.num, ""],
+            ["maxAttempts", T.num, ""],
+            ["resendCount", T.num, ""],
+            ["lastResendAt", T.date, ""],
+            ["verifiedAt", T.date, ""],
+            ["consumedAt", T.date, ""],
+            ["ipAddress", T.str, ""],
+            ["createdAt", T.date, ""],
+          ],
+        },
+        membership_orders: {
+          x: 1486, y: 140, title: "membership_orders",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["userId", T.oid, "buyer; indexed → users", "fk"],
+            ["plan", T.str, "earth | sky | sun"],
+            ["amountBdt", T.num, "from membership catalog"],
+            ["paymentMethod", T.str, "bank_transfer"],
+            ["bankTransfer_accountName", T.str, "sender account name"],
+            ["bankTransfer_senderReference", T.str, "txn / reference no."],
+            ["bankTransfer_transferDate", T.date, ""],
+            ["bankTransfer_note", T.str, "optional"],
+            ["status", T.str, "pending | confirmed | rejected"],
+            ["createdAt", T.date, ""],
+            ["updatedAt", T.date, ""],
+          ],
+        },
+        listing_categories: {
+          x: 170, y: 590, title: "listing_categories",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["slug", T.str, "unique; give/ or exchange/ namespaced"],
+            ["name", T.str, "display label"],
+            ["parentId", T.oid, "null for root nodes", "fk"],
+            ["level", T.num, "0=root … 3=max (Zakat L3)"],
+            ["ancestors", T.arr + "<ObjectId>", "root..parent (length == level)"],
+            ["listingType", T.str, "give | exchange (from root)"],
+            ["sortOrder", T.num, ""],
+            ["isActive", T.bool, ""],
+            ["createdAt", T.date, ""],
+            ["updatedAt", T.date, ""],
+          ],
+        },
+        listings: {
+          x: 600, y: 590, title: "listings", w: 286,
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["ownerUserId", T.oid, "→ users", "fk"],
+            ["title", T.str, ""],
+            ["listingType", T.str, "give | exchange"],
+            ["imageUrl", T.str, ""],
+            ["gallery", T.arr + "<String>", ""],
+            ["categoryId", T.oid, "listing_categories LEAF", "fk"],
+            ["categoryName", T.str, "denormalized leaf name"],
+            ["categoryPath", T.str, "denormalized breadcrumb"],
+            ["location", T.str, "server-built display string"],
+            ["areaId", T.oid, "listing_locations LEAF (L2)", "fk"],
+            ["divisionName", T.str, "denormalized"],
+            ["cityName", T.str, "denormalized"],
+            ["areaName", T.str, "denormalized"],
+            ["locationPath", T.str, "Dhaka > Metro > Gulshan"],
+            ["pickupLatitude", T.num, "draggable map pin"],
+            ["pickupLongitude", T.num, "draggable map pin"],
+            ["story", T.str, ""],
+            ["tags", T.arr + "<String>", ""],
+            ["specs", T.obj, ""],
+            ["exchange_referencePrice", T.num, ""],
+            ["exchange_desiredItems", T.arr, "category breadcrumbs"],
+            ["status", T.str, "available | pending | accepted | completed | rejected | cancelled"],
+            ["claimedByUserId", T.oid, "set on claim accept", "fk"],
+            ["acceptedClaimId", T.oid, "set on claim accept", "fk"],
+            ["relatedIds", T.arr + "<ObjectId>", "legacy / related-by-price·category"],
+            ["createdAt", T.date, ""],
+            ["updatedAt", T.date, ""],
+          ],
+        },
+        claims: {
+          x: 1018, y: 590, title: "claims",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["listingId", T.oid, "indexed → listings", "fk"],
+            ["ownerUserId", T.oid, "owner inbox → users", "fk"],
+            ["claimerUserId", T.oid, "→ users", "fk"],
+            ["type", T.str, "give_claim | exchange_proposal"],
+            ["message", T.str, ""],
+            ["offeredItem_title", T.str, ""],
+            ["offeredItem_imageUrl", T.str, ""],
+            ["offeredItem_notes", T.str, ""],
+            ["status", T.str, "submitted | pending | accepted | rejected | completed | cancelled"],
+            ["ownerDecisionAt", T.date, ""],
+            ["completedAt", T.date, ""],
+            ["createdAt", T.date, ""],
+            ["updatedAt", T.date, ""],
+          ],
+        },
+        listing_locations: {
+          x: 1486, y: 590, title: "listing_locations",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["slug", T.str, "dhaka/dhaka-metro/gulshan"],
+            ["name", T.str, "display label"],
+            ["parentId", T.oid, "null for divisions", "fk"],
+            ["level", T.num, "0=division … 2=area leaf"],
+            ["ancestors", T.arr + "<ObjectId>", "root..parent (length == level)"],
+            ["latitude", T.num, "required on L2 leaves"],
+            ["longitude", T.num, "required on L2 leaves"],
+            ["sortOrder", T.num, ""],
+            ["isActive", T.bool, ""],
+            ["createdAt", T.date, ""],
+            ["updatedAt", T.date, ""],
+          ],
+        },
+        notifications: {
+          x: 70, y: 1148, title: "notifications",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["userId", T.oid, "recipient → users", "fk"],
+            ["type", T.str, "claim_submitted | claim_accepted | claim_rejected | claim_message | claim_completed | listing_updated"],
+            ["title", T.str, ""],
+            ["body", T.str, ""],
+            ["relatedListingId", T.oid, "→ listings", "fk"],
+            ["relatedClaimId", T.oid, "→ claims", "fk"],
+            ["navigateSearch", T.str, "deep-link query"],
+            ["channel", T.str, "in_app | email | push"],
+            ["deliveredAt", T.date, ""],
+            ["read", T.bool, ""],
+            ["readAt", T.date, ""],
+            ["createdAt", T.date, ""],
+          ],
+        },
+        claim_messages: {
+          x: 470, y: 1148, title: "claim_messages",
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["claimId", T.oid, "→ claims", "fk"],
+            ["senderUserId", T.oid, "owner or claimer → users", "fk"],
+            ["body", T.str, "max 2000 chars"],
+            ["createdAt", T.date, ""],
+          ],
+        },
+        audit_logs: {
+          x: 880, y: 1148, title: "audit_logs", w: 262,
+          fields: [
+            ["_id", T.oid, "", "pk"],
+            ["entityType", T.str, "user | session | otp | listing_category | listing_location | listing | claim"],
+            ["entityId", T.oid, "polymorphic", ""],
+            ["action", T.str, "create | update | status_change | login | logout | otp_issued | password_reset"],
+            ["actorUserId", T.oid, "nullable (system) → users", "fk"],
+            ["previousState", T.obj, ""],
+            ["newState", T.obj, ""],
+            ["ipAddress", T.str, ""],
+            ["userAgent", T.str, ""],
+            ["metadata", T.obj, ""],
+            ["createdAt", T.date, ""],
+          ],
+        },
+      };
+
+      // relationships (all one-to-many: 1 → N).  optional from/to side override.
+      const RELS = [
+        { from: "users", to: "sessions", label: "has many sessions", fromSide: "right", toSide: "left" },
+        { from: "users", to: "otps", label: "issued for", fromSide: "top", toSide: "top" },
+        { from: "users", to: "membership_orders", label: "requests", fromSide: "top", toSide: "top" },
+        { from: "users", to: "listings", label: "owns listings", fromSide: "bottom", toSide: "left" },
+        { from: "users", to: "claims", label: "claimer", fromSide: "bottom", toSide: "left" },
+        { from: "users", to: "claims", label: "owner", fromSide: "bottom", toSide: "left" },
+        { from: "users", to: "notifications", label: "recipient", fromSide: "bottom", toSide: "left" },
+        { from: "users", to: "claim_messages", label: "sends", fromSide: "bottom", toSide: "left" },
+        { from: "users", to: "audit_logs", label: "acted by", fromSide: "bottom", toSide: "top" },
+        { from: "listing_categories", to: "listing_categories", label: "parent → children", self: true },
+        { from: "listing_categories", to: "listings", label: "categorizes (LEAF)", fromSide: "right", toSide: "left" },
+        { from: "listing_locations", to: "listing_locations", label: "parent → children", self: true, selfSide: "right" },
+        { from: "listing_locations", to: "listings", label: "pickup area", fromSide: "left", toSide: "right" },
+        { from: "listings", to: "claims", label: "receives", fromSide: "right", toSide: "left" },
+        { from: "listings", to: "notifications", label: "context", fromSide: "left", toSide: "right" },
+        { from: "claims", to: "claim_messages", label: "negotiation thread", fromSide: "bottom", toSide: "right" },
+        { from: "claims", to: "notifications", label: "context", fromSide: "bottom", toSide: "right" },
+      ];
+
+      // ---- render tables --------------------------------------------------
+      const stage = document.getElementById("stage");
+      const svg = document.getElementById("wires");
+
+      function fieldRow(f) {
+        const [name, type, note, kind] = f;
+        const cls = kind ? ` class="${kind}"` : "";
+        const ty = type ? ` <span class="ty">${type}</span>` : "";
+        const dt = note ? ` <span class="dt">(${note})</span>` : "";
+        return `<li${cls}><span class="nm">${name}</span>${ty}${dt}</li>`;
+      }
+
+      for (const [id, e] of Object.entries(ENTITIES)) {
+        const div = document.createElement("div");
+        div.className = "tbl";
+        div.id = "tbl-" + id;
+        div.style.left = e.x + "px";
+        div.style.top = e.y + "px";
+        if (e.w) div.style.width = e.w + "px";
+        div.innerHTML =
+          `<header>${e.title}</header><ul>${e.fields.map(fieldRow).join("")}</ul>`;
+        stage.appendChild(div);
+      }
+
+      // ---- seed-tree inset ------------------------------------------------
+      const seed = document.createElement("div");
+      seed.className = "seed";
+      seed.style.left = "170px";
+      seed.style.top = "918px";
+      seed.innerHTML = `
+        <div class="t">SEED TREE — listing_categories (up to 4 levels)</div>
+<pre>give                        (root · level 0)
+ ├─ category                (level 1)
+ │   ├─ sub-category         (level 2 · LEAF)
+ │   └─ sub-category         (level 2 · LEAF)
+ └─ zakat                    (level 1)
+     └─ &lt;amount range&gt;       (level 2)
+         └─ &lt;asset&gt;          (level 3 · LEAF)
+exchange                    (root · level 0)
+ └─ … mirrored category tree (give & exchange)</pre>
+        <div class="cap">listings reference category LEAVES only (no active children — usually L2, Zakat assets L3).</div>`;
+      stage.appendChild(seed);
+
+      // location tree note
+      const locNote = document.createElement("div");
+      locNote.className = "note-box";
+      locNote.style.left = "1486px";
+      locNote.style.top = "918px";
+      locNote.style.width = "250px";
+      locNote.innerHTML =
+        `<b>listing_locations</b> — 3-level tree: Division (L0) → City (L1) → Area (L2, leaf). listings reference the <b>area leaf</b> via <i>areaId</i>; lat/long required on leaves.`;
+      stage.appendChild(locNote);
+
+      // polymorphic note
+      const polyNote = document.createElement("div");
+      polyNote.className = "note-box";
+      polyNote.style.left = "1180px";
+      polyNote.style.top = "1148px";
+      polyNote.style.width = "240px";
+      polyNote.innerHTML =
+        `<b>audit_logs.entityType</b> is polymorphic → references users · sessions · otps · listing_categories · listing_locations · listings · claims via <i>entityId</i> (no hard FK).`;
+      stage.appendChild(polyNote);
+
+      // ---- footer legend --------------------------------------------------
+      const footer = document.createElement("div");
+      footer.className = "footer";
+      footer.innerHTML =
+        `All persistence in MongoDB via Mongoose. Sessions are httpOnly cookie-bound (<b>sessions</b> collection, TTL). ` +
+        `<b>listing_categories</b>: up to 4 levels (root → child → sub-child → Zakat assets); <b>listing_locations</b>: Division → City → Area. ` +
+        `listings reference category &amp; location <b>LEAVES only</b>. No client-side storage of credentials, OTPs, listings, or claims.`;
+      stage.appendChild(footer);
+
+      // ---- connector routing ---------------------------------------------
+      function anchorPoint(rect, side, t) {
+        switch (side) {
+          case "left": return { x: rect.left, y: rect.top + rect.h * t, nx: -1, ny: 0 };
+          case "right": return { x: rect.left + rect.w, y: rect.top + rect.h * t, nx: 1, ny: 0 };
+          case "top": return { x: rect.left + rect.w * t, y: rect.top, nx: 0, ny: -1 };
+          case "bottom": return { x: rect.left + rect.w * t, y: rect.top + rect.h, nx: 0, ny: 1 };
+        }
+      }
+
+      function autoSides(a, b) {
+        const acx = a.left + a.w / 2, acy = a.top + a.h / 2;
+        const bcx = b.left + b.w / 2, bcy = b.top + b.h / 2;
+        const dx = bcx - acx, dy = bcy - acy;
+        if (Math.abs(dx) >= Math.abs(dy))
+          return dx >= 0 ? ["right", "left"] : ["left", "right"];
+        return dy >= 0 ? ["bottom", "top"] : ["top", "bottom"];
+      }
+
+      function drawWires() {
+        // measure boxes relative to stage
+        const sRect = stage.getBoundingClientRect();
+        const rects = {};
+        for (const id of Object.keys(ENTITIES)) {
+          const el = document.getElementById("tbl-" + id);
+          const r = el.getBoundingClientRect();
+          rects[id] = { left: r.left - sRect.left, top: r.top - sRect.top, w: r.width, h: r.height };
+        }
+
+        // group endpoints per (id, side) to spread their t-offsets
+        const sideUse = {};
+        const plan = [];
+        for (const rel of RELS) {
+          if (rel.self) { plan.push({ rel, self: true }); continue; }
+          let [fs, ts] = autoSides(rects[rel.from], rects[rel.to]);
+          if (rel.fromSide) fs = rel.fromSide;
+          if (rel.toSide) ts = rel.toSide;
+          const fk = rel.from + ":" + fs, tk = rel.to + ":" + ts;
+          sideUse[fk] = (sideUse[fk] || 0) + 1;
+          sideUse[tk] = (sideUse[tk] || 0) + 1;
+          plan.push({ rel, fs, ts, fk, tk });
+        }
+        const sideIdx = {};
+        function nextT(key) {
+          const n = sideUse[key];
+          sideIdx[key] = (sideIdx[key] || 0) + 1;
+          const i = sideIdx[key];
+          return n <= 1 ? 0.5 : 0.2 + (0.6 * (i - 1)) / (n - 1);
+        }
+
+        const NS = "http://www.w3.org/2000/svg";
+        for (const p of plan) {
+          if (p.self) {
+            drawSelf(rects[p.rel.from], p.rel);
+            continue;
+          }
+          const { rel, fs, ts, fk, tk } = p;
+          const a = anchorPoint(rects[rel.from], fs, nextT(fk));
+          const b = anchorPoint(rects[rel.to], ts, nextT(tk));
+          const k = 70;
+          const c1 = { x: a.x + a.nx * k, y: a.y + a.ny * k };
+          const c2 = { x: b.x + b.nx * k, y: b.y + b.ny * k };
+
+          const path = document.createElementNS(NS, "path");
+          path.setAttribute("d", `M ${a.x} ${a.y} C ${c1.x} ${c1.y} ${c2.x} ${c2.y} ${b.x} ${b.y}`);
+          path.setAttribute("fill", "none");
+          path.setAttribute("stroke", "#7c3aed");
+          path.setAttribute("stroke-width", "1.6");
+          path.setAttribute("marker-end", "url(#arrow)");
+          path.setAttribute("opacity", "0.85");
+          svg.appendChild(path);
+
+          // cardinality 1 (source) and N (target)
+          addText(a.x + a.nx * 13 - 3, a.y + a.ny * 13 + 4, "1", "card-label");
+          addText(b.x + b.nx * 16 - 3, b.y + b.ny * 16 + 4, "N", "card-label");
+
+          // label near bezier midpoint
+          const mid = bezierMid(a, c1, c2, b);
+          addLabel(mid.x, mid.y, rel.label);
+        }
+      }
+
+      function drawSelf(r, rel) {
+        const NS = "http://www.w3.org/2000/svg";
+        const onRight = rel.selfSide === "right";
+        const x = onRight ? r.left + r.w : r.left;
+        const dir = onRight ? 1 : -1;
+        const y1 = r.top + r.h * 0.3;
+        const y2 = r.top + r.h * 0.6;
+        const ext = 46 * dir;
+        const path = document.createElementNS(NS, "path");
+        path.setAttribute(
+          "d",
+          `M ${x} ${y1} C ${x + ext} ${y1 - 6} ${x + ext} ${y2 + 6} ${x} ${y2}`
+        );
+        path.setAttribute("fill", "none");
+        path.setAttribute("stroke", "#7c3aed");
+        path.setAttribute("stroke-width", "1.6");
+        path.setAttribute("marker-end", "url(#arrow)");
+        path.setAttribute("opacity", "0.85");
+        svg.appendChild(path);
+        addText(x + ext * 0.5 - (onRight ? -2 : 4), y1 - 8, "1", "card-label");
+        addText(x + ext * 0.5 - (onRight ? -2 : 4), y2 + 16, "N", "card-label");
+        addLabel(x + ext + dir * 4, (y1 + y2) / 2, rel.label, onRight ? "start" : "end");
+      }
+
+      function bezierMid(p0, p1, p2, p3) {
+        const t = 0.5, mt = 1 - t;
+        const x =
+          mt * mt * mt * p0.x + 3 * mt * mt * t * p1.x + 3 * mt * t * t * p2.x + t * t * t * p3.x;
+        const y =
+          mt * mt * mt * p0.y + 3 * mt * mt * t * p1.y + 3 * mt * t * t * p2.y + t * t * t * p3.y;
+        return { x, y };
+      }
+
+      const NS = "http://www.w3.org/2000/svg";
+      function addText(x, y, str, cls) {
+        const t = document.createElementNS(NS, "text");
+        t.setAttribute("x", x);
+        t.setAttribute("y", y);
+        t.setAttribute("class", cls);
+        t.textContent = str;
+        svg.appendChild(t);
+      }
+      function addLabel(x, y, str, anchor) {
+        const padX = 4;
+        const approxW = str.length * 6.0 + padX * 2;
+        const a = anchor || "middle";
+        let rx = x - approxW / 2;
+        if (a === "start") rx = x;
+        if (a === "end") rx = x - approxW;
+        const rect = document.createElementNS(NS, "rect");
+        rect.setAttribute("x", rx);
+        rect.setAttribute("y", y - 10);
+        rect.setAttribute("width", approxW);
+        rect.setAttribute("height", 15);
+        rect.setAttribute("rx", 3);
+        rect.setAttribute("fill", "#ffffff");
+        rect.setAttribute("opacity", "0.92");
+        rect.setAttribute("stroke", "#e7dcfb");
+        rect.setAttribute("stroke-width", "0.8");
+        svg.appendChild(rect);
+        const t = document.createElementNS(NS, "text");
+        t.setAttribute("x", a === "middle" ? x : a === "start" ? x + padX : x - padX);
+        t.setAttribute("y", y + 1);
+        t.setAttribute("text-anchor", a);
+        t.setAttribute("class", "wire-label");
+        t.textContent = str;
+        svg.appendChild(t);
+      }
+
+      // draw after layout/fonts settle
+      function refresh() {
+        while (svg.childNodes.length > 1) svg.removeChild(svg.lastChild);
+        drawWires();
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => requestAnimationFrame(refresh));
+      }
+      window.addEventListener("load", () => requestAnimationFrame(refresh));
+
+      // ---- zoom -----------------------------------------------------------
+      let zoom = 1;
+      const stageWrap = document.getElementById("stageWrap");
+      function applyZoom() { stageWrap.style.transform = `scale(${zoom})`; }
+      document.getElementById("zi").onclick = () => { zoom = Math.min(2, zoom + 0.1); applyZoom(); };
+      document.getElementById("zo").onclick = () => { zoom = Math.max(0.4, zoom - 0.1); applyZoom(); };
+      document.getElementById("zr").onclick = () => { zoom = 1; applyZoom(); };
+    </script>
+  </body>
+</html>

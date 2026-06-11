@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment files (secrets)
+.env
+.env.local
+.env.*.local
+
+# Build output / caches
+dist/
+build/
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+
+# User-uploaded runtime files
+server/upload/
+
+# Local backup archives (too large for GitHub)
+server/server.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db

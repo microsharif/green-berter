@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoLoop Collective | The Regenerative Exchange</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-secondary": "#ffffff",
+                "secondary-fixed": "#d4e3ff",
+                "on-primary": "#ffffff",
+                "secondary-fixed-dim": "#a5c8ff",
+                "error": "#ba1a1a",
+                "primary": "#0d631b",
+                "inverse-primary": "#88d982",
+                "surface-container-high": "#eae7e7",
+                "tertiary": "#923357",
+                "primary-fixed-dim": "#88d982",
+                "tertiary-fixed": "#ffd9e2",
+                "on-tertiary-fixed": "#3f001c",
+                "tertiary-fixed-dim": "#ffb1c7",
+                "on-primary-container": "#cbffc2",
+                "tertiary-container": "#b14b6f",
+                "secondary-container": "#54a0fe",
+                "surface-bright": "#fcf9f8",
+                "surface-dim": "#dcd9d9",
+                "on-primary-fixed-variant": "#005312",
+                "error-container": "#ffdad6",
+                "secondary": "#005faf",
+                "outline": "#707a6c",
+                "inverse-on-surface": "#f3f0ef",
+                "surface-container": "#f0eded",
+                "surface-variant": "#e5e2e1",
+                "primary-fixed": "#a3f69c",
+                "on-secondary-container": "#003567",
+                "on-secondary-fixed-variant": "#004786",
+                "on-surface": "#1b1c1c",
+                "on-error-container": "#93000a",
+                "surface-tint": "#1b6d24",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#002204",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#001c3a",
+                "on-background": "#1b1c1c",
+                "inverse-surface": "#303030",
+                "surface": "#fcf9f8",
+                "on-tertiary-container": "#ffedf0",
+                "surface-container-highest": "#e5e2e1",
+                "surface-container-low": "#f6f3f2",
+                "background": "#fcf9f8",
+                "on-tertiary-fixed-variant": "#7f2448",
+                "primary-container": "#2e7d32",
+                "on-surface-variant": "#40493d",
+                "on-error": "#ffffff",
+                "outline-variant": "#bfcaba"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-asymmetry {
+            margin-left: clamp(2rem, 5vw, 8rem);
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-emerald-800 dark:text-emerald-400 tracking-tighter font-headline">The Regenerative Exchange</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1 text-sm font-medium Inter" href="#">Give</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 text-sm font-medium Inter" href="#">Exchange</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 text-sm font-medium Inter" href="#">Impact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-300 rounded-full text-emerald-700 dark:text-emerald-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-300 rounded-full text-emerald-700 dark:text-emerald-500">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 min-h-screen">
+<div class="max-w-screen-2xl mx-auto px-6">
+<!-- Hero Editorial Section -->
+<section class="py-12 md:py-20 editorial-asymmetry">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-4">
+                    EcoLoop <span class="text-primary italic">Collective</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed">
+                    A curated ecosystem for local regenerative sharing. Every swap extends a product's life and nurtures our community soil.
+                </p>
+</section>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar Filters (SideNavBar Style Integration) -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="sticky top-28 space-y-10">
+<!-- Search Tonal Zone -->
+<div class="bg-surface-container-low p-4 rounded-xl">
+<label class="block text-xs font-bold font-headline uppercase tracking-widest text-on-surface-variant mb-3">Quick Search</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg pl-10 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-outline" placeholder="Find resources..." type="text"/>
+</div>
+</div>
+<!-- Filter Clusters -->
+<nav class="flex flex-col space-y-8">
+<div>
+<h3 class="font-headline font-bold text-sm mb-4 px-2">Action Type</h3>
+<div class="space-y-1">
+<button class="w-full flex items-center gap-3 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-full px-4 py-3 font-semibold Inter translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="redeem">redeem</span>
+<span>Give</span>
+</button>
+<button class="w-full flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-4 py-3 hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-full transition-colors font-semibold Inter">
+<span class="material-symbols-outlined text-lg" data-icon="sync_alt">sync_alt</span>
+<span>Exchange</span>
+</button>
+</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm mb-4 px-2">Categories</h3>
+<ul class="space-y-3 px-2">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-primary-fixed-dim"></div> Garden &amp; Soil
+                                    </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div> Tools &amp; Tech
+                                    </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div> Household Goods
+                                    </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div> Textiles
+                                    </li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm mb-4 px-2">Price (Credits)</h3>
+<input class="w-full h-1 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<div class="flex justify-between mt-2 text-xs font-medium text-outline">
+<span>0</span>
+<span>100+</span>
+</div>
+</div>
+</nav>
+<button class="w-full py-4 px-6 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold font-headline shadow-lg shadow-primary/10 hover:scale-105 active:scale-95 transition-all">
+                            Post an Item
+                        </button>
+</div>
+</aside>
+<!-- Product Grid (Bento-lite Layout) -->
+<div class="flex-grow pb-20">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="aspect-[4/5] relative m-2 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vintage copper watering can for garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAqlcuVWc4Y1FcibJsSN85dJjkmHS2p7yhWSqvW6VDtyDlslmKHk26dHZ3kqyB7tI1e67iqLHXstioOEhqn4Jhzy7hrVkU8HxfloUrxOHfY-6yUFZFGkxQXJpccK7ZXnbaGsIhBVO_ruheiFPnDi8qsRQjTLnLA9GYvodycVNtEdRuFgS9QNzIzbARQiV6VvPqjgEqDgf1poUejIDB580vORk_-9UC7PSsTuV3_q1aoH9bLPqHkx1ZZewfCs1znY1Lrh2Tb4rwRf_K"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Free</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Artisanal Copper Watering Can</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>Portland, OR</span>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant hover:border-primary hover:text-primary transition-all rounded-full text-sm font-bold font-headline">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="aspect-[4/5] relative m-2 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High quality hand-woven linen textiles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs23lDSzjkW8IvxrZhDYtOY4eFBhb-ctPLMdhlTIytGIqbZpYQCpTKc45aOjeTu-mnkYyvbKIXLw3pcgV8ZTF8fPLKzMWkD2XvcPNrT0klkVhnIBmp8rFxOtikfCRSWMrrFt4aRnPKeasdJ_cHCiVYvnEp8f0M7d8JnfmGUWWhvP5I7YGbpznDl4Maev_vNiJWGJ0BzkhfHy6qvqoEwTPpf6Dy_V4gQytB4TBIyp39j9jauc2U0VFIZbQ84wbv2VZVOyOHMjQ6iV2Y"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Exchange</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Hand-Woven Organic Linen Set</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>Seattle, WA</span>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant hover:border-primary hover:text-primary transition-all rounded-full text-sm font-bold font-headline">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="aspect-[4/5] relative m-2 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Industrial style compost bin for kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgedg-w81My2_8jwhWNNWXHJ0JlbQzKX0oMInx4nScmZiIE1tIxe1brTrgwVWny7cymQbYZ3SOoOhKA81ICWv7XeXSX8ucu3FOJyqzKquUGyXj1YCXh21r18DQpOVbMbLD2U8qAqq92agOdrqhlhCDEOsQekHFzym8BJO5kp2-tBfUZiccQR8tXkWluiPE9VDVT8YvUnTHN0e48-ja668EQ8F5cjvdfcNg3_whYo9zW1hJeX2MqmUI3W7YbmS0p3Y-e4JCJ--tRRkd"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Free</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Countertop Bokashi System</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>Austin, TX</span>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant hover:border-primary hover:text-primary transition-all rounded-full text-sm font-bold font-headline">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="aspect-[4/5] relative m-2 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist table lamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9XGWNpHj-5bq9tx_gMh3s58Wi2ztg9aRVFnJTESMo6PQlj0g0O2BbLqSX7_-TzsewLBMtlkzNpCzsZHahkzVfBhTqcxpQGQaUiH0WZ4gHPn295yiIA2GCC4n3oQ1Sv2o5QHkg8odWoiR-lWR6e2I-vKCwMM20Ep7Q-H9K_Gl91lvywFOD8LxzJERMIiHIvVBD-91ogNaC-JK1D1HJh8tts5NK1g0bhkwPQ6V11_t7wetsJLB3z6Pn5hqy3dwX3okHte9vn8TpdR77"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Exchange</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Mid-Century Task Lighting</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>Brooklyn, NY</span>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant hover:border-primary hover:text-primary transition-all rounded-full text-sm font-bold font-headline">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="aspect-[4/5] relative m-2 rounded-lg overflow-hidden">
+<img class="w-800 h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Selection of heirloom garden seeds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrcd5qpJ8rAyzwdVQvY3ktxSLj0jsB_iBHB2ed6Ks9G8hUIHgn3ectEIz_QjaE4ta3KVlL7jUkUo23Wbeg6tXyuPI5PCdiegciRjVa5Iog-gv-tO4DCuPqBtROeUTHGDCBqd9f3XTHJjAaAxN0Ah86bT-SISfagfPbQVguDDUEglmQtWE29tvgJZM7XyhD_SwXZkdKfTbhYnUzYNsNk0I4Z_oYwXXt6eZ4c2JoAyFZhYVLJVxTzuv4RftRkF-0FofkCa00klmnLYfQ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Free</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Heirloom Seed Starter Kit</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>Boulder, CO</span>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant hover:border-primary hover:text-primary transition-all rounded-full text-sm font-bold font-headline">
+                                    View Details
+                                </button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="aspect-[4/5] relative m-2 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Refurbished retro analog camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkxPF9sD-wvacIE_0TZ29QtYu4yTigsN8mVFVEhCOEvRIEZKMykgynQB6DJYftjS4_u2NfavjuJB2bMZS5ZHOeOohYWrSCghGiU4ECGxmFDE7n5hpJm0nBNQV8XTovR-Kpnlw938K6wp6fT6Zrs4JSodoXRQkPIGP-39Sd5uMmijIKcF584kh39An1zx0f1psHF2eQGSH7jDylYeqwgTSVsScrnryPPZJUAWt_5tislNxEnQ7k_ZwfRBCuvkidi75nMnSg5sMjoM62"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Exchange</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">35mm Vintage Film Camera</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>San Francisco, CA</span>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant hover:border-primary hover:text-primary transition-all rounded-full text-sm font-bold font-headline">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full mt-20 bg-zinc-100 dark:bg-zinc-900">
+<div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-zinc-200/50 dark:border-zinc-800/50 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 font-headline">The Regenerative Exchange</div>
+<p class="text-sm Inter leading-relaxed text-zinc-500">© 2024 The Regenerative Exchange. For a circular future.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors text-sm font-medium Inter" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors text-sm font-medium Inter" href="#">Terms of Service</a>
+<a class="text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors text-sm font-medium Inter" href="#">Community Guidelines</a>
+<a class="text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors text-sm font-medium Inter" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

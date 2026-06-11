@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile | EcoLoop Collective</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#1b1c1c",
+              "on-tertiary-container": "#ffedf0",
+              "secondary-container": "#54a0fe",
+              "on-surface-variant": "#40493d",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#303030",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#fcf9f8",
+              "error": "#ba1a1a",
+              "on-surface": "#1b1c1c",
+              "surface-dim": "#dcd9d9",
+              "on-tertiary-fixed-variant": "#7f2448",
+              "secondary-fixed": "#d4e3ff",
+              "primary-fixed-dim": "#88d982",
+              "outline-variant": "#bfcaba",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f0eded",
+              "tertiary-fixed-dim": "#ffb1c7",
+              "tertiary-fixed": "#ffd9e2",
+              "on-secondary-container": "#003567",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#a5c8ff",
+              "secondary": "#005faf",
+              "on-error-container": "#93000a",
+              "on-primary": "#ffffff",
+              "primary": "#0d631b",
+              "inverse-on-surface": "#f3f0ef",
+              "tertiary": "#923357",
+              "surface-container-high": "#eae7e7",
+              "surface-tint": "#1b6d24",
+              "outline": "#707a6c",
+              "surface-variant": "#e5e2e1",
+              "on-primary-fixed": "#002204",
+              "primary-fixed": "#a3f69c",
+              "on-primary-container": "#cbffc2",
+              "on-secondary-fixed-variant": "#004786",
+              "primary-container": "#2e7d32",
+              "on-secondary-fixed": "#001c3a",
+              "inverse-primary": "#88d982",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#b14b6f",
+              "on-primary-fixed-variant": "#005312",
+              "surface": "#fcf9f8",
+              "on-tertiary-fixed": "#3f001c",
+              "surface-container-highest": "#e5e2e1",
+              "background": "#fcf9f8",
+              "surface-container-low": "#f6f3f2"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fcf9f8;
+      }
+      h1, h2, h3, h4 {
+        font-family: 'Manrope', sans-serif;
+      }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black text-green-800 dark:text-green-400 tracking-tighter">EcoLoop Collective</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-zinc-600 dark:text-zinc-400 font-medium hover:text-green-700 transition-colors" href="#">Discover</a>
+<a class="text-zinc-600 dark:text-zinc-400 font-medium hover:text-green-700 transition-colors" href="#">Swaps</a>
+<a class="text-green-900 dark:text-white font-bold" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-600">notifications</span>
+<span class="material-symbols-outlined text-green-800" data-weight="fill">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-zinc-50 dark:bg-zinc-950 flex flex-col p-6 gap-8 hidden md:flex pt-24">
+<div class="flex flex-col gap-2">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of Alex Rivers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAScOCFu4B7klYGnCvmo_WmG62jtyljITMc93Et1-DoNSLwIANXxxg4cB4Oz4MSBId50uHoJaYV0jA4ofQwBDRs15hKxevSRxiGh_YL24sO6UFfW-Y0QUmBC0n-mMYgvcFjiSWkRDZy5GAagySXpsEHM1ktq5uiig2euE5NJMc73vaFnA3HWSi26u6E-ej3rAqc56bPFA1dkGP7haMFQz68L3dWkhQwsh7ieFgms577D941AvyZgV8Y9Z6Lr-YmZ3cbMBuMdOhatQsS"/>
+</div>
+<div>
+<p class="font-bold text-zinc-800 dark:text-zinc-100">Alex Rivers</p>
+<p class="text-xs text-zinc-500">Regenerative Pioneer</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-zinc-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium text-sm">Discover</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-zinc-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium text-sm">My Listings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-zinc-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="font-medium text-sm">Swaps</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-green-800 bg-green-50 font-bold rounded-lg" href="#">
+<span class="material-symbols-outlined">eco</span>
+<span class="font-medium text-sm">Impact</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-zinc-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium text-sm">Community</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 border-t border-zinc-200 pt-6">
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-green-700 text-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-green-700 text-sm" href="#">
+<span class="material-symbols-outlined">person_pin</span>
+<span>Account Info</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 pt-24 px-6 pb-20">
+<div class="max-w-6xl mx-auto space-y-12">
+<!-- Hero Header -->
+<section class="relative bg-surface-container-low rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="relative z-10 flex flex-col gap-6 max-w-xl">
+<div class="space-y-2">
+<span class="inline-block px-3 py-1 bg-primary-fixed text-on-primary-fixed text-xs font-bold rounded-full tracking-wider uppercase">Verified Member</span>
+<h1 class="text-5xl md:text-6xl font-black text-green-900 tracking-tighter leading-none">Alex Rivers</h1>
+<p class="text-xl text-on-surface-variant font-medium">Regenerative Pioneer · Portland, OR</p>
+</div>
+<p class="text-on-surface-variant/80 leading-relaxed">Dedicated to a circular lifestyle. Always looking for quality outdoor gear and local seeds to trade. 4 years of active community building.</p>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 transition-all active:scale-95">Give Item</button>
+<button class="px-8 py-3 bg-white text-green-800 font-bold border border-green-800/10 rounded-full transition-all hover:bg-zinc-50">Edit Profile</button>
+</div>
+</div>
+<!-- Impact Stats Bento -->
+<div class="grid grid-cols-2 md:grid-cols-1 gap-4 w-full md:w-auto">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-zinc-100 flex flex-col gap-1">
+<span class="text-3xl font-black text-primary leading-none">42</span>
+<span class="text-xs font-bold text-zinc-500 uppercase tracking-widest">Items Shared</span>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-zinc-100 flex flex-col gap-1">
+<span class="text-3xl font-black text-tertiary leading-none">112kg</span>
+<span class="text-xs font-bold text-zinc-500 uppercase tracking-widest">CO2 Saved</span>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-zinc-100 flex flex-col gap-1 md:hidden lg:flex">
+<span class="text-3xl font-black text-secondary leading-none">15</span>
+<span class="text-xs font-bold text-zinc-500 uppercase tracking-widest">Swaps</span>
+</div>
+</div>
+<!-- Abstract Decorative Element -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Tabbed Interface -->
+<section class="space-y-8">
+<div class="flex gap-12 border-b border-zinc-200">
+<button class="pb-4 text-green-900 border-b-2 border-green-800 font-bold text-lg">Active Listings</button>
+<button class="pb-4 text-zinc-400 hover:text-zinc-600 font-medium text-lg transition-colors">Swap History</button>
+<button class="pb-4 text-zinc-400 hover:text-zinc-600 font-medium text-lg transition-colors">My Impact</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Eco-friendly bamboo cutlery set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx77_CFSLI3a_xdYdz8HFnKNSgB5bWAsqZVeLNMNLzWNLckwSvkikpxphOYRimhHrCnxwKk5sLZJTtKEwaISzBZi72nLZjgh-d2VUiIWTY1BNa_w9NjiOvbGqRqUi7xk9MdU9GzIw1PuGaQN9jorCUBrGHGmNyI_cj9GmjhxEdF5Xf48QkreV_hnteAt3iIfdVw1i2EeGWwkogRB-QTuEEMnlyOHZuWBbdBy-q9JN79yq-KKNH5tISyWI7ewE6uJu_DrA70ugIRXk9"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-on-surface">Bamboo Cutlery Set</h3>
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">FREE</span>
+</div>
+<p class="text-sm text-zinc-500 line-clamp-2">Complete travel set with carrying pouch. Never used, sustainable alternative for dining on the go.</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-sm text-zinc-400">location_on</span>
+<span class="text-xs text-zinc-400">0.8 miles away</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portable solar power bank" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQ1xxLznXDxpxvmPiH0PJxknKPojl60VVok-hNvB5NA1kfb2QkkRu7iKmeWfvs_U4UkOz78mkY7FbexhCrJWfQSTF_PPmmXQqA3SYzS3X8etAGKEi6mCr1x9brqR5UgG9UxvUxu2FKrlQtPTI9jwRgHvIf04Hw1YLQmx1hTlhwgxHrosvbKqGkgVk_Z5UnhiWuvwgQ_GBgPwOJK33qf1aCKsvp4NPxPKDJYvzzUXNXfJZBadrlST0ONkR4RX77eXJb6tKe7CF2F0z"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-on-surface">Solar Power Bank</h3>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full">EXCHANGE</span>
+</div>
+<p class="text-sm text-zinc-500 line-clamp-2">10,000mAh rugged battery with solar panels. Looking for camping gear or a small tarp.</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-sm text-zinc-400">location_on</span>
+<span class="text-xs text-zinc-400">1.2 miles away</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:bg-surface-container-high transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vintage glass storage jars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ3-6j8PGrSaCJARhuQAYx-RNcK06LOwoJvPaSWzrkCxpdpBC2uENhWgRYahT3m7SjECm7JUFTCTAxvNlZwQ9oz12n0V3PIAyELSSJV3QBqTKdOEaEEBAFPZNeVgzEhOIp-hcF7kcqg34UG1NyU4lytG67_fMDbwTGUK7oXxff6hNKQVu1TKkvyNPw09QSsnA7xF0m5AMWdKpmC04pBn-YhBsIjD3SQosJB_SW0nyc0cwUxy_pdv7HBrfOpMdIKcqJsO9xGbXxR2HY"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-on-surface">Glass Mason Jars (Set of 6)</h3>
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">FREE</span>
+</div>
+<p class="text-sm text-zinc-500 line-clamp-2">Perfect for pantry storage or pickling. High quality thick glass with airtight lids.</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-sm text-zinc-400">location_on</span>
+<span class="text-xs text-zinc-400">0.5 miles away</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Impact Section (Bento Grid) -->
+<section class="space-y-8 pt-12">
+<div class="flex items-center justify-between">
+<h2 class="text-3xl font-black text-green-900 tracking-tight">Community Impact</h2>
+<span class="text-primary font-bold hover:underline cursor-pointer">View Details</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Level Card -->
+<div class="bg-primary text-white p-8 rounded-3xl flex flex-col justify-between aspect-square md:aspect-auto">
+<div class="space-y-2">
+<p class="text-sm font-bold opacity-70 uppercase tracking-widest">Current Rank</p>
+<h3 class="text-4xl font-black">Eco-Warrior Level 3</h3>
+</div>
+<div class="space-y-4">
+<div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
+<div class="bg-white h-full" style="width: 75%;"></div>
+</div>
+<p class="text-sm font-medium">1,250 / 2,000 XP to Level 4</p>
+</div>
+</div>
+<!-- Badges Grid -->
+<div class="md:col-span-2 bg-surface-container-low rounded-3xl p-8 grid grid-cols-2 sm:grid-cols-4 gap-6">
+<div class="flex flex-col items-center gap-3 text-center group">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-on-primary-fixed" data-weight="fill">volunteer_activism</span>
+</div>
+<span class="text-xs font-bold text-zinc-600">Top Giver</span>
+</div>
+<div class="flex flex-col items-center gap-3 text-center group">
+<div class="w-20 h-20 bg-secondary-fixed rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-on-secondary-fixed" data-weight="fill">cycle</span>
+</div>
+<span class="text-xs font-bold text-zinc-600">Zero Waste Hero</span>
+</div>
+<div class="flex flex-col items-center gap-3 text-center group opacity-40 grayscale">
+<div class="w-20 h-20 bg-tertiary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-fixed">forest</span>
+</div>
+<span class="text-xs font-bold text-zinc-600">Forest Guardian</span>
+</div>
+<div class="flex flex-col items-center gap-3 text-center group">
+<div class="w-20 h-20 bg-surface-container rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform border-2 border-primary-fixed">
+<span class="material-symbols-outlined text-4xl text-primary">groups</span>
+</div>
+<span class="text-xs font-bold text-zinc-600">Community Pillar</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="md:ml-64 bg-zinc-950 text-zinc-500 py-16 px-12 border-t border-zinc-900">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2 space-y-6">
+<div class="text-xl font-black text-white tracking-tighter">EcoLoop Collective</div>
+<p class="max-w-xs text-sm leading-relaxed">Building a circular economy, one community at a time. Join the movement of regenerative sharing and waste reduction.</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold text-sm">Platform</h4>
+<ul class="text-sm space-y-2">
+<li><a class="hover:text-white transition-colors" href="#">How it works</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Safety Guidelines</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Impact Reporting</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold text-sm">Legal</h4>
+<ul class="text-sm space-y-2">
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Community Pact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-zinc-900 text-xs flex justify-between items-center">
+<p>© 2024 EcoLoop Collective. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-sm">public</span>
+<span class="material-symbols-outlined text-sm">eco</span>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 w-full bg-white/95 backdrop-blur-lg border-t border-zinc-100 flex justify-around items-center py-4 z-50">
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold">Discover</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-bold">Listings</span>
+</button>
+<button class="flex flex-col items-center gap-1 -mt-8">
+<div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="text-[10px] font-bold">Swaps</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-green-800">
+<span class="material-symbols-outlined" data-weight="fill">account_circle</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</nav>
+</body></html>

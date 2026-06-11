@@ -1,0 +1,308 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Manrope", sans-serif;
+}
+
+.glass-header {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.editorial-asymmetry {
+  margin-left: 0;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .editorial-asymmetry {
+    margin-left: clamp(2rem, 5vw, 8rem);
+  }
+}
+
+.editorial-shadow {
+  box-shadow: 0 32px 64px -12px rgba(27, 28, 28, 0.06);
+}
+
+.asymmetric-layout {
+  padding-left: clamp(1rem, 8vw, 8rem);
+  padding-right: clamp(1rem, 4vw, 4rem);
+}
+
+.tonal-shift {
+  transition: background-color 0.3s ease;
+}
+
+/* Profile sidebar — hidden scrollbar until hover or scroll */
+.profile-sidebar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.profile-sidebar-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.profile-sidebar-scroll.profile-sidebar-scroll--visible {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(13, 99, 27, 0.38) transparent;
+}
+
+.profile-sidebar-scroll.profile-sidebar-scroll--visible::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-sidebar-scroll.profile-sidebar-scroll--visible::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 4px;
+}
+
+.profile-sidebar-scroll.profile-sidebar-scroll--visible::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 99, 27, 0.22) 0%,
+    rgba(13, 99, 27, 0.42) 100%
+  );
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.2s ease;
+}
+
+.profile-sidebar-scroll.profile-sidebar-scroll--visible:hover::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 99, 27, 0.35) 0%,
+    rgba(13, 99, 27, 0.58) 100%
+  );
+  background-clip: padding-box;
+}
+
+.brand-text {
+  font-family: "Manrope", sans-serif;
+}
+
+.organic-asymmetry {
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+/* Route navigation progress — NProgress-style bar at top of viewport */
+.navigation-progress {
+  transition: opacity 200ms ease;
+}
+
+.navigation-progress-bar {
+  background: linear-gradient(90deg, #0d631b 0%, #2e7d32 55%, #88d982 100%);
+  box-shadow:
+    0 0 10px rgba(13, 99, 27, 0.45),
+    0 0 5px rgba(13, 99, 27, 0.35);
+  transition: width 220ms ease;
+}
+
+.navigation-progress-peg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  transform: rotate(3deg) translate(0, -4px);
+  box-shadow:
+    0 0 10px rgba(13, 99, 27, 0.55),
+    0 0 5px rgba(13, 99, 27, 0.45);
+  opacity: 1;
+}
+
+/* Scroll-triggered section reveals */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance — staggered fade-up on first paint */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #1b5e20;
+  letter-spacing: -1px;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #2e7d32 0%, #00897b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-enter {
+  opacity: 0;
+  animation: hero-fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-enter-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.hero-enter-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.hero-enter-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.bento-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 24px -8px rgba(13, 99, 27, 0.08);
+}
+
+.detail-section-heading {
+  border-left: 4px solid theme("colors.primary");
+  padding-left: 1rem;
+}
+
+.hero-enter-delay-4 {
+  animation-delay: 0.48s;
+}
+
+.hero-enter-delay-5 {
+  animation-delay: 0.58s;
+}
+
+.hero-enter-delay-6 {
+  animation-delay: 0.72s;
+}
+
+.hero-enter-delay-7 {
+  animation-delay: 0.86s;
+}
+
+@keyframes hero-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.hero-card-enter {
+  opacity: 0;
+  animation: hero-fade-in-right 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hero-card-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-card-float {
+  animation: hero-card-float 4.5s ease-in-out infinite;
+}
+
+.hero-card-float-delay-1 {
+  animation-delay: 0.6s;
+}
+
+.hero-card-float-delay-2 {
+  animation-delay: 1.2s;
+}
+
+.hero-card-float-delay-3 {
+  animation-delay: 1.8s;
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.hero-float {
+  animation: hero-float 5.5s ease-in-out infinite;
+}
+
+@keyframes badge-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 99, 27, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 18px 4px rgba(13, 99, 27, 0.22);
+  }
+}
+
+.hero-badge-glow {
+  animation: badge-glow 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-progress-bar {
+    transition: none;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-enter,
+  .hero-float,
+  .hero-badge-glow,
+  .hero-card-enter,
+  .hero-card-float {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

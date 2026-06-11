@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login &amp; Registration | EcoLoop Collective</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#e5e2e1",
+                      "on-surface-variant": "#40493d",
+                      "on-primary-fixed-variant": "#005312",
+                      "secondary-fixed-dim": "#a5c8ff",
+                      "surface-container-high": "#eae7e7",
+                      "primary-container": "#2e7d32",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#f3f0ef",
+                      "tertiary-container": "#b14b6f",
+                      "error": "#ba1a1a",
+                      "tertiary": "#923357",
+                      "secondary": "#005faf",
+                      "tertiary-fixed-dim": "#ffb1c7",
+                      "inverse-primary": "#88d982",
+                      "primary-fixed-dim": "#88d982",
+                      "outline-variant": "#bfcaba",
+                      "on-tertiary-fixed-variant": "#7f2448",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#ffd9e2",
+                      "primary": "#0d631b",
+                      "on-secondary-fixed-variant": "#004786",
+                      "on-surface": "#1b1c1c",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#002204",
+                      "on-secondary-container": "#003567",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#1b6d24",
+                      "on-tertiary-container": "#ffedf0",
+                      "background": "#fcf9f8",
+                      "secondary-fixed": "#d4e3ff",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-low": "#f6f3f2",
+                      "surface-bright": "#fcf9f8",
+                      "outline": "#707a6c",
+                      "inverse-surface": "#303030",
+                      "surface": "#fcf9f8",
+                      "on-secondary-fixed": "#001c3a",
+                      "primary-fixed": "#a3f69c",
+                      "secondary-container": "#54a0fe",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-container": "#f0eded",
+                      "on-background": "#1b1c1c",
+                      "on-tertiary-fixed": "#3f001c",
+                      "on-primary-container": "#cbffc2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "display": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-asymmetry {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<main class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+<section class="hidden md:flex md:w-5/12 lg:w-1/2 relative overflow-hidden bg-primary-container items-center justify-center">
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="Dreamy soft focus of sunlit fern leaves in a lush forest morning with ethereal morning mist and warm golden highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiStpmb-X51rCerqheblLaBAoXLxNsN43KBd04Jwekl1PH1qgq9HyNTvu_vs4jx2S2T2qqQFCgT7rMfTEOc-dLNwzxtVzPfFu7DPV64lNfA0qitNU7hQLoP0rYmt69s8hXh3DZXfmfpPJXn9jkbVxg3W3bX6xIQWhjFMgHVUtEnzd6-uam3f1-MrQvB1TWrrtUwg49vHOXewuDk29VjA_iqlZMrbZHAm93ARPqjESjuiJ_SZEkjOSCXQedO6rD1oyZ7fcqPOrM7AA6"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/80 to-transparent z-10"></div>
+<div class="relative z-20 px-12 lg:px-24 text-on-primary-container">
+<h1 class="font-display text-5xl lg:text-7xl font-extrabold tracking-tighter leading-none mb-8">
+                    EcoLoop<br/>Collective
+                </h1>
+<p class="font-body text-lg lg:text-xl opacity-90 max-w-md leading-relaxed">
+                    Join a regenerative community where giving is effortless and circular living is our shared editorial vision.
+                </p>
+<div class="mt-20 flex gap-4">
+<div class="w-12 h-12 rounded-full bg-on-primary-container/20 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-white">eco</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-on-primary-container/20 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-white">recycling</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-on-primary-container/20 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-white">diversity_3</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-12 lg:left-24 z-20">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-on-primary-container/60">Regenerating Since 2024</span>
+</div>
+</section>
+<section class="flex-1 flex flex-col justify-center items-center p-6 md:p-12 lg:p-24 bg-surface-bright">
+<div class="w-full max-w-md">
+<div class="mb-12">
+<h2 class="font-display text-4xl font-bold tracking-tight text-on-surface mb-2">Welcome Back</h2>
+<p class="text-on-surface-variant font-body">Continue your sustainable journey today.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-10">
+<button class="flex items-center justify-center gap-3 px-4 py-3 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors duration-200">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-semibold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 px-4 py-3 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors duration-200">
+<svg class="w-5 h-5" fill="#1877F2" viewbox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+<span class="text-sm font-semibold text-on-surface">Facebook</span>
+</button>
+</div>
+<div class="relative flex items-center mb-10">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Or with Email</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant ml-1" for="email">Email Address</label>
+<input class="w-full px-6 py-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/40 transition-all duration-200" id="email" placeholder="hello@ecoloop.com" type="email"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-sm font-bold text-on-surface-variant" for="password">Password</label>
+<a class="text-xs font-semibold text-secondary hover:underline" href="#">Forgot?</a>
+</div>
+<input class="w-full px-6 py-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/40 transition-all duration-200" id="password" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-white font-display font-bold text-lg rounded-full shadow-lg hover:shadow-xl active:scale-[0.98] transition-all duration-300" type="submit">
+                        Sign In to Collective
+                    </button>
+</form>
+<div class="mt-12 pt-8 border-t border-outline-variant/30 text-center">
+<p class="text-on-surface-variant font-body">
+                        New to the movement? 
+                        <a class="text-primary font-bold ml-1 hover:underline underline-offset-4" href="#register">Create an account</a>
+</p>
+</div>
+</div>
+</section>
+<section class="fixed inset-0 z-50 bg-white translate-x-full transition-transform duration-500 flex flex-col md:flex-row overflow-hidden pointer-events-none opacity-0" id="register">
+<!-- Hidden by default, meant for interaction simulation in a real app -->
+</section>
+</main>
+<div class="hidden">
+<section class="max-w-7xl mx-auto py-24 px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-bold uppercase tracking-widest">
+                    The Registration
+                </div>
+<h3 class="font-display text-5xl font-extrabold text-on-surface mb-6 leading-tight">Start Your Circular Journey</h3>
+<form class="space-y-5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Full Name</label>
+<input class="w-full p-4 rounded-xl bg-surface-container-low border-none" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Email</label>
+<input class="w-full p-4 rounded-xl bg-surface-container-low border-none" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Choose Password</label>
+<input class="w-full p-4 rounded-xl bg-surface-container-low border-none" placeholder="Create a secure password" type="password"/>
+</div>
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 rounded text-primary focus:ring-primary" id="terms" type="checkbox"/>
+<label class="text-xs text-on-surface-variant leading-relaxed" for="terms">
+                            I agree to the <a class="text-primary font-bold" href="#">Terms of Service</a> and <a class="text-primary font-bold" href="#">Privacy Policy</a> regarding my ecological footprint data.
+                        </label>
+</div>
+<button class="w-full py-5 bg-primary text-white font-display font-black rounded-full text-xl shadow-xl">Join the Collective</button>
+</form>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="aspect-square rounded-[3rem] overflow-hidden rotate-3 shadow-2xl relative z-10">
+<img class="w-full h-full object-cover scale-110" data-alt="Modern minimalist workspace with recycled wood desk, small potted succulent, and a glass of water, bright natural lighting with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2cwANKiPwkbqnAZW5ZIjCH8tMsALXEli5Pq2ZDStq--1tFHhWA1ybnq7gwmUFhan_PgQHcgGRcldMeaNuW4XJaPwKf8XKMhIwlIbYF-b9Nkz-W3kHetGg0-TXtKiF0FdBnHVo64AoH7b2_ONGAcIXFoMaWfqokkR_M8DL2zF-93SwbP5H59BAMm6CUl8b7AXXkV--ITMs0CJL9CsoOkUtxn10xkEizOToOp8gDRqcMBOY7zgNJ01YCHZaUfmiJJuTgSeGKu08YjMH"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary-fixed rounded-full mix-blend-multiply opacity-50 blur-3xl z-0"></div>
+<div class="absolute -top-10 -right-10 w-48 h-48 bg-tertiary-fixed rounded-full mix-blend-multiply opacity-50 blur-2xl z-0"></div>
+</div>
+</section>
+</div>
+<footer class="w-full py-12 bg-stone-50 dark:bg-stone-950">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-xl font-bold text-stone-900 dark:text-stone-100 font-manrope">EcoLoop Collective</div>
+<nav class="flex gap-8">
+<a class="font-inter text-sm text-stone-500 dark:text-stone-400 hover:text-[#0d631b] dark:hover:text-green-300 underline-offset-4 hover:underline" href="#">About Us</a>
+<a class="font-inter text-sm text-stone-500 dark:text-stone-400 hover:text-[#0d631b] dark:hover:text-green-300 underline-offset-4 hover:underline" href="#">Sustainability Report</a>
+<a class="font-inter text-sm text-stone-500 dark:text-stone-400 hover:text-[#0d631b] dark:hover:text-green-300 underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="font-inter text-sm text-stone-500 dark:text-stone-400 hover:text-[#0d631b] dark:hover:text-green-300 underline-offset-4 hover:underline" href="#">Terms of Service</a>
+</nav>
+<div class="font-inter text-sm text-stone-500 dark:text-stone-400">
+                © 2024 EcoLoop Collective. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

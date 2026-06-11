@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Almadot — Data Flow Diagrams (Requirements)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+      :root {
+        --bg: #0f1419;
+        --panel: #1a222d;
+        --border: #2d3a4d;
+        --text: #e8eef5;
+        --muted: #8fa3b8;
+        --accent: #3ecf8e;
+        --accent-dim: #2a9d66;
+        --entity: #6eb5ff;
+        --process: #c9a227;
+        --store: #b388ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+          "header header"
+          "sidebar main";
+      }
+      header {
+        grid-area: header;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        background: linear-gradient(180deg, #151c24 0%, var(--bg) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      header p {
+        margin: 0;
+        font-size: 0.8rem;
+        color: var(--muted);
+        max-width: 42rem;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        font-size: 0.72rem;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .legend span::before {
+        content: "";
+        display: inline-block;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 2px;
+        margin-right: 0.35rem;
+        vertical-align: middle;
+      }
+      .legend .e::before {
+        background: var(--entity);
+      }
+      .legend .p::before {
+        background: var(--process);
+      }
+      .legend .d::before {
+        background: var(--store);
+      }
+      aside {
+        grid-area: sidebar;
+        border-right: 1px solid var(--border);
+        background: var(--panel);
+        overflow-y: auto;
+        padding: 0.75rem 0;
+        position: relative;
+        z-index: 2;
+      }
+      .section {
+        margin-bottom: 0.25rem;
+      }
+      .section-title {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        padding: 0.5rem 1rem 0.35rem;
+        font-weight: 600;
+      }
+      button.nav-item {
+        display: block;
+        width: 100%;
+        text-align: left;
+        border: none;
+        background: transparent;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem 0.55rem 1.15rem;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition: background 0.12s, border-color 0.12s;
+      }
+      button.nav-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      button.nav-item.active {
+        background: rgba(62, 207, 142, 0.12);
+        border-left-color: var(--accent);
+        color: #fff;
+      }
+      button.nav-item small {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 0.15rem;
+        font-weight: 400;
+      }
+      main {
+        grid-area: main;
+        overflow: auto;
+        padding: 1.25rem 1.5rem 2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .panel-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.05rem;
+      }
+      .panel-ref {
+        margin: 0 0 1rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      #diagram-host {
+        background: #fff;
+        border-radius: 10px;
+        padding: 1rem;
+        min-height: 320px;
+        border: 1px solid var(--border);
+        overflow: auto;
+      }
+      #diagram-host svg {
+        max-width: 100%;
+        height: auto;
+      }
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .toolbar button {
+        font-family: inherit;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        color: var(--text);
+        cursor: pointer;
+      }
+      .toolbar button:hover {
+        border-color: var(--accent-dim);
+        color: var(--accent);
+      }
+      .zoom-wrap {
+        transform-origin: top left;
+        transition: transform 0.15s ease;
+      }
+      @media (max-width: 900px) {
+        body {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto 1fr;
+          grid-template-areas:
+            "header"
+            "sidebar"
+            "main";
+        }
+        aside {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          max-height: 40vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Almadot — Data flow diagrams</h1>
+        <p>
+          Derived from <code style="color: var(--accent)">ApplicationFeatureRequirements.md</code>.
+          Pick a section or subsection to view its DFD. Shapes follow a DFD-style reading: external
+          actor → processes → data stores. Open this file directly in a browser, or from the
+          <code>doc</code> folder run <code>npx --yes serve -l 8765</code> and visit the served URL
+          (needs network for the Mermaid script).
+        </p>
+      </div>
+      <div class="legend">
+        <span class="e">External entity</span>
+        <span class="p">Process</span>
+        <span class="d">Data store</span>
+      </div>
+    </header>
+    <aside id="nav" aria-label="Diagram navigation"></aside>
+    <main>
+      <h2 class="panel-title" id="panel-title">Overview</h2>
+      <p class="panel-ref" id="panel-ref">ApplicationFeatureRequirements.md — context</p>
+      <div class="toolbar">
+        <span style="font-size:0.8rem;color:var(--muted)">View</span>
+        <button type="button" id="zoom-out" title="Zoom out">−</button>
+        <button type="button" id="zoom-reset" title="100%">100%</button>
+        <button type="button" id="zoom-in" title="Zoom in">+</button>
+      </div>
+      <div id="diagram-host">
+        <div class="zoom-wrap" id="zoom-wrap"></div>
+      </div>
+    </main>
+
+    <script>
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#e8f4fc",
+          primaryTextColor: "#1a222d",
+          primaryBorderColor: "#2d3a4d",
+          lineColor: "#3d4f66",
+          secondaryColor: "#f5f0e6",
+          tertiaryColor: "#eef8f2",
+          fontFamily: "DM Sans, system-ui, sans-serif",
+        },
+        flowchart: {
+          curve: "basis",
+          padding: 12,
+          nodeSpacing: 28,
+          rankSpacing: 40,
+        },
+      });
+
+      const diagrams = [
+        {
+          id: "overview",
+          section: "Overview",
+          ref: "Whole application — Level 0 context",
+          mermaid: `flowchart TB
+            subgraph EXT["External"]
+              U(["User"])
+              OTP["Email / SMS provider\\n(OTP in production)"]
+            end
+            subgraph APP["Almadot web app"]
+              SHELL["Client shell / routes\\n/login /register /upload /profile /product"]
+              AUTH["§1 Auth, session,\\nforgot / reset / logout"]
+              UP["§2 Upload give or exchange\\n+ validation + draft"]
+              PROF["§3 Profile, listings panel,\\ndeep-links"]
+              CLAIM["§4 Claim or exchange\\nproposals + lifecycle"]
+            end
+            LS[("D1: Browser storage\\nlocalStorage: users,\\nsessions, catalog, drafts,\\nlisting IDs, claim state")]
+            U <-->|"UI actions"| SHELL
+            SHELL --> AUTH
+            SHELL --> UP
+            SHELL --> PROF
+            SHELL --> CLAIM
+            AUTH --> LS
+            UP --> LS
+            PROF --> LS
+            CLAIM --> LS
+            AUTH -.->|"OTP send (prod)"| OTP`,
+        },
+        {
+          id: "1-1",
+          section: "§1 Authentication",
+          ref: "1.1 Registration — /register",
+          mermaid: `flowchart LR
+            U(["User"])
+            P["P1.1 Register & validate\\nemail format, uniqueness,\\npassword match, required fields"]
+            DS[("D1: User + session\\nlocalStorage")]
+            U -->|"full name, email, phone,\\naddress, pwd, confirm,\\nterms, optional image"| P
+            P -->|"errors"| U
+            P -->|"create user + auto session"| DS
+            DS -->|"redirect to app entry / profile"| U`,
+        },
+        {
+          id: "1-2",
+          section: "§1 Authentication",
+          ref: "1.2 Login — /login",
+          mermaid: `flowchart LR
+            U(["User"])
+            P["P1.2 Authenticate\\nemail + password"]
+            DS[("D1: Users + session")]
+            U -->|"credentials"| P
+            P -->|"unregistered / wrong pwd\\nfeedback"| U
+            P -->|"restore session"| DS
+            DS -->|"redirect intended or default"| U`,
+        },
+        {
+          id: "1-3",
+          section: "§1 Authentication",
+          ref: "1.3 Session & protected routes",
+          mermaid: `flowchart TB
+            U(["User"])
+            LOAD["P1.3a Restore session\\non app load"]
+            GUARD["P1.3b Route guard\\n(e.g. /upload)"]
+            NAV["P1.3c Header / nav\\nauth-aware UI"]
+            DS[("D1: Session in\\nlocalStorage")]
+            BROWSER["Browser"]
+            LOAD --> DS
+            DS --> LOAD
+            LOAD --> NAV
+            U --> GUARD
+            GUARD -->|"read session"| DS
+            GUARD -->|"deny / redirect"| U
+            GUARD -->|"allow"| BROWSER
+            NAV --> U`,
+        },
+        {
+          id: "1-4",
+          section: "§1 Authentication",
+          ref: "1.4 Forgot password + OTP",
+          mermaid: `flowchart TB
+            U(["User"])
+            REQ["P1.4a Request OTP\\nregistered email"]
+            GEN["P1.4b Generate OTP\\nexpiry, retry limits"]
+            OTPX["Email/SMS\\n(external)"]
+            VER["P1.4c Verify OTP"]
+            DS[("D1: OTP state / users\\nplus cooldown, attempts")]
+            U -->|"email"| REQ
+            REQ -->|"not registered"| U
+            REQ --> GEN
+            GEN --> DS
+            GEN -.->|"deliver OTP"| OTPX
+            U -->|"OTP code"| VER
+            VER --> DS
+            VER -->|"invalid / expired /\\nretry exceeded"| U
+            VER -->|"ok: reset screen"| U`,
+        },
+        {
+          id: "1-5",
+          section: "§1 Authentication",
+          ref: "1.5 Reset password (post-OTP)",
+          mermaid: `flowchart LR
+            U(["User"])
+            P["P1.5 Update password\\nstrength, confirm match,\\nnot same as old (recommended)"]
+            DS[("D1: User credentials")]
+            U -->|"new pwd + confirm"| P
+            P -->|"validation errors"| U
+            P -->|"persist"| DS
+            DS -->|"success: login or auto-login"| U`,
+        },
+        {
+          id: "1-6",
+          section: "§1 Authentication",
+          ref: "1.6 Logout",
+          mermaid: `flowchart LR
+            U(["User"])
+            P["P1.6 Clear session"]
+            DS[("D1: Session storage")]
+            U -->|"logout control"| P
+            P -->|"remove session"| DS
+            P -->|"redirect home/login"| U`,
+        },
+        {
+          id: "2-1",
+          section: "§2 Upload",
+          ref: "2.1 Access & mode — /upload?mode=",
+          mermaid: `flowchart TB
+            U(["User"])
+            G["P2.1a Guard\\nlogin required"]
+            M["P2.1b Mode selection\\nGive / Exchange"]
+            DS[("D1: Session")]
+            U -->|"open /upload"| G
+            G --> DS
+            DS -->|"unauthenticated\\n→ redirect"| U
+            G --> M
+            U -->|"URL query mode give or exchange"| M`,
+        },
+        {
+          id: "2-2",
+          section: "§2 Upload",
+          ref: "2.2 Product upload steps",
+          mermaid: `flowchart TB
+            U(["User"])
+            S["P2.2 Capture listing\\nphoto, title, category,\\nlocation, story"]
+            X["P2.2b Exchange fields\\nref price, desired items"]
+            M{Exchange mode?}
+            U --> S
+            S --> M
+            M -->|yes| X
+            M -->|no| SUB["P2.3 Submit"]
+            X --> SUB`,
+        },
+        {
+          id: "2-3",
+          section: "§2 Upload",
+          ref: "2.3 Validation & submission",
+          mermaid: `flowchart LR
+            U(["User"])
+            V["P2.3 Validate\\nrequired fields,\\nmandatory image"]
+            N["P2.3b Normalize\\nto catalog shape"]
+            C[("D2: Merged catalog\\n+ listing IDs on user")]
+            U -->|"submit"| V
+            V -->|"block + feedback"| U
+            V --> N
+            N --> C
+            C -->|"toast + redirect\\nto product detail"| U`,
+        },
+        {
+          id: "2-4",
+          section: "§2 Upload",
+          ref: "2.4 Draft & persistence",
+          mermaid: `flowchart TB
+            U(["User"])
+            DRAFT["P2.4 Maintain draft\\nwhile on upload flow"]
+            DS[("D1: Draft + listings\\nlocalStorage")]
+            U <-->|"edit flow"| DRAFT
+            DRAFT --> DS
+            POST["Successful post"]
+            DRAFT --> POST
+            POST -->|"reset draft"| DS`,
+        },
+        {
+          id: "3-1",
+          section: "§3 Profile",
+          ref: "3.1 Access & identity display",
+          mermaid: `flowchart LR
+            U(["User"])
+            P["P3.1 Load profile\\nfrom session + stored user"]
+            DS[("D1: User record\\navatar, name, contact")]
+            U -->|"nav to profile"| P
+            P --> DS
+            DS -->|"render name, avatar,\\nlocation/contact"| U`,
+        },
+        {
+          id: "3-2",
+          section: "§3 Profile",
+          ref: "3.2 Profile actions (deep-link)",
+          mermaid: `flowchart LR
+            U(["User"])
+            A["P3.2 Actions:\\nGive, Exchange, Logout"]
+            UP["/upload?mode=give or exchange"]
+            U --> A
+            A -->|"Give / Exchange"| UP
+            A -->|"Logout"| LO["§1.6 flow"]`,
+        },
+        {
+          id: "3-3",
+          section: "§3 Profile",
+          ref: "3.3 Listing management panel",
+          mermaid: `flowchart TB
+            U(["User"])
+            P["P3.3 Resolve listings\\nlistingProductIds + catalog"]
+            IDS[("D1: User.listingProductIds")]
+            CAT[("D2: Product catalog")]
+            U -->|"open profile"| P
+            P --> IDS
+            P --> CAT
+            CAT -->|"joined rows"| U`,
+        },
+        {
+          id: "3-4",
+          section: "§3 Profile",
+          ref: "3.4 UX — responsive, placeholders, feedback",
+          mermaid: `flowchart LR
+            U(["User"])
+            UI["P3.4 Profile UI\\nresponsive layout"]
+            T["Shared toasts / loaders\\n(app-wide patterns)"]
+            U <--> UI
+            UI --> T`,
+        },
+        {
+          id: "4-1",
+          section: "§4 Claim / Exchange",
+          ref: "4.1 Give — claim process",
+          mermaid: `flowchart TB
+            C(["Claimer"])
+            O(["Owner"])
+            P1["P4.1a Capture claim\\nintent + claimant id"]
+            P2["P4.1b Owner review\\naccept / reject"]
+            L[("D3: Listing +\\nclaim state")]
+            N["Notifications\\n(status updates)"]
+            C -->|"claim action"| P1
+            P1 --> L
+            P1 -->|"notify owner"| O
+            O --> P2
+            P2 --> L
+            L -->|"accepted: completed"| N
+            N --> C
+            N --> O`,
+        },
+        {
+          id: "4-2",
+          section: "§4 Claim / Exchange",
+          ref: "4.2 Exchange — proposal / take",
+          mermaid: `flowchart TB
+            I(["Interested user"])
+            O(["Owner"])
+            P1["P4.2 Submit proposal\\n(offered item / message)"]
+            P2["P4.2b Review\\naccept / reject / counter"]
+            L[("D3: Exchange proposals\\n+ listing state")]
+            I --> P1
+            P1 --> L
+            P2 --> L
+            O --> P2
+            L -->|"mutual accept:\\nagreed / closed"| I`,
+        },
+        {
+          id: "4-3",
+          section: "§4 Claim / Exchange",
+          ref: "4.3 Listing lifecycle states",
+          mermaid: `flowchart LR
+            L[("D3: Listing lifecycle")]
+            S1["available"]
+            S2["pending"]
+            S3["accepted"]
+            S4["completed"]
+            S5["rejected / cancelled"]
+            L --> S1
+            S1 --> S2
+            S2 --> S3
+            S3 --> S4
+            S2 --> S5`,
+        },
+        {
+          id: "4-4",
+          section: "§4 Claim / Exchange",
+          ref: "4.4 Notifications & audit trail",
+          mermaid: `flowchart TB
+            stateChange["Claim / exchange\\nstate changes"]
+            notifyUsers["P4.4a User notifications"]
+            historyStore["D4 History store per listing and user with timestamp and actor"]
+            audience["Users"]
+            stateChange --> historyStore
+            stateChange --> notifyUsers
+            notifyUsers --> audience`,
+        },
+        {
+          id: "4-5",
+          section: "§4 Claim / Exchange",
+          ref: "4.5 Safety & policy",
+          mermaid: `flowchart TB
+            U(["Authenticated user"])
+            POL["P4.5 Policy engine\\nsingle acceptance,\\nowner-only approve,\\nno dup winners"]
+            L[("D3: Listing + claims")]
+            R["Abuse / report\\n(recommended prod)"]
+            U --> POL
+            POL --> L
+            U --> R`,
+        },
+      ];
+
+      let renderId = 0;
+      let zoom = 1;
+
+      const navEl = document.getElementById("nav");
+      const titleEl = document.getElementById("panel-title");
+      const refEl = document.getElementById("panel-ref");
+      const host = document.getElementById("diagram-host");
+      const zoomWrap = document.getElementById("zoom-wrap");
+
+      const groups = {};
+      for (const d of diagrams) {
+        if (!groups[d.section]) groups[d.section] = [];
+        groups[d.section].push(d);
+      }
+
+      function buildNav() {
+        const order = [
+          "Overview",
+          "§1 Authentication",
+          "§2 Upload",
+          "§3 Profile",
+          "§4 Claim / Exchange",
+        ];
+        for (const section of order) {
+          const items = groups[section];
+          if (!items) continue;
+          const wrap = document.createElement("div");
+          wrap.className = "section";
+          const t = document.createElement("div");
+          t.className = "section-title";
+          t.textContent = section;
+          wrap.appendChild(t);
+          for (const item of items) {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "nav-item";
+            b.dataset.id = item.id;
+            b.innerHTML =
+              item.id === "overview"
+                ? `<strong>Context (Level 0)</strong><small>All feature areas</small>`
+                : (() => {
+                    const parts = item.ref.split(/\s—\s/);
+                    const sub = parts.length > 1 ? parts.slice(1).join(" — ") : item.ref;
+                    return `<strong>${parts[0]}</strong><small>${sub}</small>`;
+                  })();
+            b.addEventListener("click", () => selectDiagram(item.id));
+            wrap.appendChild(b);
+          }
+          navEl.appendChild(wrap);
+        }
+      }
+
+      function setActiveNav(id) {
+        navEl.querySelectorAll("button.nav-item").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.id === id);
+        });
+      }
+
+      async function selectDiagram(id) {
+        const item = diagrams.find((x) => x.id === id);
+        if (!item) return;
+        setActiveNav(id);
+        titleEl.textContent = item.section;
+        refEl.textContent = item.ref;
+        const unique = `mmd-${++renderId}`;
+        try {
+          const { svg } = await mermaid.render(unique, item.mermaid);
+          zoomWrap.innerHTML = svg;
+          applyZoom();
+        } catch (e) {
+          zoomWrap.innerHTML =
+            '<p style="color:#b00;padding:1rem;font-family:monospace;">Diagram error: ' +
+            String(e.message || e) +
+            "</p>";
+        }
+      }
+
+      function applyZoom() {
+        zoomWrap.style.transform = `scale(${zoom})`;
+      }
+
+      document.getElementById("zoom-in").addEventListener("click", () => {
+        zoom = Math.min(2.25, zoom + 0.15);
+        applyZoom();
+      });
+      document.getElementById("zoom-out").addEventListener("click", () => {
+        zoom = Math.max(0.5, zoom - 0.15);
+        applyZoom();
+      });
+      document.getElementById("zoom-reset").addEventListener("click", () => {
+        zoom = 1;
+        applyZoom();
+      });
+
+      buildNav();
+      selectDiagram("overview");
+    </script>
+  </body>
+</html>

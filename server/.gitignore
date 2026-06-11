@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+
+# User-uploaded files (profile + product images) are runtime data, not source.
+upload/

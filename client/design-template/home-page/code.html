@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoLoop Collective | Build a Sharing Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#d4e3ff",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#a5c8ff",
+              "error": "#ba1a1a",
+              "primary": "#0d631b",
+              "inverse-primary": "#88d982",
+              "surface-container-high": "#eae7e7",
+              "tertiary": "#923357",
+              "primary-fixed-dim": "#88d982",
+              "tertiary-fixed": "#ffd9e2",
+              "on-tertiary-fixed": "#3f001c",
+              "tertiary-fixed-dim": "#ffb1c7",
+              "on-primary-container": "#cbffc2",
+              "tertiary-container": "#b14b6f",
+              "secondary-container": "#54a0fe",
+              "surface-bright": "#fcf9f8",
+              "surface-dim": "#dcd9d9",
+              "on-primary-fixed-variant": "#005312",
+              "error-container": "#ffdad6",
+              "secondary": "#005faf",
+              "outline": "#707a6c",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container": "#f0eded",
+              "surface-variant": "#e5e2e1",
+              "primary-fixed": "#a3f69c",
+              "on-secondary-container": "#003567",
+              "on-secondary-fixed-variant": "#004786",
+              "on-surface": "#1b1c1c",
+              "on-error-container": "#93000a",
+              "surface-tint": "#1b6d24",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#002204",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#001c3a",
+              "on-background": "#1b1c1c",
+              "inverse-surface": "#303030",
+              "surface": "#fcf9f8",
+              "on-tertiary-container": "#ffedf0",
+              "surface-container-highest": "#e5e2e1",
+              "surface-container-low": "#f6f3f2",
+              "background": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#7f2448",
+              "primary-container": "#2e7d32",
+              "on-surface-variant": "#40493d",
+              "on-error": "#ffffff",
+              "outline-variant": "#bfcaba"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-emerald-800 dark:text-emerald-400 tracking-tighter">
+                The Regenerative Exchange
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1 text-sm font-medium Inter" href="#">Give</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 text-sm font-medium Inter" href="#">Exchange</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 text-sm font-medium Inter" href="#">Impact</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-emerald-700 dark:text-emerald-500" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-emerald-700 dark:text-emerald-500" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: Intentional Asymmetry -->
+<section class="relative px-6 py-20 md:py-32 max-w-screen-2xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10 lg:ml-8">
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tight leading-[0.9] text-on-surface mb-8">
+                        Give, Take, or <br/>
+<span class="text-primary italic">Exchange</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+                        Join EcoLoop Collective to build a circular future. Share what you have, find what you need, and grow your community impact.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-full shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                            Give Now
+                        </button>
+<button class="px-8 py-4 border-2 border-outline-variant text-on-surface font-bold rounded-full hover:bg-surface-container-low active:scale-95 transition-all">
+                            Browse Products
+                        </button>
+<button class="px-8 py-4 bg-secondary-container text-on-secondary-container font-bold rounded-full active:scale-95 transition-all">
+                            Start Exchange
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden rotate-2 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Sustainably packaged lifestyle products on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqvhNTuFJLnymiQl4LHPJMZ0If1l3BXnTd0RWGvbRdn6nhKAQPlQO_91qZEreM6Wfs2cOm79_lrWR6B9JXEE8JblGj0Q3MoUH40oYmk9vuFAR6M7JLSY4XZHf4NhhYQrKwS_wIQl734tpGWH8CwHzh35K4WV9pXKzFiC7glfdqjgnJ--1bC7l7i8m46qZ_4yYoiSjce5oAf2RaxZxMfDxXjXWACC9fqtcuM7GSp-6tdpPw8r7U_x6eHz-tGOlUDdmk4hS8xaZg8eAH"/>
+</div>
+<!-- Floating Stat Badge -->
+<div class="absolute -bottom-6 -left-12 bg-surface-container-lowest p-6 rounded-2xl shadow-xl max-w-xs -rotate-3 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="eco">eco</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">1.2k Tons Saved</p>
+<p class="text-xs text-on-surface-variant">Waste diverted this month</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Highlight Bento -->
+<section class="px-6 py-20 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-xs">Our Ecosystem</span>
+<h2 class="text-4xl font-bold mt-2">How we grow together</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Give Card -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] transition-all hover:bg-primary-container hover:text-on-primary-container">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed mb-8 flex items-center justify-center group-hover:bg-on-primary-container group-hover:text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="redeem">redeem</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Give</h3>
+<p class="opacity-80 leading-relaxed mb-6">List items you no longer need for free. Help a neighbor and keep useful products out of landfills.</p>
+<span class="font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Post a gift <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+<!-- Take Card -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] transition-all hover:bg-secondary-container hover:text-on-secondary-container">
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed mb-8 flex items-center justify-center group-hover:bg-on-secondary-container group-hover:text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Take</h3>
+<p class="opacity-80 leading-relaxed mb-6">Find exactly what you're looking for. From furniture to tech, browse local items available for pick up.</p>
+<span class="font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Explore items <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+<!-- Exchange Card -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] transition-all hover:bg-tertiary-container hover:text-on-tertiary-container">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed mb-8 flex items-center justify-center group-hover:bg-on-tertiary-container group-hover:text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="sync_alt">sync_alt</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Exchange</h3>
+<p class="opacity-80 leading-relaxed mb-6">Propose a fair trade. Swap goods or skills with community members in a direct value exchange.</p>
+<span class="font-bold flex items-center gap-2 group-hover:gap-4 transition-all">Start a swap <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products: Modern Card Grid -->
+<section class="px-6 py-24 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-4xl font-bold mb-2">Recent Discoveries</h2>
+<p class="text-on-surface-variant">Available right now in your community</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                    View All Products <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden hover:bg-surface-container-high transition-colors">
+<div class="relative aspect-square overflow-hidden m-2 rounded-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist wooden desk lamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdLFIiWqZ6y1AvOVbNKfOgO_T1jGxsu2EBKUZIyVxqLgZMjiJPVaExyTQudMyftKgFph4OKNeurRm4Agz1kwM4BerYOWYfwN3ZKPGNlaQkctoDxaAJPSc-fdL16gxnkU1Jvk6cawbWtYtee2Cw4Jch1MeCFPu91Hg4nY6X_HF9t6-EKkezxWFBzh9OAvB0wRCRKdsVOXLMRbSKaAm9CDUgVf8fj9yolkq-Z1imijm3LDnKD25tmB7sMjBnHGXfEkN8v8O5Ih4y_ivS"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Free</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-1">Oak Desk Lamp</h4>
+<p class="text-sm text-on-surface-variant mb-4">Downtown • 2km away</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200"></div>
+<span class="text-xs font-medium">Sarah J.</span>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden hover:bg-surface-container-high transition-colors">
+<div class="relative aspect-square overflow-hidden m-2 rounded-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Set of ceramic kitchen bowls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Z_jve4bXYA6RL2QXnbPixDEFIxFjyi55oCLg9_BwZ1bmH8BFxcr8N5liHpeU2Rnrkhb4zK-ylaSf2li-ghcgg9CEiD63pEEmVAX2veiIFN2OPW4XN2ithVRzkyMxurxc5xfE_QqtA9dEDOtaWySDFg44clWPA3JEF89WJtT4czvYtPXUXSLCsHrCEIpAKeFRH6h8KQd88AgLnXoILfDgwZiI4QvZv7CY4PFnWk4H49YWLKTGsYSEJ4xZMX-y9eh_E33n9-CIheN_"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Exchange Available</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-1">Ceramic Bowl Set</h4>
+<p class="text-sm text-on-surface-variant mb-4">East Side • 5km away</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200"></div>
+<span class="text-xs font-medium">Marcus K.</span>
+</div>
+<button class="p-2 rounded-full hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden hover:bg-surface-container-high transition-colors">
+<div class="relative aspect-square overflow-hidden m-2 rounded-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern white watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRKQARD8MG1QUkRfr79T5K4swiRw_aqTgAzgwh7hEYhQDaK7tFIWwkJjqIfSCDQGzgcVuOhLsEqf23cy2gkFCEI90Vr725LR8_EObWIFX1ue4-4thOL0RqazFv01-_kOHxUq5fSFYEyEYE7DgrG0SCjZ0K7lc5_MUXO8OhmJpZWvIxC4AEoJnTrteoxTX9LjKvgZS4BGK4mB8cFHOMjYIk4apIXvV_fSPd0GuiUGyEYICAOC4V_epcMmF7HEWufWhWpd7YDHHoPMi"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Free</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-1">Analog Watch</h4>
+<p class="text-sm text-on-surface-variant mb-4">West Port • 1.2km away</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200"></div>
+<span class="text-xs font-medium">Elena R.</span>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden hover:bg-surface-container-high transition-colors">
+<div class="relative aspect-square overflow-hidden m-2 rounded-2xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern armchair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0jI-29owriFgPBdZyrEDhlN8SknSpvC4zRNMMtSibWolAMH8JolHBKdLwiyfD8iAy2qjJtxZ5YKDdNCPOd0k5MTk9RbxvtOXPApUZaRIyqbr08_ObbaExsCut-xRR_XPZfGqBCoygEL1FhokCD9KeIMgxkNlkvbeISj8OprdD0x_xObFZ1hLt80gbrNxGhNPBCgC_jBATRE1KPP4OkFLWlLW1TT41LK-fJzgTi_ghowrltxXAP0zzO7ApYSNHj7XHvWQj0dpM4blG"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Exchange Available</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-1">Eames Style Chair</h4>
+<p class="text-sm text-on-surface-variant mb-4">North Hills • 8km away</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200"></div>
+<span class="text-xs font-medium">David W.</span>
+</div>
+<button class="p-2 rounded-full hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works: Visual Flow -->
+<section class="px-6 py-24 bg-primary-container text-on-primary-container rounded-t-[4rem]">
+<div class="max-w-screen-xl mx-auto text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Simple Steps to a Circular Life</h2>
+<p class="text-lg opacity-90 max-w-2xl mx-auto">Becoming part of the regenerative economy is easier than you think. Start your first loop today.</p>
+</div>
+<div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+<!-- Step 1 -->
+<div class="relative flex flex-col items-center">
+<div class="w-24 h-24 rounded-full bg-on-primary-container text-primary flex items-center justify-center text-3xl font-black mb-8 shadow-xl">1</div>
+<h3 class="text-2xl font-bold mb-4">Snap &amp; List</h3>
+<p class="text-center opacity-80">Take a photo of an item you're ready to part with and set your terms—Gift or Exchange.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col items-center">
+<div class="w-24 h-24 rounded-full bg-on-primary-container text-primary flex items-center justify-center text-3xl font-black mb-8 shadow-xl">2</div>
+<h3 class="text-2xl font-bold mb-4">Connect Locally</h3>
+<p class="text-center opacity-80">Chat with verified community members nearby to arrange a safe and easy hand-off.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col items-center">
+<div class="w-24 h-24 rounded-full bg-on-primary-container text-primary flex items-center justify-center text-3xl font-black mb-8 shadow-xl">3</div>
+<h3 class="text-2xl font-bold mb-4">Close the Loop</h3>
+<p class="text-center opacity-80">Complete the transaction and track your carbon savings. Every item shared is a win for the planet.</p>
+</div>
+</div>
+</section>
+<!-- Impact/Testimonial Section -->
+<section class="px-6 py-24 max-w-screen-2xl mx-auto">
+<div class="bg-surface-container-lowest rounded-[3rem] p-8 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[30rem]" data-icon="format_quote">format_quote</span>
+</div>
+<div class="max-w-3xl relative z-10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h2 class="text-3xl md:text-5xl font-bold leading-tight mb-8">
+                        "EcoLoop has completely changed how our neighborhood interacts. We don't just share things; we build real relationships while reducing our footprint."
+                    </h2>
+<div class="flex items-center gap-4">
+<img class="w-16 h-16 rounded-full object-cover" data-alt="Portrait of a smiling community member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh-zed4AmA9ErXk9LDvxvIJ72PdxB-cxV0uPKSqD_tPF0PBYurUfZIEur-jIsvTDRCMK6jKzzRKUWUinCrG-TNYLtbksjFkxk1XW6Zl8yteIWRDq1qM8r0Smy4ulxC-zdTIsRnIS1o_HJDs0gLwgAC6FyhqVAXhsD2H9u0_ta_3GlGmzITDQ3DbGnrpr_AclDeijXwFvaFrQoGJ4vyGjqytfUSNmxwVdC29PAzFb5uvHrTuTqsVpnGFgYa0BUQZhQ4GpodSsaxpf3R"/>
+<div>
+<p class="font-bold text-lg">Julianne Rivera</p>
+<p class="text-on-surface-variant">Community Member since 2022</p>
+</div>
+</div>
+</div>
+<!-- Impact Stats Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 border-t border-outline-variant/30 pt-12">
+<div>
+<p class="text-4xl font-extrabold text-primary mb-1">15k+</p>
+<p class="text-sm font-medium opacity-60">Active Users</p>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-secondary mb-1">42k</p>
+<p class="text-sm font-medium opacity-60">Items Shared</p>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-tertiary mb-1">89%</p>
+<p class="text-sm font-medium opacity-60">Waste Reduction</p>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-primary mb-1">$2.4M</p>
+<p class="text-sm font-medium opacity-60">Community Savings</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-zinc-100 dark:bg-zinc-900">
+<div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-zinc-200/50 dark:border-zinc-800/50">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<div class="text-lg font-bold text-zinc-900 dark:text-zinc-100">The Regenerative Exchange</div>
+<p class="text-sm Inter leading-relaxed text-zinc-500 max-w-xs">© 2024 The Regenerative Exchange. For a circular future.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-zinc-500 hover:text-emerald-600 transition-colors text-sm Inter" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-emerald-600 transition-colors text-sm Inter" href="#">Terms of Service</a>
+<a class="text-zinc-500 hover:text-emerald-600 transition-colors text-sm Inter" href="#">Community Guidelines</a>
+<a class="text-zinc-500 hover:text-emerald-600 transition-colors text-sm Inter" href="#">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-emerald-700" data-icon="language">language</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-emerald-700" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>

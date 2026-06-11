@@ -1,0 +1,2306 @@
+{
+  "Chittagong": {
+    "Bandarban": {
+      "Bandarban (general)": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      }
+    },
+    "Brahmanbaria": {
+      "Brahmanbaria (general)": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      }
+    },
+    "Chandpur": {
+      "Chandpur Thana": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Hajiganj": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Shaharasti": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Kachua": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Faridganj": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Haimchar": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      },
+      "Brahmanbaria Sadar Thana": {
+        "lat": 22.3529,
+        "lng": 91.7788
+      },
+      "Sarail Thana": {
+        "lat": 22.3549,
+        "lng": 91.781
+      },
+      "Ashuganj": {
+        "lat": 22.3569,
+        "lng": 91.7832
+      },
+      "Nasirnagar": {
+        "lat": 22.3589,
+        "lng": 91.7854
+      },
+      "Nabinagar": {
+        "lat": 22.3609,
+        "lng": 91.7876
+      },
+      "Bancharampur": {
+        "lat": 22.3629,
+        "lng": 91.7898
+      },
+      "Kasba": {
+        "lat": 22.3649,
+        "lng": 91.792
+      },
+      "Akhaura": {
+        "lat": 22.3669,
+        "lng": 91.7942
+      }
+    },
+    "Chittagong": {
+      "Kotwali": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Pahartali": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Pachlaish": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Chandgaon": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Khulsi": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Bakulia": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      },
+      "Bayezid Bostami": {
+        "lat": 22.3529,
+        "lng": 91.7788
+      },
+      "Double Mooring": {
+        "lat": 22.3549,
+        "lng": 91.781
+      },
+      "Halishahar": {
+        "lat": 22.3569,
+        "lng": 91.7832
+      },
+      "Patenga": {
+        "lat": 22.3589,
+        "lng": 91.7854
+      },
+      "Karnafuli": {
+        "lat": 22.3609,
+        "lng": 91.7876
+      },
+      "Immigration": {
+        "lat": 22.3629,
+        "lng": 91.7898
+      },
+      "Raozan": {
+        "lat": 22.3649,
+        "lng": 91.792
+      },
+      "Hathazari": {
+        "lat": 22.3669,
+        "lng": 91.7942
+      },
+      "Fatikchhari": {
+        "lat": 22.3689,
+        "lng": 91.7964
+      },
+      "Rangunia": {
+        "lat": 22.3709,
+        "lng": 91.7986
+      },
+      "Patia": {
+        "lat": 22.3729,
+        "lng": 91.8008
+      },
+      "Mirsarai": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Sitakundu": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Anwara": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Boalkhali": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Bashkhali": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Satkania": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      },
+      "Lohagarh": {
+        "lat": 22.3529,
+        "lng": 91.7788
+      },
+      "Chandnaish": {
+        "lat": 22.3549,
+        "lng": 91.781
+      }
+    },
+    "Comilla": {
+      "Kotwali Comilla": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Chauddagram": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Debiddar": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Homna": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Laksam": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Daudkandi": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      },
+      "Burichang": {
+        "lat": 22.3529,
+        "lng": 91.7788
+      },
+      "Chandina": {
+        "lat": 22.3549,
+        "lng": 91.781
+      },
+      "Barura": {
+        "lat": 22.3569,
+        "lng": 91.7832
+      },
+      "Langalkot": {
+        "lat": 22.3589,
+        "lng": 91.7854
+      },
+      "Muradnagar": {
+        "lat": 22.3609,
+        "lng": 91.7876
+      },
+      "Brahmanpara": {
+        "lat": 22.3629,
+        "lng": 91.7898
+      },
+      "Meghna": {
+        "lat": 22.3649,
+        "lng": 91.792
+      },
+      "Manoharganj": {
+        "lat": 22.3669,
+        "lng": 91.7942
+      },
+      "Titas": {
+        "lat": 22.3689,
+        "lng": 91.7964
+      },
+      "Sadar South Comilla": {
+        "lat": 22.3709,
+        "lng": 91.7986
+      }
+    },
+    "Cox's Bazar": {
+      "Sandeep": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Cox's Bazar Thana": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Ramu": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Ukhia": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Teknaf": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Chakoria": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      },
+      "Kutubdia": {
+        "lat": 22.3529,
+        "lng": 91.7788
+      },
+      "Maheshkhali": {
+        "lat": 22.3549,
+        "lng": 91.781
+      },
+      "Pekua": {
+        "lat": 22.3569,
+        "lng": 91.7832
+      }
+    },
+    "Feni": {
+      "Feni Thana": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Sonagazi": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Fulgazi": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Parashuram": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Chagalnaiya": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Daganbhuiyan": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      }
+    },
+    "Khagrachhari": {
+      "Khagrachhari (general)": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      }
+    },
+    "Lakshmipur": {
+      "Laxmipur Thana": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Raipura": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Ramganj": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Ramgati": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      }
+    },
+    "Noakhali": {
+      "Sudharam": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      },
+      "Begumganj": {
+        "lat": 22.3429,
+        "lng": 91.7678
+      },
+      "Senbagh": {
+        "lat": 22.3449,
+        "lng": 91.77
+      },
+      "Sonaimuri": {
+        "lat": 22.3469,
+        "lng": 91.7722
+      },
+      "Companiganj": {
+        "lat": 22.3489,
+        "lng": 91.7744
+      },
+      "Chatkhil": {
+        "lat": 22.3509,
+        "lng": 91.7766
+      },
+      "Hatia": {
+        "lat": 22.3529,
+        "lng": 91.7788
+      },
+      "Charjabbar": {
+        "lat": 22.3549,
+        "lng": 91.781
+      }
+    },
+    "Rangamati": {
+      "Rangamati (general)": {
+        "lat": 22.3409,
+        "lng": 91.7656
+      }
+    }
+  },
+  "Dhaka": {
+    "Dhaka": {
+      "Ramna": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Dhanmondi": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Shahbag": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "New Market": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Lalbagh": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Kotwali": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Hazaribagh": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      },
+      "Kamrangirchar": {
+        "lat": 23.8083,
+        "lng": 90.4103
+      },
+      "Sutrapur": {
+        "lat": 23.8103,
+        "lng": 90.4125
+      },
+      "Demra": {
+        "lat": 23.8123,
+        "lng": 90.4147
+      },
+      "Shampur": {
+        "lat": 23.8143,
+        "lng": 90.4169
+      },
+      "Jatrabari": {
+        "lat": 23.8163,
+        "lng": 90.4191
+      },
+      "Motijheel": {
+        "lat": 23.8183,
+        "lng": 90.4213
+      },
+      "Sabujbagh": {
+        "lat": 23.8203,
+        "lng": 90.4235
+      },
+      "Khilgaon": {
+        "lat": 23.8223,
+        "lng": 90.4257
+      },
+      "Platoon": {
+        "lat": 23.8243,
+        "lng": 90.4279
+      },
+      "Uttara": {
+        "lat": 23.8263,
+        "lng": 90.4301
+      },
+      "Airport": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Turag": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Uttarkhan": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Dakshin Khan": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Gulshan": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Cantonment": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Badda": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      },
+      "Khilkhet": {
+        "lat": 23.8083,
+        "lng": 90.4103
+      },
+      "Tejgaon": {
+        "lat": 23.8103,
+        "lng": 90.4125
+      },
+      "Tejgaon Industrial": {
+        "lat": 23.8123,
+        "lng": 90.4147
+      },
+      "Mohammadpur": {
+        "lat": 23.8143,
+        "lng": 90.4169
+      },
+      "Adabar": {
+        "lat": 23.8163,
+        "lng": 90.4191
+      },
+      "Mirpur": {
+        "lat": 23.8183,
+        "lng": 90.4213
+      },
+      "Pallabi": {
+        "lat": 23.8203,
+        "lng": 90.4235
+      },
+      "Kafrul": {
+        "lat": 23.8223,
+        "lng": 90.4257
+      },
+      "Shah Ali": {
+        "lat": 23.8243,
+        "lng": 90.4279
+      },
+      "Savar": {
+        "lat": 23.8263,
+        "lng": 90.4301
+      },
+      "Dhamrai": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Keraniganj": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Nawabganj": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Dohar": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Ashulia": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "South Keraniganj": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Gandaria": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      }
+    },
+    "Gazipur": {
+      "Joydevpur": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Tongi": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Kaliakair": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Sreepur": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Kapasia": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Kaliganj": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      }
+    },
+    "Kishoreganj": {
+      "Kishoreganj Thana": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Karimganj": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Tarail": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Hossainpur": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Katiadi": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Bajitpur": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Kuliyarchar": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      },
+      "Bhairab": {
+        "lat": 23.8083,
+        "lng": 90.4103
+      },
+      "Itna": {
+        "lat": 23.8103,
+        "lng": 90.4125
+      },
+      "Mithamin": {
+        "lat": 23.8123,
+        "lng": 90.4147
+      },
+      "Nikli": {
+        "lat": 23.8143,
+        "lng": 90.4169
+      },
+      "Pakundia": {
+        "lat": 23.8163,
+        "lng": 90.4191
+      },
+      "Ashtagram": {
+        "lat": 23.8183,
+        "lng": 90.4213
+      }
+    },
+    "Manikganj": {
+      "Manikganj": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Ghior": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Shibalaya": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Daulatpur": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Harirampur": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Saturia": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Singair": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      }
+    },
+    "Munshiganj": {
+      "Munshiganj Thana": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Tongibari": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Louhjong": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Srinagar": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Sirajdikhan": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Gazaria": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      }
+    },
+    "Narayanganj": {
+      "Narayanganj": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Fatullah": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Port Thana": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Siddirganj": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Araihazar": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Sonargaon": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Rupganj": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      }
+    },
+    "Narsingdi": {
+      "Narsingdi Thana": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Raipur": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Shibpur": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Belabo": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Manohardi": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Palash": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      }
+    },
+    "Tangail": {
+      "Tangail Thana": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Mirzapur": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Nagarpur": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Sakhipur": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Basail": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Delduar": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Madhupur": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      },
+      "Ghatail": {
+        "lat": 23.8083,
+        "lng": 90.4103
+      },
+      "Kalihati": {
+        "lat": 23.8103,
+        "lng": 90.4125
+      },
+      "Bhuapur": {
+        "lat": 23.8123,
+        "lng": 90.4147
+      },
+      "Jamuna Bridge East": {
+        "lat": 23.8143,
+        "lng": 90.4169
+      },
+      "Dhanbari": {
+        "lat": 23.8163,
+        "lng": 90.4191
+      },
+      "Gopalpur": {
+        "lat": 23.8183,
+        "lng": 90.4213
+      }
+    },
+    "Faridpur": {
+      "Kotwali Faridpur": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Madhukhali": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Boalmari": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Alfadanga": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Charbhadrasan": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Nagarkanda": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Sadarpur": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      },
+      "Salta": {
+        "lat": 23.8083,
+        "lng": 90.4103
+      },
+      "Bhanga": {
+        "lat": 23.8103,
+        "lng": 90.4125
+      }
+    },
+    "Gopalganj": {
+      "Gopalganj Thana": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Maksudpur": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Kashiani": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Kotalipara": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Tungipara": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      }
+    },
+    "Madaripur": {
+      "Madaripur Thana": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Rajoir": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Kalkini": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Shivchar": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      }
+    },
+    "Rajbari": {
+      "Rajbari": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      },
+      "Baliakandi": {
+        "lat": 23.7963,
+        "lng": 90.3971
+      },
+      "Pangsha": {
+        "lat": 23.7983,
+        "lng": 90.3993
+      },
+      "Goalanda": {
+        "lat": 23.8003,
+        "lng": 90.4015
+      },
+      "Gosairhat": {
+        "lat": 23.8023,
+        "lng": 90.4037
+      },
+      "Vederganj": {
+        "lat": 23.8043,
+        "lng": 90.4059
+      },
+      "Damudda": {
+        "lat": 23.8063,
+        "lng": 90.4081
+      },
+      "Jajira": {
+        "lat": 23.8083,
+        "lng": 90.4103
+      },
+      "Naria": {
+        "lat": 23.8103,
+        "lng": 90.4125
+      },
+      "Palang": {
+        "lat": 23.8123,
+        "lng": 90.4147
+      },
+      "Shakhipur": {
+        "lat": 23.8143,
+        "lng": 90.4169
+      }
+    },
+    "Shariatpur": {
+      "Shariatpur (general)": {
+        "lat": 23.7943,
+        "lng": 90.3949
+      }
+    }
+  },
+  "Khulna": {
+    "Bagerhat": {
+      "Bagerhat Thana": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Fakirhat": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Mollarhat": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Chitalmari": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Kachua": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Moralganj": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Sharankhola": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      },
+      "Mongla": {
+        "lat": 22.8436,
+        "lng": 89.5381
+      },
+      "Rampal": {
+        "lat": 22.8456,
+        "lng": 89.5403
+      }
+    },
+    "Chuadanga": {
+      "Chuadanga Thana": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Alamdanga": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Jivannagar": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Damurhuda": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Meherpur": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Gangni": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Mujibnagar": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      }
+    },
+    "Jashore": {
+      "Kotwali Jessore": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Jhikargachha": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Sharsha": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Chougachha": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Monirampur": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Keshabpur": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Abhaynagar": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      },
+      "Bagharpara": {
+        "lat": 22.8436,
+        "lng": 89.5381
+      },
+      "Benapole Port": {
+        "lat": 22.8456,
+        "lng": 89.5403
+      },
+      "Benapole Check Post": {
+        "lat": 22.8476,
+        "lng": 89.5425
+      }
+    },
+    "Jhenaidah": {
+      "Jhenaidah (general)": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      }
+    },
+    "Khulna": {
+      "Khulna": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Sonadanga": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Khalishpur": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Daulatpur": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Khanjahan Ali": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Fultala": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Dighalia": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      },
+      "Paikgachha": {
+        "lat": 22.8436,
+        "lng": 89.5381
+      },
+      "Batiaghata": {
+        "lat": 22.8456,
+        "lng": 89.5403
+      },
+      "Dumuria": {
+        "lat": 22.8476,
+        "lng": 89.5425
+      },
+      "Terkhada": {
+        "lat": 22.8496,
+        "lng": 89.5447
+      },
+      "Rupsa": {
+        "lat": 22.8516,
+        "lng": 89.5469
+      },
+      "Dakop": {
+        "lat": 22.8536,
+        "lng": 89.5491
+      },
+      "Koira": {
+        "lat": 22.8556,
+        "lng": 89.5513
+      }
+    },
+    "Kushtia": {
+      "Kushtia Thana": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Khoksa": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Kumarkhali": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Bheramara": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Daulatpur": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Mirpur": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Islamic University": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      }
+    },
+    "Magura": {
+      "Magura Thana": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Shalikha": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Sreepur": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Mohammadpur": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Jhenaidah": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Kaliganj": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Shailkupa": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      },
+      "Harinakundu": {
+        "lat": 22.8436,
+        "lng": 89.5381
+      },
+      "Kotchadpur": {
+        "lat": 22.8456,
+        "lng": 89.5403
+      },
+      "Maheshpur": {
+        "lat": 22.8476,
+        "lng": 89.5425
+      }
+    },
+    "Meherpur": {
+      "Meherpur (general)": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      }
+    },
+    "Narail": {
+      "Narail Thana": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Kalia": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "Lohagarh": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Naragati": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      }
+    },
+    "Satkhira": {
+      "Satkhira Thana": {
+        "lat": 22.8296,
+        "lng": 89.5227
+      },
+      "Kalaroa": {
+        "lat": 22.8316,
+        "lng": 89.5249
+      },
+      "lock": {
+        "lat": 22.8336,
+        "lng": 89.5271
+      },
+      "Kaliganj": {
+        "lat": 22.8356,
+        "lng": 89.5293
+      },
+      "Shyamnagar": {
+        "lat": 22.8376,
+        "lng": 89.5315
+      },
+      "Debhata": {
+        "lat": 22.8396,
+        "lng": 89.5337
+      },
+      "Asashuni": {
+        "lat": 22.8416,
+        "lng": 89.5359
+      },
+      "Patkelghata": {
+        "lat": 22.8436,
+        "lng": 89.5381
+      }
+    }
+  },
+  "Mymensingh": {
+    "Jamalpur": {
+      "Jamalpur": {
+        "lat": 24.7311,
+        "lng": 90.4027
+      },
+      "Melandah": {
+        "lat": 24.7331,
+        "lng": 90.4049
+      },
+      "Sarishabari": {
+        "lat": 24.7351,
+        "lng": 90.4071
+      },
+      "Dewanganj": {
+        "lat": 24.7371,
+        "lng": 90.4093
+      },
+      "Islampur": {
+        "lat": 24.7391,
+        "lng": 90.4115
+      },
+      "Madarganj": {
+        "lat": 24.7411,
+        "lng": 90.4137
+      },
+      "Bakshiganj": {
+        "lat": 24.7431,
+        "lng": 90.4159
+      },
+      "Bahadurabad": {
+        "lat": 24.7451,
+        "lng": 90.4181
+      }
+    },
+    "Mymensingh": {
+      "Kotwali Mymensingh": {
+        "lat": 24.7311,
+        "lng": 90.4027
+      },
+      "Muktagachha": {
+        "lat": 24.7331,
+        "lng": 90.4049
+      },
+      "Phulbari": {
+        "lat": 24.7351,
+        "lng": 90.4071
+      },
+      "Trishal": {
+        "lat": 24.7371,
+        "lng": 90.4093
+      },
+      "Gauripur": {
+        "lat": 24.7391,
+        "lng": 90.4115
+      },
+      "Ishwarganj": {
+        "lat": 24.7411,
+        "lng": 90.4137
+      },
+      "Nandail": {
+        "lat": 24.7431,
+        "lng": 90.4159
+      },
+      "Phulpur": {
+        "lat": 24.7451,
+        "lng": 90.4181
+      },
+      "Haluaghat": {
+        "lat": 24.7471,
+        "lng": 90.4203
+      },
+      "Dhobaura": {
+        "lat": 24.7491,
+        "lng": 90.4225
+      },
+      "Gafargaon": {
+        "lat": 24.7511,
+        "lng": 90.4247
+      },
+      "Bhaluka": {
+        "lat": 24.7531,
+        "lng": 90.4269
+      },
+      "Tarakanda": {
+        "lat": 24.7551,
+        "lng": 90.4291
+      }
+    },
+    "Netrokona": {
+      "Netrokona Thana": {
+        "lat": 24.7311,
+        "lng": 90.4027
+      },
+      "Barhatta": {
+        "lat": 24.7331,
+        "lng": 90.4049
+      },
+      "Kalmakanda": {
+        "lat": 24.7351,
+        "lng": 90.4071
+      },
+      "Atpara": {
+        "lat": 24.7371,
+        "lng": 90.4093
+      },
+      "Durgapur": {
+        "lat": 24.7391,
+        "lng": 90.4115
+      },
+      "Purbadhala": {
+        "lat": 24.7411,
+        "lng": 90.4137
+      },
+      "Kendua": {
+        "lat": 24.7431,
+        "lng": 90.4159
+      },
+      "Madan": {
+        "lat": 24.7451,
+        "lng": 90.4181
+      },
+      "Mohanganj": {
+        "lat": 24.7471,
+        "lng": 90.4203
+      },
+      "Khalijuri": {
+        "lat": 24.7491,
+        "lng": 90.4225
+      },
+      "Sherpur": {
+        "lat": 24.7511,
+        "lng": 90.4247
+      }
+    },
+    "Sherpur": {
+      "Nakla": {
+        "lat": 24.7311,
+        "lng": 90.4027
+      },
+      "Nalitabari": {
+        "lat": 24.7331,
+        "lng": 90.4049
+      },
+      "Srivardi": {
+        "lat": 24.7351,
+        "lng": 90.4071
+      },
+      "Jhenaigati": {
+        "lat": 24.7371,
+        "lng": 90.4093
+      }
+    }
+  },
+  "Rajshahi": {
+    "Bogura": {
+      "Bogra Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Shibganj": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Sonatala": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Gabtali": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Sariakandi": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      },
+      "Adamdighi": {
+        "lat": 24.3685,
+        "lng": 88.5976
+      },
+      "Dhupchachia": {
+        "lat": 24.3705,
+        "lng": 88.5998
+      },
+      "Kahalu": {
+        "lat": 24.3725,
+        "lng": 88.602
+      },
+      "Sherpur": {
+        "lat": 24.3745,
+        "lng": 88.6042
+      },
+      "Dhunat": {
+        "lat": 24.3765,
+        "lng": 88.6064
+      },
+      "Nandigram": {
+        "lat": 24.3785,
+        "lng": 88.6086
+      },
+      "Shahjahanpur": {
+        "lat": 24.3805,
+        "lng": 88.6108
+      }
+    },
+    "Joypurhat": {
+      "Joypurhat Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Kalai": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Khetlal": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Akkelpur": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Pachbibi": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      }
+    },
+    "Naogaon": {
+      "Naogaon Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Rayanagar": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Atrai": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Dhamrai": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Budalgachhi": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      },
+      "Mahadevpur": {
+        "lat": 24.3685,
+        "lng": 88.5976
+      },
+      "Patnitala": {
+        "lat": 24.3705,
+        "lng": 88.5998
+      },
+      "Niamatpur": {
+        "lat": 24.3725,
+        "lng": 88.602
+      },
+      "Manda": {
+        "lat": 24.3745,
+        "lng": 88.6042
+      },
+      "Sapahar": {
+        "lat": 24.3765,
+        "lng": 88.6064
+      },
+      "Parsha": {
+        "lat": 24.3785,
+        "lng": 88.6086
+      }
+    },
+    "Natore": {
+      "Natore Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Singra": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Baghatipara": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Gurudaspur": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Lalpur": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      },
+      "Borigram": {
+        "lat": 24.3685,
+        "lng": 88.5976
+      },
+      "Naldanga": {
+        "lat": 24.3705,
+        "lng": 88.5998
+      }
+    },
+    "Chapai Nawabganj": {
+      "Chapai Nawabganj Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Shibganj": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Gomstapur": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Nachol": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Bholahat": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      }
+    },
+    "Pabna": {
+      "Pabna Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Ishwardi": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Atgharia": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Chatmohar": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Bhangora": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      },
+      "Faridpur (Pabna)": {
+        "lat": 24.3685,
+        "lng": 88.5976
+      },
+      "Suryanagar": {
+        "lat": 24.3705,
+        "lng": 88.5998
+      },
+      "Fence": {
+        "lat": 24.3725,
+        "lng": 88.602
+      },
+      "Sathya": {
+        "lat": 24.3745,
+        "lng": 88.6042
+      },
+      "Ataikula": {
+        "lat": 24.3765,
+        "lng": 88.6064
+      }
+    },
+    "Rajshahi": {
+      "Boalia": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Rajapur": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Motihar": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Shah Makdum": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Paba": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      },
+      "Gudagari": {
+        "lat": 24.3685,
+        "lng": 88.5976
+      },
+      "Tanar": {
+        "lat": 24.3705,
+        "lng": 88.5998
+      },
+      "Mohanpur": {
+        "lat": 24.3725,
+        "lng": 88.602
+      },
+      "Puthia": {
+        "lat": 24.3745,
+        "lng": 88.6042
+      },
+      "Bagmara": {
+        "lat": 24.3765,
+        "lng": 88.6064
+      },
+      "Durgapur": {
+        "lat": 24.3785,
+        "lng": 88.6086
+      },
+      "Charghat": {
+        "lat": 24.3805,
+        "lng": 88.6108
+      },
+      "Bagha": {
+        "lat": 24.3825,
+        "lng": 88.613
+      }
+    },
+    "Sirajganj": {
+      "Sirajganj Thana": {
+        "lat": 24.3585,
+        "lng": 88.5866
+      },
+      "Shahjadpur": {
+        "lat": 24.3605,
+        "lng": 88.5888
+      },
+      "Ullapara": {
+        "lat": 24.3625,
+        "lng": 88.591
+      },
+      "Chowhali": {
+        "lat": 24.3645,
+        "lng": 88.5932
+      },
+      "Taras": {
+        "lat": 24.3665,
+        "lng": 88.5954
+      },
+      "Kazipur": {
+        "lat": 24.3685,
+        "lng": 88.5976
+      },
+      "Kamarkhand": {
+        "lat": 24.3705,
+        "lng": 88.5998
+      },
+      "Raiganj": {
+        "lat": 24.3725,
+        "lng": 88.602
+      },
+      "Belkuchi": {
+        "lat": 24.3745,
+        "lng": 88.6042
+      },
+      "Jamuna Bridge West": {
+        "lat": 24.3765,
+        "lng": 88.6064
+      },
+      "Salanga": {
+        "lat": 24.3785,
+        "lng": 88.6086
+      },
+      "Enayetpur": {
+        "lat": 24.3805,
+        "lng": 88.6108
+      }
+    }
+  },
+  "Rangpur": {
+    "Dinajpur": {
+      "Kotwali Dinajpur": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Chiri Port": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Real": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Parbatipur": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Birganj": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      },
+      "Bochaganj": {
+        "lat": 25.7379,
+        "lng": 89.2686
+      },
+      "Kaharol": {
+        "lat": 25.7399,
+        "lng": 89.2708
+      },
+      "Khansama": {
+        "lat": 25.7419,
+        "lng": 89.273
+      },
+      "Phulbari": {
+        "lat": 25.7439,
+        "lng": 89.2752
+      },
+      "Birampur": {
+        "lat": 25.7459,
+        "lng": 89.2774
+      },
+      "Nawabganj (Dinajpur)": {
+        "lat": 25.7479,
+        "lng": 89.2796
+      },
+      "Ghoraghat": {
+        "lat": 25.7499,
+        "lng": 89.2818
+      },
+      "Hakimpur": {
+        "lat": 25.7519,
+        "lng": 89.284
+      }
+    },
+    "Gaibandha": {
+      "Gaibandha": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Sadullapur": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Sundarganj": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Palashbari": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Gobindganj": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      },
+      "Satghata": {
+        "lat": 25.7379,
+        "lng": 89.2686
+      },
+      "Fulchhari": {
+        "lat": 25.7399,
+        "lng": 89.2708
+      }
+    },
+    "Kurigram": {
+      "Kurigram": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Rajarhat": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Phulbari": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Nageshwar": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Burungamari": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      },
+      "Ulipur": {
+        "lat": 25.7379,
+        "lng": 89.2686
+      },
+      "Chilmari": {
+        "lat": 25.7399,
+        "lng": 89.2708
+      },
+      "Roumari": {
+        "lat": 25.7419,
+        "lng": 89.273
+      },
+      "Rajibpur": {
+        "lat": 25.7439,
+        "lng": 89.2752
+      },
+      "Dusmara": {
+        "lat": 25.7459,
+        "lng": 89.2774
+      },
+      "Kochakata": {
+        "lat": 25.7479,
+        "lng": 89.2796
+      }
+    },
+    "Lalmonirhat": {
+      "Aditmari": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Kaliganj": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Hatibanda": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Patgram": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      }
+    },
+    "Nilphamari": {
+      "Nilphamari": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Syedpur": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Kishoreganj (Nilphamari)": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Domar": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Dimla": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      },
+      "Syedpur Police Outpost": {
+        "lat": 25.7379,
+        "lng": 89.2686
+      }
+    },
+    "Panchagarh": {
+      "Panchagarh": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Boda": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Atwari": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Tetulia": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Debiganj": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      }
+    },
+    "Rangpur": {
+      "Kotwali": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Gangachura": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Bhodarganj": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Taraganj": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Mithapukur": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      },
+      "Pirgachha": {
+        "lat": 25.7379,
+        "lng": 89.2686
+      },
+      "Kaunia": {
+        "lat": 25.7399,
+        "lng": 89.2708
+      },
+      "Pirganj": {
+        "lat": 25.7419,
+        "lng": 89.273
+      }
+    },
+    "Thakurgaon": {
+      "Thakurgaon Thana": {
+        "lat": 25.7279,
+        "lng": 89.2576
+      },
+      "Baliadangi": {
+        "lat": 25.7299,
+        "lng": 89.2598
+      },
+      "Rani Sankoul": {
+        "lat": 25.7319,
+        "lng": 89.262
+      },
+      "Pirganj": {
+        "lat": 25.7339,
+        "lng": 89.2642
+      },
+      "Haripur": {
+        "lat": 25.7359,
+        "lng": 89.2664
+      }
+    }
+  },
+  "Sylhet": {
+    "Habiganj": {
+      "Habiganj Thana": {
+        "lat": 24.8789,
+        "lng": 91.8511
+      },
+      "Madhabpur": {
+        "lat": 24.8809,
+        "lng": 91.8533
+      },
+      "Chunarughat": {
+        "lat": 24.8829,
+        "lng": 91.8555
+      },
+      "Bahubal": {
+        "lat": 24.8849,
+        "lng": 91.8577
+      },
+      "Lakhai": {
+        "lat": 24.8869,
+        "lng": 91.8599
+      },
+      "Nabiganj": {
+        "lat": 24.8889,
+        "lng": 91.8621
+      },
+      "Baniachang": {
+        "lat": 24.8909,
+        "lng": 91.8643
+      },
+      "Ajmiriganj": {
+        "lat": 24.8929,
+        "lng": 91.8665
+      },
+      "Shayestaganj": {
+        "lat": 24.8949,
+        "lng": 91.8687
+      }
+    },
+    "Moulvibazar": {
+      "Moulvibazar Thana": {
+        "lat": 24.8789,
+        "lng": 91.8511
+      },
+      "Srimangal": {
+        "lat": 24.8809,
+        "lng": 91.8533
+      },
+      "Kamalganj": {
+        "lat": 24.8829,
+        "lng": 91.8555
+      },
+      "Rajnagar": {
+        "lat": 24.8849,
+        "lng": 91.8577
+      },
+      "Kulaura": {
+        "lat": 24.8869,
+        "lng": 91.8599
+      },
+      "Baralekha": {
+        "lat": 24.8889,
+        "lng": 91.8621
+      },
+      "Jury": {
+        "lat": 24.8909,
+        "lng": 91.8643
+      }
+    },
+    "Sunamganj": {
+      "Sunamganj Thana": {
+        "lat": 24.8789,
+        "lng": 91.8511
+      },
+      "Chhatak": {
+        "lat": 24.8809,
+        "lng": 91.8533
+      },
+      "Jagannathpur": {
+        "lat": 24.8829,
+        "lng": 91.8555
+      },
+      "Tahirpur": {
+        "lat": 24.8849,
+        "lng": 91.8577
+      },
+      "Bishwambarpur": {
+        "lat": 24.8869,
+        "lng": 91.8599
+      },
+      "Doarabazar": {
+        "lat": 24.8889,
+        "lng": 91.8621
+      },
+      "Dirai": {
+        "lat": 24.8909,
+        "lng": 91.8643
+      },
+      "Salna": {
+        "lat": 24.8929,
+        "lng": 91.8665
+      },
+      "Jamalganj": {
+        "lat": 24.8949,
+        "lng": 91.8687
+      },
+      "Dharmapasha": {
+        "lat": 24.8969,
+        "lng": 91.8709
+      },
+      "Madhyanagar": {
+        "lat": 24.8989,
+        "lng": 91.8731
+      }
+    },
+    "Sylhet": {
+      "Kotwali (Sylhet)": {
+        "lat": 24.8789,
+        "lng": 91.8511
+      },
+      "Balaganj": {
+        "lat": 24.8809,
+        "lng": 91.8533
+      },
+      "Jaintapur": {
+        "lat": 24.8829,
+        "lng": 91.8555
+      },
+      "Gowainghat": {
+        "lat": 24.8849,
+        "lng": 91.8577
+      },
+      "Kanaighat": {
+        "lat": 24.8869,
+        "lng": 91.8599
+      },
+      "Companiganj": {
+        "lat": 24.8889,
+        "lng": 91.8621
+      },
+      "Zakiganj": {
+        "lat": 24.8909,
+        "lng": 91.8643
+      },
+      "Beanibazar": {
+        "lat": 24.8929,
+        "lng": 91.8665
+      },
+      "Golapganj": {
+        "lat": 24.8949,
+        "lng": 91.8687
+      },
+      "Bishwanath": {
+        "lat": 24.8969,
+        "lng": 91.8709
+      },
+      "Fenchuganj": {
+        "lat": 24.8989,
+        "lng": 91.8731
+      },
+      "South Surma": {
+        "lat": 24.9009,
+        "lng": 91.8753
+      },
+      "Osmani Nagar": {
+        "lat": 24.9029,
+        "lng": 91.8775
+      }
+    }
+  },
+  "Barisal": {
+    "Barguna": {
+      "Barguna (general)": {
+        "lat": 23.669,
+        "lng": 90.3387
+      }
+    },
+    "Barishal": {
+      "Kotwali Barisal": {
+        "lat": 23.669,
+        "lng": 90.3387
+      },
+      "Hijla": {
+        "lat": 23.671,
+        "lng": 90.3409
+      },
+      "Mehediganj": {
+        "lat": 23.673,
+        "lng": 90.3431
+      },
+      "Muladi": {
+        "lat": 23.675,
+        "lng": 90.3453
+      },
+      "Babuganj": {
+        "lat": 23.677,
+        "lng": 90.3475
+      },
+      "Bakerganj": {
+        "lat": 23.679,
+        "lng": 90.3497
+      },
+      "Banaripara": {
+        "lat": 23.681,
+        "lng": 90.3519
+      },
+      "Agauljhara": {
+        "lat": 23.683,
+        "lng": 90.3541
+      },
+      "Gournadi": {
+        "lat": 23.685,
+        "lng": 90.3563
+      },
+      "Wazirpur": {
+        "lat": 23.687,
+        "lng": 90.3585
+      },
+      "Jhalokati": {
+        "lat": 23.689,
+        "lng": 90.3607
+      },
+      "Nalchithi": {
+        "lat": 23.691,
+        "lng": 90.3629
+      },
+      "Rajapur": {
+        "lat": 23.693,
+        "lng": 90.3651
+      },
+      "Kathalia": {
+        "lat": 23.695,
+        "lng": 90.3673
+      }
+    },
+    "Bhola": {
+      "Bhola Thana": {
+        "lat": 23.669,
+        "lng": 90.3387
+      },
+      "Daulatkhan": {
+        "lat": 23.671,
+        "lng": 90.3409
+      },
+      "Tajumuddin": {
+        "lat": 23.673,
+        "lng": 90.3431
+      },
+      "Borhanuddin": {
+        "lat": 23.675,
+        "lng": 90.3453
+      },
+      "Lalmohan": {
+        "lat": 23.677,
+        "lng": 90.3475
+      },
+      "Char Fashion": {
+        "lat": 23.679,
+        "lng": 90.3497
+      },
+      "Monpura": {
+        "lat": 23.681,
+        "lng": 90.3519
+      }
+    },
+    "Jhalokati": {
+      "Jhalokati (general)": {
+        "lat": 23.669,
+        "lng": 90.3387
+      }
+    },
+    "Patuakhali": {
+      "Patuakhali Thana": {
+        "lat": 23.669,
+        "lng": 90.3387
+      },
+      "Baufal": {
+        "lat": 23.671,
+        "lng": 90.3409
+      },
+      "Galachipa": {
+        "lat": 23.673,
+        "lng": 90.3431
+      },
+      "Dashmina": {
+        "lat": 23.675,
+        "lng": 90.3453
+      },
+      "Dumki": {
+        "lat": 23.677,
+        "lng": 90.3475
+      },
+      "Kalapara": {
+        "lat": 23.679,
+        "lng": 90.3497
+      },
+      "Mirzaganj": {
+        "lat": 23.681,
+        "lng": 90.3519
+      },
+      "Rangabali": {
+        "lat": 23.683,
+        "lng": 90.3541
+      }
+    },
+    "Pirojpur": {
+      "Pirojpur Thana": {
+        "lat": 23.669,
+        "lng": 90.3387
+      },
+      "Bhandaria": {
+        "lat": 23.671,
+        "lng": 90.3409
+      },
+      "Nesarabad": {
+        "lat": 23.673,
+        "lng": 90.3431
+      },
+      "Kaukhali": {
+        "lat": 23.675,
+        "lng": 90.3453
+      },
+      "Nazirpur": {
+        "lat": 23.677,
+        "lng": 90.3475
+      },
+      "Zia Nagar": {
+        "lat": 23.679,
+        "lng": 90.3497
+      },
+      "Mathbaria": {
+        "lat": 23.681,
+        "lng": 90.3519
+      },
+      "Barguna": {
+        "lat": 23.683,
+        "lng": 90.3541
+      },
+      "Amtali": {
+        "lat": 23.685,
+        "lng": 90.3563
+      },
+      "Patharghata": {
+        "lat": 23.687,
+        "lng": 90.3585
+      },
+      "Betagi": {
+        "lat": 23.689,
+        "lng": 90.3607
+      },
+      "Bamna": {
+        "lat": 23.691,
+        "lng": 90.3629
+      },
+      "Taltali": {
+        "lat": 23.693,
+        "lng": 90.3651
+      }
+    }
+  }
+}
