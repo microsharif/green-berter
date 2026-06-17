@@ -15,8 +15,6 @@ export default function AuthHeroPanel() {
       <div className="relative z-20 px-12 lg:px-24 text-on-primary-container">
         <h1 className="font-display text-5xl lg:text-7xl font-extrabold tracking-tighter leading-none mb-8">
           Green Barter
-          <br />
-          Collective
         </h1>
         <p className="font-body text-lg lg:text-xl opacity-90 max-w-md leading-relaxed">
           Join a regenerative community where giving is effortless and circular

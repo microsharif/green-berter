@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import RevealOnScroll from "../ui/RevealOnScroll.jsx";
 
 const CATEGORIES = [
-  { emoji: "👗", name: "Clothing & Accessories", tag: "Trending ↑" },
-  { emoji: "🔧", name: "Tools & Equipment", tag: "Popular" },
-  { emoji: "💼", name: "Services & Skills", tag: "New listings" },
-  { emoji: "🏡", name: "Home & Garden", tag: "Active" },
-  { emoji: "📱", name: "Electronics & Gadgets", tag: "High demand" },
+  { emoji: "👗", name: "Clothing & Accessories" },
+  { emoji: "🔧", name: "Tools & Equipment" },
+  { emoji: "💼", name: "Services & Skills" },
+  { emoji: "🏡", name: "Home & Garden" },
+  { emoji: "📱", name: "Electronics & Gadgets" },
 ];
 
 export default function HomeFeaturedCategories() {
@@ -38,7 +38,6 @@ export default function HomeFeaturedCategories() {
                 <h3 className="font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
                   {category.name}
                 </h3>
-                <p className="text-xs font-semibold text-primary mt-2">{category.tag}</p>
               </Link>
             </RevealOnScroll>
           ))}

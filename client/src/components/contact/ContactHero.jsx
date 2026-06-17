@@ -8,7 +8,7 @@ export default function ContactHero() {
         </h1>
         <p className="hero-enter hero-enter-delay-1 text-xl text-on-surface-variant max-w-2xl leading-relaxed">
           Have a question about our circular marketplace or want to partner with
-          the Green Barter Collective? We&apos;re here to help the community grow.
+          Green Barter? We&apos;re here to help the community grow.
         </p>
       </div>
     </section>

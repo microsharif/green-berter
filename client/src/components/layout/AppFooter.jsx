@@ -52,7 +52,7 @@ function FooterTextItem({ children }) {
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/",
+    href: "https://www.facebook.com/people/Green-Barter/61556686514209/",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
         <path d="M13.5 8.5V6.7c0-.8.6-1.2 1.4-1.2h2.1V2h-2.9c-2.8 0-4.1 1.7-4.1 4v2.5H7.5V12h2.5v10h3.5V12h3l.5-3.5h-3.5z" />
@@ -70,7 +70,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/greenbarter24/",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
         <path d="M12 7.1A4.9 4.9 0 1016.9 12 4.9 4.9 0 0012 7.1zm0 8.1A3.2 3.2 0 1115.2 12 3.2 3.2 0 0112 15.2zM16.8 6.7a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1zM19.8 7.2a6.8 6.8 0 00-1.9-4.8A6.8 6.8 0 0013.1.5h-2.2A6.8 6.8 0 005.1 2.4 6.8 6.8 0 003.2 7.2v2.2a6.8 6.8 0 001.9 4.8 6.8 6.8 0 004.8 1.9h2.2a6.8 6.8 0 004.8-1.9 6.8 6.8 0 001.9-4.8V7.2zm-2 2.2a4.8 4.8 0 01-1.3 3.4 4.8 4.8 0 01-3.4 1.3h-2.2a4.8 4.8 0 01-3.4-1.3 4.8 4.8 0 01-1.3-3.4V7.2a4.8 4.8 0 011.3-3.4 4.8 4.8 0 013.4-1.3h2.2a4.8 4.8 0 013.4 1.3 4.8 4.8 0 011.3 3.4v2.2z" />
