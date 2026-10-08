@@ -78,7 +78,11 @@ export const FAQ_SECTIONS = [
         answer: [
           { bold: true, text: "Answer:" },
           {
-            text: " Donors list items they wish to donate on our platform. Recipients can then browse these listings and request items they need. The donor and recipient can ",
+            text: " Donors list items they wish to donate on our platform. Recipients can then browse these listings and ",
+          },
+          { bold: true, text: "claim items they need" },
+          {
+            text: ". The donor and recipient can ",
           },
           {
             bold: true,
@@ -163,7 +167,7 @@ export const FAQ_SECTIONS = [
         answer: [
           { bold: true, text: "Answer:" },
           {
-            text: ' After logging into your account, click on the "Exchange" button and go to the " post your product/service " section, upload photos of your item, provide a detailed description, and specify the ',
+            text: ' After logging into your account, go to the "Exchange" section. Upload photos of your item, provide a detailed description, and specify the ',
           },
           {
             bold: true,
@@ -206,9 +210,9 @@ export const FAQ_SECTIONS = [
         answer: [
           { bold: true, text: "Answer:" },
           {
-            text: " Click on the item to view details and then use contact the owner and propose an exchange. You can discuss terms and arrange the swap through our ",
+            text: ' Click on the item to view details and then click on the "Propose Exchange" button, fill in the required information and submit. When your proposal is accepted, you will get a notification and be able to ',
           },
-          { bold: true, text: "messaging system" },
+          { bold: true, text: "discuss terms and arrange the swap through our messaging system" },
           { text: "." },
         ],
       },

@@ -93,3 +93,22 @@ export function resetPassword({ email, resetToken, password }) {
     body: { email, resetToken, password },
   });
 }
+
+/**
+ * POST /auth/send-verification-email
+ * Emails a one-click verification link to the signed-in user's address.
+ */
+export function requestEmailVerification() {
+  return apiFetch("/auth/send-verification-email", { method: "POST" });
+}
+
+/**
+ * POST /auth/verify-email
+ * Confirms the emailed link token and marks the account email as verified.
+ */
+export function verifyEmail({ token }) {
+  return apiFetch("/auth/verify-email", {
+    method: "POST",
+    body: { token: String(token ?? "").trim() },
+  });
+}

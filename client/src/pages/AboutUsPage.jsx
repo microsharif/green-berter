@@ -4,7 +4,7 @@ import AboutUsSections from "../components/about/AboutUsSections.jsx";
 
 export default function AboutUsPage() {
   return (
-    <main className="pt-32 pb-20 bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <main className="pt-10 pb-20 bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
       <AboutUsHero />
       <AboutUsAtAGlance />
       <AboutUsSections />

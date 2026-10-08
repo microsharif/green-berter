@@ -1173,9 +1173,9 @@ Single source of truth for plan keys, prices, and the listing cap enforced on `P
 | Plan | Price (BDT) | Listing cap |
 |------|-------------|-------------|
 | `free` | 0 | 20 |
-| `earth` | 1,000 / yr | 200 |
-| `sky` | 5,000 / yr | 500 |
-| `sun` | 10,000 / yr | unlimited (`null`) |
+| `earth` | 500 / yr | 200 |
+| `sky` | 1,000 / yr | 500 |
+| `sun` | 2,000 / yr | unlimited (`null`) |
 
 Helpers: `isValidPlan`, `isPaidPlan`, `getPlanListingLimit` (null = unlimited), `getPlanPriceBdt`.
 

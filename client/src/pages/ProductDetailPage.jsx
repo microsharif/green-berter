@@ -184,7 +184,7 @@ export default function ProductDetailPage() {
   }
 
   return (
-    <main className="pt-24 pb-20 max-w-[1280px] mx-auto px-4 md:px-16 bg-background font-body text-on-surface antialiased">
+    <main className="pt-2 pb-20 max-w-[1280px] mx-auto px-4 md:px-16 bg-background font-body text-on-surface antialiased">
       <nav
         aria-label="Breadcrumb"
         className="mb-8 flex flex-wrap items-center gap-2 text-sm text-on-surface-variant"

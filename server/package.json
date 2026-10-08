@@ -11,7 +11,8 @@
     "seed:locations:from-doc": "node src/seed/parseLocationDoc.js && node src/seed/listingLocations.js",
     "seed:reference": "npm run seed:categories && npm run seed:locations",
     "seed:reference:sync": "node src/seed/syncReferenceData.js",
-    "seed:import-listings": "node src/seed/importListings.js"
+    "seed:import-listings": "node src/seed/importListings.js",
+    "seed:admin": "node src/seed/adminUser.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

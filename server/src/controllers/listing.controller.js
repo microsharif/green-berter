@@ -612,6 +612,30 @@ async function resolveCategoryFilter(categoryId) {
     : { categoryId: cat._id };
 }
 
+/** Merges multiple category roots (e.g. give + exchange L1 with the same name). */
+async function resolveCategoryFilterIds(categoryIds) {
+  const leafIds = new Set();
+
+  for (const categoryId of categoryIds) {
+    const categoryFilter = await resolveCategoryFilter(categoryId);
+    if (!categoryFilter?.categoryId) continue;
+
+    if (categoryFilter.categoryId.$in) {
+      for (const id of categoryFilter.categoryId.$in) {
+        leafIds.add(String(id));
+      }
+    } else {
+      leafIds.add(String(categoryFilter.categoryId));
+    }
+  }
+
+  if (!leafIds.size) return null;
+  const ids = [...leafIds].map((id) => new mongoose.Types.ObjectId(id));
+  return ids.length === 1
+    ? { categoryId: ids[0] }
+    : { categoryId: { $in: ids } };
+}
+
 /**
  * GET /api/v1/listings
  *
@@ -621,6 +645,8 @@ async function resolveCategoryFilter(categoryId) {
  *   ownerUserId  — ObjectId string         (profile panel)
  *   categoryId   — ObjectId string         (category-filtered browse; non-leaf
  *                  ids match the whole subtree)
+ *   categoryIds  — comma-separated ObjectIds (OR across subtrees; used when the
+ *                  same category name exists in both give and exchange trees)
  *   areaId       — ObjectId string         (leaf area)
  *   divisionName — string                   (division filter)
  *   cityName     — string                   (city filter)
@@ -650,10 +676,22 @@ export async function listListings(req, res, next) {
       query.ownerUserId = ownerUserId;
     }
 
-    const categoryId = asString(req.query.categoryId);
-    if (categoryId && mongoose.isValidObjectId(categoryId)) {
-      const categoryFilter = await resolveCategoryFilter(categoryId);
-      if (categoryFilter) Object.assign(query, categoryFilter);
+    const categoryIdsRaw = asString(req.query.categoryIds);
+    if (categoryIdsRaw) {
+      const ids = categoryIdsRaw
+        .split(",")
+        .map((s) => s.trim())
+        .filter((id) => mongoose.isValidObjectId(id));
+      if (ids.length) {
+        const categoryFilter = await resolveCategoryFilterIds(ids);
+        if (categoryFilter) Object.assign(query, categoryFilter);
+      }
+    } else {
+      const categoryId = asString(req.query.categoryId);
+      if (categoryId && mongoose.isValidObjectId(categoryId)) {
+        const categoryFilter = await resolveCategoryFilter(categoryId);
+        if (categoryFilter) Object.assign(query, categoryFilter);
+      }
     }
 
     const areaId = asString(req.query.areaId);

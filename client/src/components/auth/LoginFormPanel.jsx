@@ -5,7 +5,6 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import { delay } from "../../utils/delay.js";
 import { useProgressNavigate } from "../../hooks/useNavigationProgress.js";
 import AuthFlowLoader from "./AuthFlowLoader.jsx";
-import SocialAuthButtons from "./SocialAuthButtons.jsx";
 
 export default function LoginFormPanel({ onSwitchToRegister }) {
   const { showToast } = useUI();
@@ -55,14 +54,6 @@ export default function LoginFormPanel({ onSwitchToRegister }) {
         <p className="text-on-surface-variant font-body">
           Continue your sustainable journey today.
         </p>
-      </div>
-      <SocialAuthButtons />
-      <div className="relative flex items-center mb-10">
-        <div className="flex-grow border-t border-outline-variant" />
-        <span className="flex-shrink mx-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-          Or with Email
-        </span>
-        <div className="flex-grow border-t border-outline-variant" />
       </div>
       <form
         className="space-y-6"

@@ -85,10 +85,7 @@ export default function AppFooter() {
       <div className="mx-auto max-w-screen-2xl px-8 py-14 md:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="flex flex-col items-center text-center sm:items-start sm:text-left space-y-5 sm:col-span-2 lg:col-span-1">
-            <BrandLogo />
-            <p className="max-w-xs text-sm leading-relaxed text-zinc-400">
-              Swap your goods &amp; sustain our planet
-            </p>
+            <BrandLogo variant="footer" />
             <div className="flex items-center justify-center sm:justify-start gap-3 pt-1">
               {socialLinks.map((social) => (
                 <a
@@ -106,7 +103,6 @@ export default function AppFooter() {
           </div>
 
           <FooterColumn title="How to Exchange Fast">
-            <FooterLinkItem to="/">Home</FooterLinkItem>
             <FooterLinkItem to="/upload?mode=give">
               Give or Exchange Quickly
             </FooterLinkItem>

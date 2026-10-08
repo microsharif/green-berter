@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import MaterialIcon from "../ui/MaterialIcon.jsx";
 import { DEMO_PROFILE_AVATAR_URL } from "../../data/catalog.js";
 
@@ -26,6 +26,15 @@ function mobileNavClass({ isActive }) {
  */
 export default function AppMobileMenu({ isAuthenticated, user, onLogout }) {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  function closeMenu() {
+    setOpen(false);
+  }
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname, location.search]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -39,15 +48,18 @@ export default function AppMobileMenu({ isAuthenticated, user, onLogout }) {
   useEffect(() => {
     if (!open) return undefined;
     function onKeyDown(e) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") closeMenu();
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  function closeMenu() {
-    setOpen(false);
-  }
+  useEffect(
+    () => () => {
+      document.body.style.overflow = "";
+    },
+    []
+  );
 
   const drawer =
     open &&

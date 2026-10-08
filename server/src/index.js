@@ -17,11 +17,16 @@ import notificationRoutes from "./routes/notification.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
+import adminRoutes from "./routes/admin/index.js";
 
 const PORT = Number(process.env.PORT) || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN ?? "http://localhost:5173";
-const configuredOrigins = CLIENT_ORIGIN.split(",")
+// The admin dashboard is a separate app/origin. Comma-separated list allowed.
+const ADMIN_ORIGIN = process.env.ADMIN_ORIGIN ?? "";
+const configuredOrigins = [CLIENT_ORIGIN, ADMIN_ORIGIN]
+  .join(",")
+  .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
 const isDev = process.env.NODE_ENV !== "production";
@@ -85,6 +90,7 @@ app.use("/api/v1/claims", claimRoutes);
 app.use("/api/v1/notifications", notificationRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/contact", contactRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

@@ -2,6 +2,7 @@ import { useUploadDraft } from "../../context/UploadDraftContext.jsx";
 import { CategoryCascade } from "./CategoryFields.jsx";
 import { LocationCascade } from "./LocationFields.jsx";
 import PickupLocationMap from "./PickupLocationMap.jsx";
+import PhotoUploadDropzone from "./PhotoUploadDropzone.jsx";
 import MaterialIcon from "../ui/MaterialIcon.jsx";
 
 export default function ListingDetailsForm() {
@@ -87,6 +88,8 @@ export default function ListingDetailsForm() {
             onChange={(e) => updateDraft({ story: e.target.value })}
           />
         </div>
+
+        <PhotoUploadDropzone />
       </div>
 
       {isExchange ? (

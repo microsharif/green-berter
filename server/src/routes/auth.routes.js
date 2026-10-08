@@ -7,6 +7,8 @@ import {
   forgotPassword,
   verifyResetOtp,
   resetPassword,
+  sendVerificationEmail,
+  verifyEmail,
 } from "../controllers/auth.controller.js";
 import { loadSession, requireAuth } from "../middleware/session.js";
 
@@ -21,5 +23,13 @@ router.post("/logout", loadSession, logout);
 router.post("/forgot-password", forgotPassword);
 router.post("/verify-reset-otp", verifyResetOtp);
 router.post("/reset-password", resetPassword);
+
+router.post(
+  "/send-verification-email",
+  loadSession,
+  requireAuth,
+  sendVerificationEmail
+);
+router.post("/verify-email", verifyEmail);
 
 export default router;

@@ -9,10 +9,10 @@ export function FaqAccordionItem({ item, isOpen, onToggle }) {
 
   return (
     <div
-      className={`overflow-hidden rounded-lg border-2 bg-surface-container-low/50 transition-[border-color,box-shadow] duration-300 ease-in-out motion-reduce:transition-none ${
+      className={`overflow-hidden rounded-xl border-2 bg-surface-container-lowest transition-[border-color,box-shadow] duration-300 ease-in-out motion-reduce:transition-none ${
         isOpen
-          ? "border-primary/35 shadow-sm shadow-primary/10"
-          : "border-primary/20"
+          ? "border-primary/30 shadow-md shadow-primary/8"
+          : "border-outline-variant/50 hover:border-primary/20 hover:shadow-sm"
       }`}
     >
       <h3 className="m-0">
@@ -22,11 +22,13 @@ export function FaqAccordionItem({ item, isOpen, onToggle }) {
           aria-expanded={isOpen}
           aria-controls={panelId}
           onClick={onToggle}
-          className={`flex w-full items-start justify-between gap-4 px-4 py-3 text-left font-headline text-base font-bold text-on-surface transition-colors duration-300 ease-in-out motion-reduce:transition-none md:px-5 md:py-4 md:text-lg ${
-            isOpen ? "bg-primary-fixed/25" : "bg-primary-fixed/15 hover:bg-primary-fixed/20"
+          className={`flex w-full items-start justify-between gap-4 px-5 py-4 text-left font-headline text-sm font-bold text-on-surface transition-colors duration-200 ease-in-out motion-reduce:transition-none md:px-6 md:py-4 md:text-base ${
+            isOpen
+              ? "bg-primary/8"
+              : "hover:bg-surface-container-low"
           }`}
         >
-          <span className="flex-1">{item.question}</span>
+          <span className="flex-1 leading-snug">{item.question}</span>
           <MaterialIcon
             name="expand_more"
             className={`mt-0.5 shrink-0 text-primary transition-transform duration-300 ease-in-out motion-reduce:transition-none ${
@@ -48,7 +50,7 @@ export function FaqAccordionItem({ item, isOpen, onToggle }) {
       >
         <div className="min-h-0 overflow-hidden">
           <div
-            className={`space-y-3 border-t-2 border-primary/10 px-4 py-4 transition-[opacity,transform] duration-300 ease-in-out motion-reduce:transition-none md:px-5 md:py-5 ${
+            className={`space-y-3 border-t border-outline-variant/40 px-5 py-4 text-sm text-on-surface-variant leading-relaxed transition-[opacity,transform] duration-300 ease-in-out motion-reduce:transition-none md:px-6 md:py-5 ${
               isOpen
                 ? "translate-y-0 opacity-100"
                 : "pointer-events-none -translate-y-1 opacity-0"
@@ -61,9 +63,10 @@ export function FaqAccordionItem({ item, isOpen, onToggle }) {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className="text-sm font-semibold text-primary hover:underline"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline underline-offset-2"
                   >
                     {link.label}
+                    <MaterialIcon name="arrow_forward" className="text-xs" />
                   </Link>
                 ))}
               </div>

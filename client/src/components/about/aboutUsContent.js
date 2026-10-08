@@ -1,5 +1,3 @@
-export const ABOUT_US_HERO_IMAGE = "/images/green-barter-logo.png";
-
 export const ABOUT_US_AT_A_GLANCE = {
   mission:
     "To empower individuals and communities by providing a sustainable and accessible platform for item swapping, sustainable handout, fostering environmental consciousness and promoting a culture of sharing and reuse.",

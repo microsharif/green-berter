@@ -60,6 +60,7 @@ export default {
         label: ["Inter", "sans-serif"],
         manrope: ["Manrope", "sans-serif"],
         inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         DEFAULT: "0.25rem",

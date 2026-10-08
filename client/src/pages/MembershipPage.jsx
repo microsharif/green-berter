@@ -110,7 +110,7 @@ export default function MembershipPage() {
   }
 
   return (
-    <main className="bg-[#fcf9f8] pt-32 pb-20 text-on-surface">
+    <main className="bg-[#fcf9f8] pt-10 pb-20 text-on-surface">
       <section className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="hero-enter inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-primary">

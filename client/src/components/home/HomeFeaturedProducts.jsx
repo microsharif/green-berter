@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useCatalog } from "../../context/CatalogContext.jsx";
-import ProductCardFeatured from "../products/ProductCardFeatured.jsx";
 import MaterialIcon from "../ui/MaterialIcon.jsx";
 import RevealOnScroll from "../ui/RevealOnScroll.jsx";
+import HomeRecentListingsSlider from "./HomeRecentListingsSlider.jsx";
 
 export default function HomeFeaturedProducts() {
   const { featuredProducts } = useCatalog();
@@ -10,24 +10,13 @@ export default function HomeFeaturedProducts() {
   return (
     <RevealOnScroll as="section" className="px-6 py-20 bg-[#f9faf5]">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 rounded-full bg-surface-container-lowest px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary mb-4">
-            🆕 Fresh Listings
-          </span>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-on-surface mb-3">
-            Recent Listings
+        <div className="text-center flex flex-col items-center">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight">
+            Recent Listing
           </h2>
-          <p className="text-on-surface-variant">
-            See what your community has just posted. Be the first to grab it!
-          </p>
+          <HomeRecentListingsSlider products={featuredProducts} />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredProducts.map((p, index) => (
-            <RevealOnScroll key={p.id} delay={index * 80}>
-              <ProductCardFeatured product={p} />
-            </RevealOnScroll>
-          ))}
-        </div>
+
         <div className="text-center mt-10">
           <Link
             to="/products"

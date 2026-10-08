@@ -22,6 +22,19 @@ h4 {
   -webkit-backdrop-filter: blur(20px);
 }
 
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header-slide-down {
+  animation: headerSlideDown 0.3s ease-out;
+}
+
 .editorial-asymmetry {
   margin-left: 0;
   min-width: 0;

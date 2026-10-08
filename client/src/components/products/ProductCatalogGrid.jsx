@@ -1,4 +1,5 @@
 import { useCatalog } from "../../context/CatalogContext.jsx";
+import { BROWSE_PAGE_SIZE } from "./browseFilterUtils.js";
 import MaterialIcon from "../ui/MaterialIcon.jsx";
 import RevealOnScroll from "../ui/RevealOnScroll.jsx";
 import SkeuomorphicPagination from "../ui/SkeuomorphicPagination.jsx";
@@ -93,7 +94,7 @@ export default function ProductCatalogGrid() {
         </div>
       </div>
 
-      {browseTotalPages > 1 ? (
+      {browseTotal > BROWSE_PAGE_SIZE ? (
         <div className="mt-12 flex flex-col items-center gap-3">
           <SkeuomorphicPagination
             page={browsePage}

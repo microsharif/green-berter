@@ -95,7 +95,7 @@ export default function ProductBrowseMobileFilters() {
           <div
             className={`min-h-0 ${open ? "overflow-visible" : "overflow-hidden"}`}
           >
-            <div className="border-t border-outline-variant/60 px-4 pb-5 pt-4">
+            <div className="profile-sidebar-scroll max-h-[min(70vh,calc(100dvh-12rem))] overflow-y-auto overscroll-contain border-t border-outline-variant/60 px-4 pb-5 pt-4">
               {activeCount > 0 ? (
                 <div className="flex justify-end mb-4">
                   <button

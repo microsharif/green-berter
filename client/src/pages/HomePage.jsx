@@ -7,8 +7,8 @@ import HomeTestimonial from "../components/home/HomeTestimonial.jsx";
 
 export default function HomePage() {
   return (
-    <main className="pt-24 bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
-      <div className="flex min-h-[calc(100dvh-6rem)] flex-col md:h-[calc(100dvh-6rem)]">
+    <main className="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+      <div className="flex flex-col md:min-h-[calc(100dvh-6rem)] md:h-[calc(100dvh-6rem)]">
         <HomeAnnouncementBanner />
         <HomeHero />
       </div>

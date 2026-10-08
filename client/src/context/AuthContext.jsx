@@ -14,6 +14,8 @@ import {
   requestPasswordReset as requestPasswordResetApi,
   verifyPasswordResetOtp as verifyPasswordResetOtpApi,
   resetPassword as resetPasswordApi,
+  requestEmailVerification as requestEmailVerificationApi,
+  verifyEmail as verifyEmailApi,
 } from "../api/auth.js";
 import { updateUser, updateMySettings } from "../api/users.js";
 import { ApiError } from "../api/client.js";
@@ -324,6 +326,70 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
+  const refreshUser = useCallback(async () => {
+    try {
+      const data = await getCurrentUser();
+      const normalized = normalizeUser(data?.user ?? null);
+      setUser(normalized);
+      return { ok: true, user: normalized };
+    } catch {
+      setUser(null);
+      return { ok: false, user: null };
+    }
+  }, []);
+
+  const requestEmailVerification = useCallback(async () => {
+    try {
+      const data = await requestEmailVerificationApi();
+      return { ok: true, message: data?.message ?? "", data };
+    } catch (err) {
+      if (err instanceof ApiError) {
+        return {
+          ok: false,
+          code: err.code,
+          error: apiErrorMessage(
+            err,
+            "Could not send the verification email."
+          ),
+        };
+      }
+      return {
+        ok: false,
+        code: "UNKNOWN_ERROR",
+        error: "Could not send the verification email. Please try again.",
+      };
+    }
+  }, []);
+
+  const verifyEmail = useCallback(async (token) => {
+    try {
+      const data = await verifyEmailApi({ token });
+      try {
+        const me = await getCurrentUser();
+        setUser(normalizeUser(me?.user ?? null));
+      } catch {
+        /* visitor may confirm from an inbox without an active session */
+      }
+      return {
+        ok: true,
+        message: data?.message ?? "Email is verified.",
+      };
+    } catch (err) {
+      if (err instanceof ApiError) {
+        return {
+          ok: false,
+          code: err.code,
+          error: apiErrorMessage(err, "Could not verify your email."),
+        };
+      }
+      return {
+        ok: false,
+        code: "UNKNOWN_ERROR",
+        error: "Could not verify your email. Please try again.",
+      };
+    }
+  }, []);
+
   const value = useMemo(
     () => ({
       user,
@@ -339,6 +405,9 @@ export function AuthProvider({ children }) {
       requestPasswordReset,
       verifyPasswordResetOtp,
       resetPassword,
+      refreshUser,
+      requestEmailVerification,
+      verifyEmail,
     }),
     [
       user,
@@ -354,6 +423,9 @@ export function AuthProvider({ children }) {
       requestPasswordReset,
       verifyPasswordResetOtp,
       resetPassword,
+      refreshUser,
+      requestEmailVerification,
+      verifyEmail,
     ]
   );
 

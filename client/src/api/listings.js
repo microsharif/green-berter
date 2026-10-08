@@ -25,6 +25,7 @@ export async function fetchListing(id) {
  *   listingType?: "give" | "exchange",
  *   ownerUserId?: string,
  *   categoryId?: string,
+ *   categoryIds?: string,
  *   status?: string,
  *   search?: string,
  *   areaId?: string,

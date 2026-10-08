@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.jsx";
+import { useUI } from "../../context/UIContext.jsx";
 import { fetchListings } from "../../api/listings.js";
 import { fetchMyMembershipOrders } from "../../api/membership.js";
 import {
@@ -73,9 +74,11 @@ function InfoRow({ label, value, mono = false, layout = "vertical" }) {
  * Account details for the signed-in member — contact, verification, and membership.
  */
 export default function ProfileAccountInfoSection() {
-  const { user } = useAuth();
+  const { user, requestEmailVerification } = useAuth();
+  const { showToast } = useUI();
   const [ownedCount, setOwnedCount] = useState(null);
   const [pendingOrder, setPendingOrder] = useState(null);
+  const [sendingVerifyEmail, setSendingVerifyEmail] = useState(false);
 
   const userId = user?.id;
 
@@ -110,6 +113,24 @@ export default function ProfileAccountInfoSection() {
       ? `— / ${formatListingLimit(limit)}`
       : `${ownedCount} / ${formatListingLimit(limit)}`;
   const pendingPlan = pendingOrder ? getPlanDisplay(pendingOrder.plan) : null;
+
+  async function handleVerifyEmailClick() {
+    if (sendingVerifyEmail || user.emailVerified) return;
+    setSendingVerifyEmail(true);
+    try {
+      const result = await requestEmailVerification();
+      if (result.ok) {
+        showToast(
+          result.message || "Verification link sent to your email.",
+          "success"
+        );
+      } else {
+        showToast(result.error || "Could not send verification email.", "error");
+      }
+    } finally {
+      setSendingVerifyEmail(false);
+    }
+  }
 
   return (
     <RevealOnScroll as="section" id="profile-account" className="scroll-mt-24 space-y-8 pt-12">
@@ -152,10 +173,40 @@ export default function ProfileAccountInfoSection() {
             Security & sign-in
           </h3>
           <dl>
-            <InfoRow
-              label="Email verification"
-              value={user.emailVerified ? "Verified" : "Not verified yet"}
-            />
+            <div className="py-3 border-b border-zinc-100 dark:border-zinc-800">
+              <dt className="text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+                Email verification
+              </dt>
+              <dd className="mt-1">
+                {user.emailVerified ? (
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    <MaterialIcon name="verified" className="text-base" />
+                    Email is verified
+                  </span>
+                ) : (
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-sm text-zinc-800 dark:text-zinc-200">
+                      The email is not verified
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleVerifyEmailClick}
+                      disabled={sendingVerifyEmail}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {sendingVerifyEmail ? (
+                        <>
+                          <MaterialIcon name="progress_activity" className="text-sm animate-spin" />
+                          Sending…
+                        </>
+                      ) : (
+                        "Verify email"
+                      )}
+                    </button>
+                  </div>
+                )}
+              </dd>
+            </div>
             <InfoRow
               label="Last sign-in"
               value={formatDateTime(user.lastLoginAt)}

@@ -68,12 +68,12 @@ export default function ProfileSideNav() {
 
   return (
     <aside
-      className="h-screen w-64 fixed left-0 top-0 bg-zinc-50 dark:bg-zinc-950 hidden md:flex md:flex-col overflow-hidden pt-24"
+      className="fixed left-0 top-24 z-40 hidden h-[calc(100vh-6rem)] w-64 flex-col overflow-hidden bg-zinc-50 dark:bg-zinc-950 md:flex"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`profile-sidebar-scroll flex-1 min-h-0 overflow-y-auto overscroll-contain px-6 pb-6 ${
+        className={`profile-sidebar-scroll flex-1 min-h-0 overflow-y-auto overscroll-contain px-6 pt-6 pb-6 ${
           scrollbarVisible ? "profile-sidebar-scroll--visible" : ""
         }`}
         onScroll={handleScroll}

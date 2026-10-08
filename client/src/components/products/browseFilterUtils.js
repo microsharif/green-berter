@@ -49,8 +49,16 @@ export function buildBrowseFetchParams(filters, page = 0) {
     else if (location.level === 0) params.divisionName = String(location.name);
   }
 
-  if (filters.selectedCategory?.id) {
-    params.categoryId = String(filters.selectedCategory.id);
+  const category = filters.selectedCategory;
+  const categoryIds = Array.isArray(category?.categoryIds)
+    ? category.categoryIds.map(String).filter(Boolean)
+    : [];
+  if (categoryIds.length > 1) {
+    params.categoryIds = categoryIds.join(",");
+  } else if (categoryIds.length === 1) {
+    params.categoryId = categoryIds[0];
+  } else if (category?.id) {
+    params.categoryId = String(category.id);
   }
 
   const maxPrice = Number(filters.maxPrice);

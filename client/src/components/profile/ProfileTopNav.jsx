@@ -6,11 +6,12 @@ import NotificationBell from "../notifications/NotificationBell.jsx";
 import AppMobileMenu from "../layout/AppMobileMenu.jsx";
 import BrandLogo from "../layout/BrandLogo.jsx";
 
-const navInactive =
-  "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 font-medium text-sm Inter transition-colors duration-300";
+const navBase =
+  "relative Inter text-sm transition-colors duration-300 after:pointer-events-none after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:rounded-full after:bg-emerald-500 dark:after:bg-emerald-400 after:transition-all after:duration-300 after:ease-out after:content-['']";
 
-const navActive =
-  "text-emerald-600 dark:text-emerald-400 font-semibold text-sm Inter transition-colors duration-300";
+const navInactive = `${navBase} font-medium text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 after:w-0 hover:after:w-full`;
+
+const navActive = `${navBase} font-semibold text-emerald-600 dark:text-emerald-400 after:w-full`;
 
 export default function ProfileTopNav() {
   const { logout, finishLogout, user, isAuthenticated, loggingOut } = useAuth();
@@ -28,9 +29,9 @@ export default function ProfileTopNav() {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border-t border-slate-200/80 dark:border-t-zinc-800/80">
-      <div className="flex justify-between items-center px-6 py-4 max-w-full mx-auto">
-        <BrandLogo />
+    <header className="fixed top-0 w-full z-[60] bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border-t border-slate-200/80 dark:border-t-zinc-800/80">
+      <div className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 max-w-full mx-auto">
+        <BrandLogo variant="header" />
         <nav className="hidden md:flex items-center gap-10 lg:gap-12">
           <NavLink to="/" end className={({ isActive }) => (isActive ? navActive : navInactive)}>
             Home

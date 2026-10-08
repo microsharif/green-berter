@@ -17,8 +17,8 @@ import {
 
 export { BROWSE_PRICE_MAX } from "../components/products/browseFilterUtils.js";
 
-/** Home hero strip — newest listings from the API (already sorted newest-first). */
-const FEATURED_COUNT = 4;
+/** Home recent-listings slider — newest from the API (already sorted newest-first). */
+const FEATURED_COUNT = 12;
 
 const CatalogContext = createContext(null);
 
@@ -139,7 +139,7 @@ export function CatalogProvider({ children }) {
     }));
   }, []);
 
-  /** @param {{ id: string, name: string, level: number } | null} category */
+  /** @param {{ id: string, name: string, level: number, categoryIds?: string[] } | null} category */
   const setBrowseCategory = useCallback((category) => {
     setBrowsePage(0);
     setBrowseFilters((f) => ({
@@ -149,6 +149,11 @@ export function CatalogProvider({ children }) {
             id: String(category.id),
             name: String(category.name),
             level: Number(category.level),
+            ...(Array.isArray(category.categoryIds) && category.categoryIds.length
+              ? {
+                  categoryIds: category.categoryIds.map(String),
+                }
+              : {}),
           }
         : null,
     }));

@@ -13,7 +13,10 @@ import {
 } from "../config/session.js";
 import { UPLOAD_KINDS, isOwnedUploadUrl } from "../config/upload.js";
 import { deleteStoredImage } from "../services/imageStorage.service.js";
-import { sendPasswordResetOtp } from "../services/mail.service.js";
+import {
+  sendPasswordResetOtp,
+  sendEmailVerificationLink,
+} from "../services/mail.service.js";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MIN_PASSWORD_LENGTH = 8;
@@ -23,6 +26,14 @@ const OTP_TTL_MINUTES = 10;
 const OTP_RESEND_COOLDOWN_MS = 60 * 1000; // min gap between code emails
 const OTP_MAX_ATTEMPTS = 5;
 const OTP_CODE_DIGITS = 6;
+
+// --- Email verification (link) tuning ---
+const EMAIL_VERIFY_TTL_HOURS = 24;
+const EMAIL_VERIFY_RESEND_COOLDOWN_MS = 60 * 1000;
+
+const CLIENT_ORIGIN = (process.env.CLIENT_ORIGIN ?? "http://localhost:5173")
+  .split(",")[0]
+  .trim();
 
 function validateRegistration(payload) {
   const errors = {};
@@ -568,6 +579,186 @@ export async function resetPassword(req, res, next) {
     return res.json({
       ok: true,
       message: "Your password has been reset. Please sign in.",
+    });
+  } catch (err) {
+    return next(err);
+  }
+}
+
+function hashEmailVerifyToken(token) {
+  return crypto.createHash("sha256").update(token).digest("hex");
+}
+
+/**
+ * POST /api/v1/auth/send-verification-email
+ *
+ * Authenticated user requests a one-click verification link delivered to
+ * their account email. Reuses the otps collection with purpose `email_verify`.
+ */
+export async function sendVerificationEmail(req, res, next) {
+  try {
+    const user = await User.findById(req.userId);
+    if (!user || user.status !== "active") {
+      return res.status(401).json({
+        ok: false,
+        code: "UNAUTHENTICATED",
+        message: "Your session is no longer valid.",
+      });
+    }
+
+    if (user.emailVerified) {
+      return res.status(400).json({
+        ok: false,
+        code: "EMAIL_ALREADY_VERIFIED",
+        message: "This email address is already verified.",
+      });
+    }
+
+    const recent = await Otp.findOne({
+      userId: user._id,
+      purpose: "email_verify",
+      consumedAt: null,
+    }).sort({ createdAt: -1 });
+
+    if (
+      recent &&
+      Date.now() - new Date(recent.createdAt).getTime() <
+        EMAIL_VERIFY_RESEND_COOLDOWN_MS
+    ) {
+      const retryInSeconds = Math.ceil(
+        (EMAIL_VERIFY_RESEND_COOLDOWN_MS -
+          (Date.now() - new Date(recent.createdAt).getTime())) /
+          1000
+      );
+      return res.status(429).json({
+        ok: false,
+        code: "EMAIL_VERIFY_RESEND_TOO_SOON",
+        message: `Please wait ${retryInSeconds}s before requesting another link.`,
+        retryInSeconds,
+      });
+    }
+
+    await Otp.deleteMany({ userId: user._id, purpose: "email_verify" });
+
+    const token = crypto.randomBytes(32).toString("hex");
+    const otp = new Otp({
+      userId: user._id,
+      email: user.email,
+      purpose: "email_verify",
+      channel: "email",
+      expiresAt: new Date(
+        Date.now() + EMAIL_VERIFY_TTL_HOURS * 60 * 60 * 1000
+      ),
+      maxAttempts: 1,
+      resetToken: hashEmailVerifyToken(token),
+      ipAddress: req.ip ?? "",
+    });
+    await otp.setCode(token);
+    await otp.save();
+
+    const verifyUrl = `${CLIENT_ORIGIN}/verify-email?token=${token}`;
+
+    try {
+      await sendEmailVerificationLink({
+        to: user.email,
+        fullName: user.fullName,
+        verifyUrl,
+        expiresInHours: EMAIL_VERIFY_TTL_HOURS,
+      });
+    } catch (err) {
+      await Otp.deleteOne({ _id: otp._id });
+      if (err?.code === "EMAIL_NOT_CONFIGURED") {
+        return res.status(503).json({
+          ok: false,
+          code: "EMAIL_NOT_CONFIGURED",
+          message:
+            "Email delivery is not configured. Please contact support.",
+        });
+      }
+      console.error(
+        "Failed to send email verification link:",
+        err?.code ?? "",
+        err?.message ?? err
+      );
+      return res.status(502).json({
+        ok: false,
+        code: "EMAIL_SEND_FAILED",
+        message:
+          "We couldn't send the verification email right now. Please try again in a few minutes.",
+      });
+    }
+
+    return res.json({
+      ok: true,
+      message: `We've sent a verification link to ${user.email}.`,
+      expiresInHours: EMAIL_VERIFY_TTL_HOURS,
+    });
+  } catch (err) {
+    return next(err);
+  }
+}
+
+/**
+ * POST /api/v1/auth/verify-email
+ *
+ * Exchanges a one-time link token for `emailVerified: true` on the user.
+ */
+export async function verifyEmail(req, res, next) {
+  try {
+    const token = String(req.body?.token ?? req.query?.token ?? "").trim();
+    if (!token) {
+      return res.status(400).json({
+        ok: false,
+        code: "VALIDATION_ERROR",
+        message: "Verification token is required.",
+      });
+    }
+
+    const otp = await Otp.findOne({
+      purpose: "email_verify",
+      resetToken: hashEmailVerifyToken(token),
+      consumedAt: null,
+    }).select("+codeHash");
+
+    if (!otp || otp.expiresAt.getTime() <= Date.now()) {
+      return res.status(400).json({
+        ok: false,
+        code: "EMAIL_VERIFY_TOKEN_INVALID",
+        message: "This verification link is invalid or has expired.",
+      });
+    }
+
+    const matches = await otp.verifyCode(token);
+    if (!matches) {
+      return res.status(400).json({
+        ok: false,
+        code: "EMAIL_VERIFY_TOKEN_INVALID",
+        message: "This verification link is invalid or has expired.",
+      });
+    }
+
+    const user = await User.findById(otp.userId);
+    if (!user || user.status !== "active") {
+      return res.status(400).json({
+        ok: false,
+        code: "EMAIL_VERIFY_TOKEN_INVALID",
+        message: "This verification link is invalid or has expired.",
+      });
+    }
+
+    if (!user.emailVerified) {
+      user.emailVerified = true;
+      await user.save();
+    }
+
+    otp.consumedAt = new Date();
+    await otp.save();
+    await Otp.deleteMany({ userId: user._id, purpose: "email_verify" });
+
+    return res.json({
+      ok: true,
+      message: "Email is verified.",
+      user: user.toPublicJSON(),
     });
   } catch (err) {
     return next(err);

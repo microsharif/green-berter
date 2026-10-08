@@ -104,9 +104,27 @@ export default function ProductFiltersPanel({ showPostLink = true, onNavigate })
             Categories
           </h3>
           {!listingTypeForCategories ? (
-            <p className="px-2 text-sm text-on-surface-variant">
-              Select Give or Exchange to browse categories.
-            </p>
+            browseFilters.selectedCategory ? (
+              <div className="px-2 space-y-2">
+                <p className="text-xs text-primary font-medium">
+                  Filtering: {browseFilters.selectedCategory.name}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setBrowseCategory(null)}
+                  className="text-xs font-semibold text-on-surface-variant hover:text-primary"
+                >
+                  Clear category filter
+                </button>
+                <p className="text-xs text-on-surface-variant">
+                  Select Give or Exchange to pick a different category.
+                </p>
+              </div>
+            ) : (
+              <p className="px-2 text-sm text-on-surface-variant">
+                Select Give or Exchange to browse categories.
+              </p>
+            )
           ) : (
             <div className="px-1">
               <CategoryFilterCascade

@@ -21,6 +21,7 @@ function timeAgo(iso) {
 
 function NotificationPanel({
   menuId,
+  panelRef,
   loading,
   notifications,
   unreadCount,
@@ -32,6 +33,7 @@ function NotificationPanel({
 }) {
   return (
     <div
+      ref={panelRef}
       id={menuId}
       role="menu"
       className={`overflow-hidden rounded-2xl border border-zinc-200/80 bg-white dark:bg-zinc-900 shadow-xl flex flex-col ${panelClassName}`}
@@ -131,6 +133,8 @@ export default function NotificationBell({ className = "", iconClassName = "" })
   const menuId = useId();
   const navigate = useProgressNavigate();
   const rootRef = useRef(null);
+  const desktopPanelRef = useRef(null);
+  const mobilePanelRef = useRef(null);
   const [open, setOpen] = useState(false);
   const {
     notifications,
@@ -160,10 +164,10 @@ export default function NotificationBell({ className = "", iconClassName = "" })
   useEffect(() => {
     if (!open) return;
     function onPointerDown(e) {
-      const panel = document.getElementById(menuId);
       if (
         rootRef.current?.contains(e.target) ||
-        panel?.contains(e.target)
+        desktopPanelRef.current?.contains(e.target) ||
+        mobilePanelRef.current?.contains(e.target)
       ) {
         return;
       }
@@ -178,7 +182,7 @@ export default function NotificationBell({ className = "", iconClassName = "" })
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [open, menuId]);
+  }, [open]);
 
   async function handleOpenItem(n) {
     if (!n.read) {
@@ -218,10 +222,12 @@ export default function NotificationBell({ className = "", iconClassName = "" })
           className="absolute inset-0 bg-zinc-900/40 backdrop-blur-[1px]"
           onClick={() => setOpen(false)}
         />
-        <div className="absolute inset-x-3 top-[4.75rem] bottom-[max(1rem,env(safe-area-inset-bottom))] flex flex-col pointer-events-none">
+        <div className="absolute inset-x-3 top-[4.75rem] bottom-[max(1rem,env(safe-area-inset-bottom))] flex flex-col">
           <NotificationPanel
             {...panelProps}
-            panelClassName="pointer-events-auto max-h-full shadow-2xl"
+            menuId={`${menuId}-mobile`}
+            panelRef={mobilePanelRef}
+            panelClassName="max-h-full shadow-2xl"
           />
         </div>
       </div>,
@@ -256,6 +262,8 @@ export default function NotificationBell({ className = "", iconClassName = "" })
         <div className="hidden md:block absolute right-0 mt-2 z-[100]">
           <NotificationPanel
             {...panelProps}
+            menuId={`${menuId}-desktop`}
+            panelRef={desktopPanelRef}
             panelClassName="w-[min(calc(100vw-2rem),22rem)] max-h-[min(70vh,24rem)]"
           />
         </div>

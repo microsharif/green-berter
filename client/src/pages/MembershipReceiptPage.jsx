@@ -70,7 +70,7 @@ export default function MembershipReceiptPage() {
 
   if (loading) {
     return (
-      <main className="bg-[#fcf9f8] pt-32 pb-20 text-on-surface">
+      <main className="bg-[#fcf9f8] pt-10 pb-20 text-on-surface">
         <section className="mx-auto max-w-2xl px-6 text-center text-sm text-zinc-500">
           Loading your receipt…
         </section>
@@ -80,7 +80,7 @@ export default function MembershipReceiptPage() {
 
   if (error || !order) {
     return (
-      <main className="bg-[#fcf9f8] pt-32 pb-20 text-on-surface">
+      <main className="bg-[#fcf9f8] pt-10 pb-20 text-on-surface">
         <section className="mx-auto max-w-xl px-6 text-center">
           <MaterialIcon
             name="error_outline"
@@ -106,7 +106,7 @@ export default function MembershipReceiptPage() {
   const plan = getPlanDisplay(order.plan);
 
   return (
-    <main className="bg-[#fcf9f8] pt-32 pb-20 text-on-surface">
+    <main className="bg-[#fcf9f8] pt-10 pb-20 text-on-surface">
       <section className="mx-auto max-w-2xl px-6">
         <div className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
           <div className="text-center">

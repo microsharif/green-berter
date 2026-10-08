@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useUploadDraft } from "../context/UploadDraftContext.jsx";
 import ListingTypeToggle from "../components/upload/ListingTypeToggle.jsx";
-import PhotoUploadDropzone from "../components/upload/PhotoUploadDropzone.jsx";
 import ListingDetailsForm from "../components/upload/ListingDetailsForm.jsx";
 import ListingSubmitBar from "../components/upload/ListingSubmitBar.jsx";
 import RevealOnScroll from "../components/ui/RevealOnScroll.jsx";
@@ -16,7 +15,7 @@ export default function UploadPage() {
   }, [searchParams, applyQueryMode]);
 
   return (
-    <main className="pt-24 pb-20 px-6 max-w-4xl mx-auto bg-surface text-on-surface min-h-screen">
+    <main className="pt-2 pb-20 px-6 max-w-4xl mx-auto bg-surface text-on-surface min-h-screen">
       <header className="mb-12">
         <h1 className="hero-enter text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-2">
           List an item
@@ -31,12 +30,9 @@ export default function UploadPage() {
           <ListingTypeToggle />
         </RevealOnScroll>
         <RevealOnScroll delay={180}>
-          <PhotoUploadDropzone />
-        </RevealOnScroll>
-        <RevealOnScroll delay={240}>
           <ListingDetailsForm />
         </RevealOnScroll>
-        <RevealOnScroll delay={300}>
+        <RevealOnScroll delay={240}>
           <ListingSubmitBar />
         </RevealOnScroll>
       </div>

@@ -95,7 +95,7 @@ export default function MembershipCheckoutPage() {
 
   if (!isValidPaidPlan) {
     return (
-      <main className="bg-[#fcf9f8] pt-32 pb-20 text-on-surface">
+      <main className="bg-[#fcf9f8] pt-10 pb-20 text-on-surface">
         <section className="mx-auto max-w-xl px-6 text-center">
           <MaterialIcon
             name="error_outline"
@@ -120,7 +120,7 @@ export default function MembershipCheckoutPage() {
   }
 
   return (
-    <main className="bg-[#fcf9f8] pt-32 pb-20 text-on-surface">
+    <main className="bg-[#fcf9f8] pt-10 pb-20 text-on-surface">
       <section className="mx-auto max-w-5xl px-6">
         <Link
           to="/membership"

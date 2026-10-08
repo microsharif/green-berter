@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
+import { FEATURED_CATEGORIES } from "../../constants/featuredCategories.js";
 import RevealOnScroll from "../ui/RevealOnScroll.jsx";
-
-const CATEGORIES = [
-  { emoji: "👗", name: "Clothing & Accessories" },
-  { emoji: "🔧", name: "Tools & Equipment" },
-  { emoji: "💼", name: "Services & Skills" },
-  { emoji: "🏡", name: "Home & Garden" },
-  { emoji: "📱", name: "Electronics & Gadgets" },
-];
 
 export default function HomeFeaturedCategories() {
   return (
@@ -26,10 +19,10 @@ export default function HomeFeaturedCategories() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-          {CATEGORIES.map((category, index) => (
-            <RevealOnScroll key={category.name} delay={index * 60}>
+          {FEATURED_CATEGORIES.map((category, index) => (
+            <RevealOnScroll key={category.id} delay={index * 60}>
               <Link
-                to="/products"
+                to={`/products?featured=${encodeURIComponent(category.id)}`}
                 className="block rounded-2xl border border-outline-variant/25 bg-surface-container-lowest p-5 hover:border-primary/30 hover:shadow-md transition-all group h-full text-center sm:text-left flex flex-col items-center sm:items-stretch"
               >
                 <span className="text-2xl mb-3 block" aria-hidden>

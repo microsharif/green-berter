@@ -118,3 +118,49 @@ export async function sendPasswordResetOtp({ to, code, fullName, expiresInMinute
     html,
   });
 }
+
+/**
+ * Sends a one-click email verification link to the account address.
+ */
+export async function sendEmailVerificationLink({
+  to,
+  fullName,
+  verifyUrl,
+  expiresInHours = 24,
+}) {
+  const transport = getTransporter();
+  const greeting = fullName?.trim() ? `Hi ${fullName.trim()},` : "Hi,";
+
+  const text = [
+    greeting,
+    "",
+    "Please verify your email address for your Green Barter account by opening the link below:",
+    "",
+    verifyUrl,
+    "",
+    `This link expires in ${expiresInHours} hours. If you did not request this, you can safely ignore this email.`,
+    "",
+    "— The Green Barter team",
+  ].join("\n");
+
+  const html = `
+  <div style="font-family:Arial,Helvetica,sans-serif;max-width:480px;margin:0 auto;color:#1b1c18;">
+    <p style="font-size:15px;">${greeting}</p>
+    <p style="font-size:15px;line-height:1.5;">Please verify your email address for your <strong>Green Barter</strong> account:</p>
+    <div style="margin:28px 0;text-align:center;">
+      <a href="${verifyUrl}" style="display:inline-block;background:#386a20;color:#ffffff;font-size:15px;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:12px;">Verify email</a>
+    </div>
+    <p style="font-size:13px;color:#44483d;line-height:1.5;">Or copy and paste this link into your browser:</p>
+    <p style="font-size:12px;color:#386a20;word-break:break-all;line-height:1.5;">${verifyUrl}</p>
+    <p style="font-size:13px;color:#44483d;line-height:1.5;">This link expires in <strong>${expiresInHours} hours</strong>. If you did not request this, you can safely ignore this email.</p>
+    <p style="font-size:13px;color:#44483d;margin-top:24px;">— The Green Barter team</p>
+  </div>`;
+
+  await transport.sendMail({
+    from: SMTP_FROM,
+    to,
+    subject: "Verify your Green Barter email",
+    text,
+    html,
+  });
+}
